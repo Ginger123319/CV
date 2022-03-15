@@ -1,0 +1,1210 @@
+ï»¿
+
+---------------[5]---[1050508]-----------------head->totalLen is:7101 
+head->imsi is: 
+head->5G-NCGI is: 
+head->mac is: 
+head->imei is: 
+head->device is: 
+head->osName is: 
+head->appIMSI is: 
+head->latitude is: 
+head->longitude is: 
+head->version is: 
+head->userAgent is: 
+IMS->corpSiteAccountType--[]
+IMS->userName--[1758148311]
+IMS->usrPwd--[]
+IMS->passWordStr--[]
+IMS->localId--[1758148311]
+IMS->localNick--[]
+IMS->remoteName--[]
+IMS->remoteId--[]
+IMS->remoteNick--[]
+IMS->ipType--[0]
+IMS->interSenderId--[]
+IMS->interRecieverId--[]
+IMS->groupNum--[]
+IMS->groupName--[]
+IMS->talkId--[1663733258]
+IMS->loginTime--[694796056]
+IMS->msgType--[1]
+IMS->imVersion--[0]
+IMS->packetSeq--[0]
+IMS->mdDigest--[]
+IMS->cookie--[]
+IMS->cntType--[]
+IMS->url--[]
+IMS->domain--[]
+IMS->referer--[]
+IMS->mediaType--[0]
+IMS->Addr--[]
+IMS->callUsedTime--[0]
+IMS->transFileParth--[]
+IMS->extName--[]
+IMS->attachFileName--[]
+IMS->md5--[]
+IMS->textLength--[0]
+IMS->msgLen--[0]
+IMS->msg--[]
+
+
+---------------[2]---[1020238]-----------------head->totalLen is:8882 
+head->imsi is: 
+head->5G-NCGI is: 
+head->mac is: 
+head->imei is: 
+head->device is: 
+head->osName is: 
+head->appIMSI is: 
+head->latitude is: 
+head->longitude is: 
+head->version is: 
+head->userAgent is: 
+ftp->actDescription is: 
+ftp->action is:250 
+ftp->backup is: 
+ftp->charset is:3 
+ftp->cntType is: 
+ftp->cookie is: 
+ftp->fileID is: 
+ftp->fileName is: 
+ftp->fileTitle is: 
+ftp->localId is: 
+ftp->localNick is: 
+ftp->loginTime is:694796056 
+ftp->md5 is: 
+ftp->msg is: 
+ftp->msgLen is:0 
+ftp->passWordStr is: 
+ftp->referer is: 
+ftp->remoteId is: 
+ftp->remoteName is: 
+ftp->remoteNick is: 
+ftp->server is: 
+ftp->textLength is:0 
+ftp->url is: 
+ftp->urlFile is: 
+ftp->userName is: 
+ftp->usrPwd is: 
+
+
+---------------[5]---[1050508]-----------------head->totalLen is:7101 
+head->imsi is: 
+head->5G-NCGI is: 
+head->mac is: 
+head->imei is: 
+head->device is: 
+head->osName is: 
+head->appIMSI is: 
+head->latitude is: 
+head->longitude is: 
+head->version is: 
+head->userAgent is: 
+IMS->corpSiteAccountType--[]
+IMS->userName--[1758148311]
+IMS->usrPwd--[]
+IMS->passWordStr--[]
+IMS->localId--[1758148311]
+IMS->localNick--[]
+IMS->remoteName--[]
+IMS->remoteId--[]
+IMS->remoteNick--[]
+IMS->ipType--[0]
+IMS->interSenderId--[]
+IMS->interRecieverId--[]
+IMS->groupNum--[]
+IMS->groupName--[]
+IMS->talkId--[1746912625]
+IMS->loginTime--[694796093]
+IMS->msgType--[1]
+IMS->imVersion--[0]
+IMS->packetSeq--[0]
+IMS->mdDigest--[]
+IMS->cookie--[]
+IMS->cntType--[]
+IMS->url--[]
+IMS->domain--[]
+IMS->referer--[]
+IMS->mediaType--[0]
+IMS->Addr--[]
+IMS->callUsedTime--[0]
+IMS->transFileParth--[]
+IMS->extName--[]
+IMS->attachFileName--[]
+IMS->md5--[]
+IMS->textLength--[0]
+IMS->msgLen--[0]
+IMS->msg--[]
+
+
+---------------[5]---[1050508]-----------------head->totalLen is:7126 
+head->imsi is: 
+head->5G-NCGI is: 
+head->mac is: 
+head->imei is:861596040884475 
+head->device is:Redmi Note 7 
+head->osName is: 
+head->appIMSI is: 
+head->latitude is: 
+head->longitude is: 
+head->version is:V1_AND_SQ_8.8.38_2266_YYB_D 
+head->userAgent is: 
+IMS->corpSiteAccountType--[]
+IMS->userName--[1758148311]
+IMS->usrPwd--[]
+IMS->passWordStr--[]
+IMS->localId--[1758148311]
+IMS->localNick--[æˆ‘]
+IMS->remoteName--[]
+IMS->remoteId--[]
+IMS->remoteNick--[]
+IMS->ipType--[0]
+IMS->interSenderId--[]
+IMS->interRecieverId--[]
+IMS->groupNum--[]
+IMS->groupName--[]
+IMS->talkId--[1746912625]
+IMS->loginTime--[694796093]
+IMS->msgType--[53]
+IMS->imVersion--[0]
+IMS->packetSeq--[0]
+IMS->mdDigest--[]
+IMS->cookie--[]
+IMS->cntType--[]
+IMS->url--[]
+IMS->domain--[]
+IMS->referer--[]
+IMS->mediaType--[0]
+IMS->Addr--[]
+IMS->callUsedTime--[0]
+IMS->transFileParth--[]
+IMS->extName--[]
+IMS->attachFileName--[]
+IMS->md5--[]
+IMS->textLength--[25]
+IMS->msgLen--[25]
+IMS->msg--[upload video
+laptop ppppp]
+
+
+---------------[5]---[1050508]-----------------head->totalLen is:7101 
+head->imsi is: 
+head->5G-NCGI is: 
+head->mac is: 
+head->imei is: 
+head->device is: 
+head->osName is: 
+head->appIMSI is: 
+head->latitude is: 
+head->longitude is: 
+head->version is: 
+head->userAgent is: 
+IMS->corpSiteAccountType--[]
+IMS->userName--[1758148311]
+IMS->usrPwd--[]
+IMS->passWordStr--[]
+IMS->localId--[1758148311]
+IMS->localNick--[]
+IMS->remoteName--[]
+IMS->remoteId--[]
+IMS->remoteNick--[]
+IMS->ipType--[0]
+IMS->interSenderId--[]
+IMS->interRecieverId--[]
+IMS->groupNum--[]
+IMS->groupName--[]
+IMS->talkId--[1746912625]
+IMS->loginTime--[694796093]
+IMS->msgType--[1]
+IMS->imVersion--[0]
+IMS->packetSeq--[0]
+IMS->mdDigest--[]
+IMS->cookie--[]
+IMS->cntType--[]
+IMS->url--[]
+IMS->domain--[]
+IMS->referer--[]
+IMS->mediaType--[0]
+IMS->Addr--[]
+IMS->callUsedTime--[0]
+IMS->transFileParth--[]
+IMS->extName--[]
+IMS->attachFileName--[]
+IMS->md5--[]
+IMS->textLength--[0]
+IMS->msgLen--[0]
+IMS->msg--[]
+
+
+---------------[50]---[1505352]-----------------head->totalLen is:5913 
+head->imsi is: 
+head->5G-NCGI is: 
+head->mac is: 
+head->imei is: 
+head->device is: 
+head->osName is: 
+head->appIMSI is: 
+head->latitude is: 
+head->longitude is: 
+head->version is: 
+head->userAgent is: 
+specialapp->optType--[250]
+specialapp->userName--[]
+specialapp->usrPwd--[]
+specialapp->passWordStr--[]
+specialapp->localId--[]
+specialapp->localNick--[]
+specialapp->remoteName--[]
+specialapp->remoteId--[]
+specialapp->remoteNick--[]
+specialapp->topic--[]
+specialapp->domain--[]
+specialapp->url--[]
+specialapp->cookie--[]
+specialapp->cntType--[]
+specialapp->referer--[]
+specialapp->extName--[]
+specialapp->attachFileName--[]
+specialapp->textLength--[0]
+specialapp->msgLen--[0]
+specialapp->msg--[]
+
+
+---------------[5]---[1050508]-----------------head->totalLen is:7101 
+head->imsi is: 
+head->5G-NCGI is: 
+head->mac is: 
+head->imei is: 
+head->device is: 
+head->osName is: 
+head->appIMSI is: 
+head->latitude is: 
+head->longitude is: 
+head->version is: 
+head->userAgent is: 
+IMS->corpSiteAccountType--[]
+IMS->userName--[1758148311]
+IMS->usrPwd--[]
+IMS->passWordStr--[]
+IMS->localId--[1758148311]
+IMS->localNick--[]
+IMS->remoteName--[]
+IMS->remoteId--[]
+IMS->remoteNick--[]
+IMS->ipType--[0]
+IMS->interSenderId--[]
+IMS->interRecieverId--[]
+IMS->groupNum--[]
+IMS->groupName--[]
+IMS->talkId--[1798618718]
+IMS->loginTime--[694796116]
+IMS->msgType--[1]
+IMS->imVersion--[0]
+IMS->packetSeq--[0]
+IMS->mdDigest--[]
+IMS->cookie--[]
+IMS->cntType--[]
+IMS->url--[]
+IMS->domain--[]
+IMS->referer--[]
+IMS->mediaType--[0]
+IMS->Addr--[]
+IMS->callUsedTime--[0]
+IMS->transFileParth--[]
+IMS->extName--[]
+IMS->attachFileName--[]
+IMS->md5--[]
+IMS->textLength--[0]
+IMS->msgLen--[0]
+IMS->msg--[]
+
+
+---------------[5]---[1050508]-----------------head->totalLen is:7101 
+head->imsi is: 
+head->5G-NCGI is: 
+head->mac is: 
+head->imei is: 
+head->device is: 
+head->osName is: 
+head->appIMSI is: 
+head->latitude is: 
+head->longitude is: 
+head->version is: 
+head->userAgent is: 
+IMS->corpSiteAccountType--[]
+IMS->userName--[1758148311]
+IMS->usrPwd--[]
+IMS->passWordStr--[]
+IMS->localId--[1758148311]
+IMS->localNick--[]
+IMS->remoteName--[]
+IMS->remoteId--[]
+IMS->remoteNick--[]
+IMS->ipType--[0]
+IMS->interSenderId--[]
+IMS->interRecieverId--[]
+IMS->groupNum--[]
+IMS->groupName--[]
+IMS->talkId--[1798618718]
+IMS->loginTime--[694796116]
+IMS->msgType--[1]
+IMS->imVersion--[0]
+IMS->packetSeq--[0]
+IMS->mdDigest--[]
+IMS->cookie--[]
+IMS->cntType--[]
+IMS->url--[]
+IMS->domain--[]
+IMS->referer--[]
+IMS->mediaType--[0]
+IMS->Addr--[]
+IMS->callUsedTime--[0]
+IMS->transFileParth--[]
+IMS->extName--[]
+IMS->attachFileName--[]
+IMS->md5--[]
+IMS->textLength--[0]
+IMS->msgLen--[0]
+IMS->msg--[]
+
+
+---------------[5]---[1050508]-----------------head->totalLen is:7126 
+head->imsi is: 
+head->5G-NCGI is: 
+head->mac is: 
+head->imei is:861596040884475 
+head->device is:Redmi Note 7 
+head->osName is: 
+head->appIMSI is: 
+head->latitude is: 
+head->longitude is: 
+head->version is:V1_AND_SQ_8.8.38_2266_YYB_D 
+head->userAgent is: 
+IMS->corpSiteAccountType--[]
+IMS->userName--[1758148311]
+IMS->usrPwd--[]
+IMS->passWordStr--[]
+IMS->localId--[1758148311]
+IMS->localNick--[æˆ‘]
+IMS->remoteName--[]
+IMS->remoteId--[]
+IMS->remoteNick--[]
+IMS->ipType--[0]
+IMS->interSenderId--[]
+IMS->interRecieverId--[]
+IMS->groupNum--[]
+IMS->groupName--[]
+IMS->talkId--[1798618718]
+IMS->loginTime--[694796116]
+IMS->msgType--[53]
+IMS->imVersion--[0]
+IMS->packetSeq--[0]
+IMS->mdDigest--[]
+IMS->cookie--[]
+IMS->cntType--[]
+IMS->url--[]
+IMS->domain--[]
+IMS->referer--[]
+IMS->mediaType--[0]
+IMS->Addr--[]
+IMS->callUsedTime--[0]
+IMS->transFileParth--[]
+IMS->extName--[]
+IMS->attachFileName--[]
+IMS->md5--[]
+IMS->textLength--[25]
+IMS->msgLen--[25]
+IMS->msg--[upload video
+laptop ppppp]
+
+
+---------------[15]---[1150208]-----------------head->totalLen is:8138 
+head->imsi is: 
+head->5G-NCGI is: 
+head->mac is: 
+head->imei is: 
+head->device is: 
+head->osName is: 
+head->appIMSI is: 
+head->latitude is: 
+head->longitude is: 
+head->version is: 
+head->userAgent is: 
+forum->charset--[50331648]
+forum->url--[]
+forum->server--[]
+forum->domain--[]
+forum->cookie--[]
+forum->cntType--[]
+forum->referer--[]
+forum->corpSiteAccountType--[]
+forum->userName--[]
+forum->usrPwd--[]
+forum->passWordStr--[]
+forum->localId--[]
+forum->localNick--[]
+forum->remoteName--[]
+forum->remoteId--[]
+forum->remoteNick--[]
+forum->bbsSubject--[]
+forum->bbsBoardId--[]
+forum->bbsBoard--[]
+forum->copyFrom--[]
+forum->linkUrl--[]
+forum->author--[]
+forum->authorEmail--[]
+forum->optType--[250]
+forum->mediaType--[0]
+forum->issueStatus--[0]
+forum->topicId--[]
+forum->mainTopicId--[]
+forum->title--[]
+forum->summary--[]
+forum->extName--[]
+forum->attachFileName--[]
+forum->md5--[]
+forum->textContentLength--[0]
+forum->dataLen--[0]
+forum->data--[]
+
+
+---------------[15]---[1151596]-----------------head->totalLen is:8138 
+head->imsi is: 
+head->5G-NCGI is: 
+head->mac is: 
+head->imei is: 
+head->device is: 
+head->osName is: 
+head->appIMSI is: 
+head->latitude is: 
+head->longitude is: 
+head->version is: 
+head->userAgent is: 
+forum->charset--[50331648]
+forum->url--[]
+forum->server--[]
+forum->domain--[]
+forum->cookie--[]
+forum->cntType--[]
+forum->referer--[]
+forum->corpSiteAccountType--[]
+forum->userName--[]
+forum->usrPwd--[]
+forum->passWordStr--[]
+forum->localId--[]
+forum->localNick--[]
+forum->remoteName--[]
+forum->remoteId--[]
+forum->remoteNick--[]
+forum->bbsSubject--[]
+forum->bbsBoardId--[]
+forum->bbsBoard--[]
+forum->copyFrom--[]
+forum->linkUrl--[]
+forum->author--[]
+forum->authorEmail--[]
+forum->optType--[250]
+forum->mediaType--[0]
+forum->issueStatus--[0]
+forum->topicId--[]
+forum->mainTopicId--[]
+forum->title--[]
+forum->summary--[]
+forum->extName--[]
+forum->attachFileName--[]
+forum->md5--[]
+forum->textContentLength--[0]
+forum->dataLen--[0]
+forum->data--[]
+
+
+---------------[15]---[1151596]-----------------head->totalLen is:8138 
+head->imsi is: 
+head->5G-NCGI is: 
+head->mac is: 
+head->imei is: 
+head->device is: 
+head->osName is: 
+head->appIMSI is: 
+head->latitude is: 
+head->longitude is: 
+head->version is: 
+head->userAgent is: 
+forum->charset--[50331648]
+forum->url--[]
+forum->server--[]
+forum->domain--[]
+forum->cookie--[]
+forum->cntType--[]
+forum->referer--[]
+forum->corpSiteAccountType--[]
+forum->userName--[]
+forum->usrPwd--[]
+forum->passWordStr--[]
+forum->localId--[]
+forum->localNick--[]
+forum->remoteName--[]
+forum->remoteId--[]
+forum->remoteNick--[]
+forum->bbsSubject--[]
+forum->bbsBoardId--[]
+forum->bbsBoard--[]
+forum->copyFrom--[]
+forum->linkUrl--[]
+forum->author--[]
+forum->authorEmail--[]
+forum->optType--[250]
+forum->mediaType--[0]
+forum->issueStatus--[0]
+forum->topicId--[]
+forum->mainTopicId--[]
+forum->title--[]
+forum->summary--[]
+forum->extName--[]
+forum->attachFileName--[]
+forum->md5--[]
+forum->textContentLength--[0]
+forum->dataLen--[0]
+forum->data--[]
+
+
+---------------[5]---[1050508]-----------------head->totalLen is:2360782 
+head->imsi is: 
+head->5G-NCGI is: 
+head->mac is: 
+head->imei is: 
+head->device is: 
+head->osName is: 
+head->appIMSI is: 
+head->latitude is: 
+head->longitude is: 
+head->version is: 
+head->userAgent is: 
+IMS->corpSiteAccountType--[]
+IMS->userName--[1758148311]
+IMS->usrPwd--[]
+IMS->passWordStr--[]
+IMS->localId--[1758148311]
+IMS->localNick--[]
+IMS->remoteName--[]
+IMS->remoteId--[]
+IMS->remoteNick--[]
+IMS->ipType--[0]
+IMS->interSenderId--[]
+IMS->interRecieverId--[]
+IMS->groupNum--[]
+IMS->groupName--[]
+IMS->talkId--[1805362991]
+IMS->loginTime--[694796119]
+IMS->msgType--[36]
+IMS->imVersion--[0]
+IMS->packetSeq--[0]
+IMS->mdDigest--[]
+IMS->cookie--[]
+IMS->cntType--[]
+IMS->url--[]
+IMS->domain--[]
+IMS->referer--[]
+IMS->mediaType--[0]
+IMS->Addr--[]
+IMS->callUsedTime--[0]
+IMS->transFileParth--[]
+IMS->extName--[mp4]
+IMS->attachFileName--[qq.mp4]
+IMS->md5--[]
+IMS->textLength--[0]
+IMS->msgLen--[2353681]
+IMS->msg--[]
+
+
+---------------[15]---[1151596]-----------------head->totalLen is:8138 
+head->imsi is: 
+head->5G-NCGI is: 
+head->mac is: 
+head->imei is: 
+head->device is: 
+head->osName is: 
+head->appIMSI is: 
+head->latitude is: 
+head->longitude is: 
+head->version is: 
+head->userAgent is: 
+forum->charset--[50331648]
+forum->url--[]
+forum->server--[]
+forum->domain--[]
+forum->cookie--[]
+forum->cntType--[]
+forum->referer--[]
+forum->corpSiteAccountType--[]
+forum->userName--[]
+forum->usrPwd--[]
+forum->passWordStr--[]
+forum->localId--[]
+forum->localNick--[]
+forum->remoteName--[]
+forum->remoteId--[]
+forum->remoteNick--[]
+forum->bbsSubject--[]
+forum->bbsBoardId--[]
+forum->bbsBoard--[]
+forum->copyFrom--[]
+forum->linkUrl--[]
+forum->author--[]
+forum->authorEmail--[]
+forum->optType--[250]
+forum->mediaType--[0]
+forum->issueStatus--[0]
+forum->topicId--[]
+forum->mainTopicId--[]
+forum->title--[]
+forum->summary--[]
+forum->extName--[]
+forum->attachFileName--[]
+forum->md5--[]
+forum->textContentLength--[0]
+forum->dataLen--[0]
+forum->data--[]
+
+
+---------------[5]---[1050508]-----------------head->totalLen is:1628553 
+head->imsi is: 
+head->5G-NCGI is: 
+head->mac is: 
+head->imei is: 
+head->device is: 
+head->osName is: 
+head->appIMSI is: 
+head->latitude is: 
+head->longitude is: 
+head->version is: 
+head->userAgent is: 
+IMS->corpSiteAccountType--[]
+IMS->userName--[1758148311]
+IMS->usrPwd--[]
+IMS->passWordStr--[]
+IMS->localId--[1758148311]
+IMS->localNick--[]
+IMS->remoteName--[]
+IMS->remoteId--[]
+IMS->remoteNick--[]
+IMS->ipType--[0]
+IMS->interSenderId--[]
+IMS->interRecieverId--[]
+IMS->groupNum--[]
+IMS->groupName--[]
+IMS->talkId--[1812107264]
+IMS->loginTime--[694796122]
+IMS->msgType--[40]
+IMS->imVersion--[0]
+IMS->packetSeq--[0]
+IMS->mdDigest--[]
+IMS->cookie--[]
+IMS->cntType--[]
+IMS->url--[]
+IMS->domain--[]
+IMS->referer--[]
+IMS->mediaType--[0]
+IMS->Addr--[]
+IMS->callUsedTime--[0]
+IMS->transFileParth--[]
+IMS->extName--[jpg]
+IMS->attachFileName--[qq.jpg]
+IMS->md5--[]
+IMS->textLength--[0]
+IMS->msgLen--[1621452]
+IMS->msg--[ÿØÿà]
+
+
+---------------[5]---[1050508]-----------------head->totalLen is:24224 
+head->imsi is: 
+head->5G-NCGI is: 
+head->mac is: 
+head->imei is: 
+head->device is: 
+head->osName is: 
+head->appIMSI is: 
+head->latitude is: 
+head->longitude is: 
+head->version is: 
+head->userAgent is: 
+IMS->corpSiteAccountType--[]
+IMS->userName--[1758148311]
+IMS->usrPwd--[]
+IMS->passWordStr--[]
+IMS->localId--[1758148311]
+IMS->localNick--[]
+IMS->remoteName--[]
+IMS->remoteId--[]
+IMS->remoteNick--[]
+IMS->ipType--[0]
+IMS->interSenderId--[]
+IMS->interRecieverId--[]
+IMS->groupNum--[]
+IMS->groupName--[]
+IMS->talkId--[1890790449]
+IMS->loginTime--[694796157]
+IMS->msgType--[96]
+IMS->imVersion--[0]
+IMS->packetSeq--[0]
+IMS->mdDigest--[]
+IMS->cookie--[]
+IMS->cntType--[]
+IMS->url--[]
+IMS->domain--[]
+IMS->referer--[]
+IMS->mediaType--[2]
+IMS->Addr--[]
+IMS->callUsedTime--[0]
+IMS->transFileParth--[]
+IMS->extName--[jpg]
+IMS->attachFileName--[qqzone.jpg]
+IMS->md5--[]
+IMS->textLength--[0]
+IMS->msgLen--[17123]
+IMS->msg--[ÿØÿà]
+
+
+---------------[5]---[1050508]-----------------head->totalLen is:472703 
+head->imsi is: 
+head->5G-NCGI is: 
+head->mac is: 
+head->imei is: 
+head->device is: 
+head->osName is: 
+head->appIMSI is: 
+head->latitude is: 
+head->longitude is: 
+head->version is: 
+head->userAgent is: 
+IMS->corpSiteAccountType--[]
+IMS->userName--[1758148311]
+IMS->usrPwd--[]
+IMS->passWordStr--[]
+IMS->localId--[1758148311]
+IMS->localNick--[]
+IMS->remoteName--[]
+IMS->remoteId--[]
+IMS->remoteNick--[]
+IMS->ipType--[0]
+IMS->interSenderId--[]
+IMS->interRecieverId--[]
+IMS->groupNum--[]
+IMS->groupName--[]
+IMS->talkId--[1895286631]
+IMS->loginTime--[694796159]
+IMS->msgType--[97]
+IMS->imVersion--[0]
+IMS->packetSeq--[0]
+IMS->mdDigest--[]
+IMS->cookie--[]
+IMS->cntType--[]
+IMS->url--[]
+IMS->domain--[]
+IMS->referer--[]
+IMS->mediaType--[4]
+IMS->Addr--[]
+IMS->callUsedTime--[0]
+IMS->transFileParth--[]
+IMS->extName--[mp4]
+IMS->attachFileName--[qqzone.mp4]
+IMS->md5--[]
+IMS->textLength--[0]
+IMS->msgLen--[465602]
+IMS->msg--[]
+
+
+---------------[12]---[1120016]-----------------head->totalLen is:574549 
+head->imsi is: 
+head->5G-NCGI is: 
+head->mac is: 
+head->imei is: 
+head->device is: 
+head->osName is: 
+head->appIMSI is: 
+head->latitude is: 
+head->longitude is: 
+head->version is: 
+head->userAgent is: 
+voip->ipVersion--[0]
+voip->voipId--[694796160]
+voip->voipType--[150994944]
+voip->msgType--[2]
+voip->rtpPt--[0]
+voip->userName--[]
+voip->usrPwd--[]
+voip->passWordStr--[]
+voip->localId--[]
+voip->localNick--[]
+voip->remoteName--[]
+voip->remoteId--[]
+voip->remoteNick--[]
+voip->callingNum--[]
+voip->calledNum--[]
+voip->callStartTime--[0]
+voip->callUsedTime--[0]
+voip->md5--[]
+voip->extName--[]
+voip->attachFileName--[]
+voip->textLength--[0]
+voip->msgLen--[572156]
+voip->msg--[]
+
+
+---------------[12]---[1120016]-----------------head->totalLen is:574549 
+head->imsi is: 
+head->5G-NCGI is: 
+head->mac is: 
+head->imei is: 
+head->device is: 
+head->osName is: 
+head->appIMSI is: 
+head->latitude is: 
+head->longitude is: 
+head->version is: 
+head->userAgent is: 
+voip->ipVersion--[0]
+voip->voipId--[694796160]
+voip->voipType--[150994944]
+voip->msgType--[2]
+voip->rtpPt--[0]
+voip->userName--[]
+voip->usrPwd--[]
+voip->passWordStr--[]
+voip->localId--[]
+voip->localNick--[]
+voip->remoteName--[]
+voip->remoteId--[]
+voip->remoteNick--[]
+voip->callingNum--[]
+voip->calledNum--[]
+voip->callStartTime--[0]
+voip->callUsedTime--[0]
+voip->md5--[]
+voip->extName--[]
+voip->attachFileName--[]
+voip->textLength--[0]
+voip->msgLen--[572156]
+voip->msg--[]
+
+
+---------------[5]---[1050530]-----------------head->totalLen is:7101 
+head->imsi is: 
+head->5G-NCGI is: 
+head->mac is: 
+head->imei is: 
+head->device is: 
+head->osName is: 
+head->appIMSI is: 
+head->latitude is: 
+head->longitude is: 
+head->version is:android8.0.16 
+head->userAgent is: 
+IMS->corpSiteAccountType--[]
+IMS->userName--[]
+IMS->usrPwd--[]
+IMS->passWordStr--[]
+IMS->localId--[119866740]
+IMS->localNick--[]
+IMS->remoteName--[]
+IMS->remoteId--[]
+IMS->remoteNick--[]
+IMS->ipType--[0]
+IMS->interSenderId--[]
+IMS->interRecieverId--[]
+IMS->groupNum--[]
+IMS->groupName--[]
+IMS->talkId--[367499450]
+IMS->loginTime--[694796450]
+IMS->msgType--[1]
+IMS->imVersion--[0]
+IMS->packetSeq--[0]
+IMS->mdDigest--[]
+IMS->cookie--[]
+IMS->cntType--[]
+IMS->url--[]
+IMS->domain--[]
+IMS->referer--[]
+IMS->mediaType--[0]
+IMS->Addr--[]
+IMS->callUsedTime--[0]
+IMS->transFileParth--[]
+IMS->extName--[]
+IMS->attachFileName--[]
+IMS->md5--[]
+IMS->textLength--[0]
+IMS->msgLen--[0]
+IMS->msg--[]
+
+
+---------------[5]---[1050530]-----------------head->totalLen is:7364 
+head->imsi is: 
+head->5G-NCGI is: 
+head->mac is: 
+head->imei is: 
+head->device is: 
+head->osName is: 
+head->appIMSI is: 
+head->latitude is: 
+head->longitude is: 
+head->version is:android8.0.16 
+head->userAgent is: 
+IMS->corpSiteAccountType--[]
+IMS->userName--[]
+IMS->usrPwd--[]
+IMS->passWordStr--[]
+IMS->localId--[]
+IMS->localNick--[]
+IMS->remoteName--[]
+IMS->remoteId--[]
+IMS->remoteNick--[]
+IMS->ipType--[0]
+IMS->interSenderId--[]
+IMS->interRecieverId--[]
+IMS->groupNum--[]
+IMS->groupName--[]
+IMS->talkId--[367499450]
+IMS->loginTime--[694796450]
+IMS->msgType--[93]
+IMS->imVersion--[0]
+IMS->packetSeq--[0]
+IMS->mdDigest--[]
+IMS->cookie--[]
+IMS->cntType--[]
+IMS->url--[]
+IMS->domain--[]
+IMS->referer--[]
+IMS->mediaType--[0]
+IMS->Addr--[]
+IMS->callUsedTime--[0]
+IMS->transFileParth--[]
+IMS->extName--[]
+IMS->attachFileName--[]
+IMS->md5--[]
+IMS->textLength--[263]
+IMS->msgLen--[263]
+IMS->msg--[http://szzjwxsns.video.qq.com/102/20202/snsvideodownload?filekey=30340201010420301e0201660402535a04109d3c48addf08fb66a0aa3d97063b576002031b04e9040d00000004627466730000000132&hy=SZ&storeid=161a07d3d00058390617aa9ed0000006600004eea535a2&dotrans=3&ef=30_0&bizid=1023]
+
+
+---------------[5]---[1050530]-----------------head->totalLen is:7364 
+head->imsi is: 
+head->5G-NCGI is: 
+head->mac is: 
+head->imei is: 
+head->device is: 
+head->osName is: 
+head->appIMSI is: 
+head->latitude is: 
+head->longitude is: 
+head->version is:android8.0.16 
+head->userAgent is: 
+IMS->corpSiteAccountType--[]
+IMS->userName--[]
+IMS->usrPwd--[]
+IMS->passWordStr--[]
+IMS->localId--[]
+IMS->localNick--[]
+IMS->remoteName--[]
+IMS->remoteId--[]
+IMS->remoteNick--[]
+IMS->ipType--[0]
+IMS->interSenderId--[]
+IMS->interRecieverId--[]
+IMS->groupNum--[]
+IMS->groupName--[]
+IMS->talkId--[367499450]
+IMS->loginTime--[694796450]
+IMS->msgType--[93]
+IMS->imVersion--[0]
+IMS->packetSeq--[0]
+IMS->mdDigest--[]
+IMS->cookie--[]
+IMS->cntType--[]
+IMS->url--[]
+IMS->domain--[]
+IMS->referer--[]
+IMS->mediaType--[0]
+IMS->Addr--[]
+IMS->callUsedTime--[0]
+IMS->transFileParth--[]
+IMS->extName--[]
+IMS->attachFileName--[]
+IMS->md5--[]
+IMS->textLength--[263]
+IMS->msgLen--[263]
+IMS->msg--[http://szzjwxsns.video.qq.com/102/20202/snsvideodownload?filekey=30340201010420301e0201660402535a0410e859b11e5c933c4459785dda596c38f202031f5099040d00000004627466730000000132&hy=SZ&storeid=161407d4d0009b196617aa9ed0000006600004eea535a0&dotrans=2&ef=30_0&bizid=1023]
+
+
+---------------[50]---[1500812]-----------------head->totalLen is:5913 
+head->imsi is: 
+head->5G-NCGI is: 
+head->mac is: 
+head->imei is: 
+head->device is: 
+head->osName is: 
+head->appIMSI is: 
+head->latitude is: 
+head->longitude is: 
+head->version is: 
+head->userAgent is: 
+specialapp->optType--[250]
+specialapp->userName--[]
+specialapp->usrPwd--[]
+specialapp->passWordStr--[]
+specialapp->localId--[]
+specialapp->localNick--[]
+specialapp->remoteName--[]
+specialapp->remoteId--[]
+specialapp->remoteNick--[]
+specialapp->topic--[]
+specialapp->domain--[]
+specialapp->url--[]
+specialapp->cookie--[]
+specialapp->cntType--[]
+specialapp->referer--[]
+specialapp->extName--[]
+specialapp->attachFileName--[]
+specialapp->textLength--[0]
+specialapp->msgLen--[0]
+specialapp->msg--[]
+
+
+---------------[2]---[1020209]-----------------head->totalLen is:8882 
+head->imsi is: 
+head->5G-NCGI is: 
+head->mac is: 
+head->imei is: 
+head->device is: 
+head->osName is: 
+head->appIMSI is: 
+head->latitude is: 
+head->longitude is: 
+head->version is: 
+head->userAgent is: 
+ftp->actDescription is: 
+ftp->action is:250 
+ftp->backup is: 
+ftp->charset is:3 
+ftp->cntType is: 
+ftp->cookie is: 
+ftp->fileID is: 
+ftp->fileName is: 
+ftp->fileTitle is: 
+ftp->localId is: 
+ftp->localNick is: 
+ftp->loginTime is:694796486 
+ftp->md5 is: 
+ftp->msg is:1é‘Wq‘™[]²+\rš×¡l—+58òkÿ›IœhB½‚Ø'Ÿ	–‡¹¬.
+5/€Gì 
+ftp->msgLen is:0 
+ftp->passWordStr is: 
+ftp->referer is: 
+ftp->remoteId is: 
+ftp->remoteName is: 
+ftp->remoteNick is: 
+ftp->server is: 
+ftp->textLength is:0 
+ftp->url is: 
+ftp->urlFile is: 
+ftp->userName is: 
+ftp->usrPwd is: 
+
+
+---------------[5]---[1050530]-----------------head->totalLen is:7101 
+head->imsi is: 
+head->5G-NCGI is: 
+head->mac is: 
+head->imei is: 
+head->device is: 
+head->osName is: 
+head->appIMSI is: 
+head->latitude is: 
+head->longitude is: 
+head->version is:android8.0.16 
+head->userAgent is: 
+IMS->corpSiteAccountType--[]
+IMS->userName--[]
+IMS->usrPwd--[]
+IMS->passWordStr--[]
+IMS->localId--[119866740]
+IMS->localNick--[]
+IMS->remoteName--[]
+IMS->remoteId--[]
+IMS->remoteNick--[]
+IMS->ipType--[0]
+IMS->interSenderId--[]
+IMS->interRecieverId--[]
+IMS->groupNum--[]
+IMS->groupName--[]
+IMS->talkId--[450678817]
+IMS->loginTime--[694796487]
+IMS->msgType--[1]
+IMS->imVersion--[0]
+IMS->packetSeq--[0]
+IMS->mdDigest--[]
+IMS->cookie--[]
+IMS->cntType--[]
+IMS->url--[]
+IMS->domain--[]
+IMS->referer--[]
+IMS->mediaType--[0]
+IMS->Addr--[]
+IMS->callUsedTime--[0]
+IMS->transFileParth--[]
+IMS->extName--[]
+IMS->attachFileName--[]
+IMS->md5--[]
+IMS->textLength--[0]
+IMS->msgLen--[0]
+IMS->msg--[ÃıËm9!”†ïq¶"_¦êT@™¬cÿ/qÈ²u{p_=\jMO™AÊ„l4ª¢?£_<2µ—“ï¥l}Ù]ÓÇ#%Lš´&Ów-n¯ï…\¶°DÈpËÄp”Ù/ÏÑ]
+
+
+---------------[15]---[1151596]-----------------head->totalLen is:8138 
+head->imsi is: 
+head->5G-NCGI is: 
+head->mac is: 
+head->imei is: 
+head->device is: 
+head->osName is: 
+head->appIMSI is: 
+head->latitude is: 
+head->longitude is: 
+head->version is: 
+head->userAgent is: 
+forum->charset--[50331648]
+forum->url--[]
+forum->server--[]
+forum->domain--[]
+forum->cookie--[]
+forum->cntType--[]
+forum->referer--[]
+forum->corpSiteAccountType--[]
+forum->userName--[]
+forum->usrPwd--[]
+forum->passWordStr--[]
+forum->localId--[]
+forum->localNick--[]
+forum->remoteName--[]
+forum->remoteId--[]
+forum->remoteNick--[]
+forum->bbsSubject--[]
+forum->bbsBoardId--[]
+forum->bbsBoard--[]
+forum->copyFrom--[]
+forum->linkUrl--[]
+forum->author--[]
+forum->authorEmail--[]
+forum->optType--[250]
+forum->mediaType--[0]
+forum->issueStatus--[0]
+forum->topicId--[]
+forum->mainTopicId--[]
+forum->title--[]
+forum->summary--[]
+forum->extName--[]
+forum->attachFileName--[]
+forum->md5--[]
+forum->textContentLength--[0]
+forum->dataLen--[0]
+forum->data--[]
