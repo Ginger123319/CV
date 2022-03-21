@@ -1,3 +1,5 @@
+import random
+
 import numpy as np
 import torch
 from torch import tensor
@@ -62,8 +64,11 @@ from torch import tensor
 
 # # stack函数:同维度的元素按照对应的索引位置堆叠在一起
 # # 堆叠后的结果会比原始张量升高一个维度；高维空间是由低维空间堆叠而来
-# g = torch.tensor([[[4]], [[4]]])
-# h = torch.tensor([[[1]], [[3]]])
+g = torch.tensor([[[4]], [[1]]])
+h = torch.tensor([[[1]], [[3]]])
+# print(g[1])
+# # 为了保持原始张量的维度
+# print(g[[1]])
 # # stack expects each tensor to be equal size, but got [2, 2, 2] at entry 0 and [2, 2] at entry 1
 # # print(torch.stack((g, e), dim=0))
 # # dim可以取[-4,3]取负数是什么含义？
@@ -71,9 +76,17 @@ from torch import tensor
 # print(h.shape)
 # print(torch.stack((g, h), dim=1))
 
-# randn()函数可以生成指定形状的张量，其中元素值是随机生成的
+# # randn()函数可以生成指定形状的张量[至少是矢量]，其中元素值是随机生成的
+# print(torch.randn(2))
+# print(torch.randn(1))
+# print(torch.tensor(1))
 # print(torch.randn((2, 2)))
 # print(np.random.randn(2, 2))
+
+# randint()函数可以生成指定形状的张量[至少是矢量]，其中元素值是随机生成的
+# print(torch.randint(0, 4, (1,)))
+# 其中参数a是下限，参数b是上限，生成的随机数n: a <= n <= b
+print(random.randint(0, 4))
 
 # 张量的运算
 # 张量【形状相同的时候】可以进行基本的加减乘除操作
@@ -155,10 +168,10 @@ from torch import tensor
 # print(a.min())
 
 
-# 改变张量的形状
-a = torch.tensor([[[3, 2, 2], [4, 2, 2]], [[3, 4, 2], [1, 3, 2]]], dtype=torch.float32)
-print(type(a))
-print(a.shape)
-print(a.reshape(1, 2, 6, 1))
-# 对轴进行交换来改变张量的形状
-print(a.permute(1, 2, 0))
+# # 改变张量的形状
+# a = torch.tensor([[[3, 2, 2], [4, 2, 2]], [[3, 4, 2], [1, 3, 2]]], dtype=torch.float32)
+# print(type(a))
+# print(a.shape)
+# print(a.reshape(1, 2, 6, 1))
+# # 对轴进行交换来改变张量的形状
+# print(a.permute(1, 2, 0))
