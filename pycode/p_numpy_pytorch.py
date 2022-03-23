@@ -4,7 +4,7 @@ import numpy as np
 import torch
 from torch import tensor
 
-# print(torch.__version__)
+print(torch.__version__)
 # print(torch.cuda.is_available())
 # numpy既不能直接支持BP算法也不能支持GPU运算；工程上会使用pytorch进行操作
 

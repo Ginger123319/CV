@@ -159,7 +159,7 @@ class Net(torch.nn.Module):
         # 初始化一个偏移量b，也是一个矢量
         self.b = torch.nn.Parameter(torch.randn(1))
 
-    # 前向计算，代入输入值计算经过模型运算的输出值（此处有问题）
+    # 前向计算，代入输入值计算经过模型运算的输出值
     def forward(self, x):
         return (x * self.W).sum() + self.b
 
