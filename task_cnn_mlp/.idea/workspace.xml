@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7efff1cf-926f-4bd4-8b71-b83d53097a0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/net.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task321/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/../task321/data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task321/data_p.py" beforeDir="false" afterPath="$PROJECT_DIR$/../task321/data_p.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task321/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../task321/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task321/train_p.py" beforeDir="false" afterPath="$PROJECT_DIR$/../task321/train_p.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/net.py" beforeDir="false" afterPath="$PROJECT_DIR$/net.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
