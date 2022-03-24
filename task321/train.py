@@ -91,6 +91,6 @@ class Train:
 
 
 if __name__ == '__main__':
-    train = Train(r"..\source\MNIST_IMG")
+    train = Train(r"..\..\source\MNIST_IMG")
     # 调用call函数
     train()

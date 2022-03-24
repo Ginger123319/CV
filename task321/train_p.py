@@ -45,7 +45,7 @@ class Train:
 
 
 if __name__ == '__main__':
-    train = Train(r"..\source\MNIST_IMG")
+    train = Train(r"..\..\source\MNIST_IMG")
     train()
 
     # 没有对输入数据做归一化处理

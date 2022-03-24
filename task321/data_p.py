@@ -46,5 +46,5 @@ class MnistDataset(Dataset):
 
 
 if __name__ == '__main__':
-    data = MnistDataset(r"..\source\MNIST_IMG", True)
+    data = MnistDataset(r"..\..\source\MNIST_IMG", True)
     print(data[0])
