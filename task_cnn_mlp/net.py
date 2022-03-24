@@ -6,6 +6,7 @@ class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
         self.layer = nn.Sequential(
+            # 全连接MNIST使用
             # nn.Linear(784, 600),
             nn.Linear(32 * 32 * 3, 600),
             nn.ReLU(),
@@ -22,8 +23,9 @@ class Net(nn.Module):
         )
         # 构建卷积神经网络CNN
         self.layer = nn.Sequential(
-            # nn.Conv2d(3, 16, 3, 1),
-            nn.Conv2d(1, 16, 3, 1),
+            # 卷积CIFAR10使用
+            nn.Conv2d(3, 16, 3, 1),
+            # nn.Conv2d(1, 16, 3, 1),
             nn.ReLU(),
             nn.Conv2d(16, 32, 3, 1),
             nn.ReLU(),
@@ -34,8 +36,9 @@ class Net(nn.Module):
             nn.Conv2d(128, 256, 3, 1)
         )
         self.out_layer = nn.Sequential(
-            nn.Linear(256 * 18 * 18, 10),
-            # nn.Linear(256 * 22 * 22, 10),
+            # nn.Linear(256 * 18 * 18, 10),
+            # 卷积CIFAR10使用
+            nn.Linear(256 * 22 * 22, 10),
             nn.Softmax(dim=1)
         )
 

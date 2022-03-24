@@ -1,12 +1,18 @@
 import torch
+import os
 from net import MnistNet
 from data import MnistDataset
 from torch.utils.data import DataLoader
 from torch import optim
 
+from torch.utils.tensorboard import SummaryWriter
+
 
 class Train:
     def __init__(self, root):
+        # 数据可视化工具使用
+        self.writer = SummaryWriter("./log")
+
         # 训练集数据导入
         self.train_dataset = MnistDataset(root, True)
         self.train_loader = DataLoader(self.train_dataset, batch_size=600, shuffle=True)
@@ -17,6 +23,10 @@ class Train:
 
         # 生成神经网络对象
         self.net = MnistNet()
+
+        # 预加载之前训练好的参数并传入到网络中
+        if os.path.exists("./checkpoint/4.t"):
+            self.net.load_state_dict(torch.load("./checkpoint/4.t"))
 
         # 生成优化器
         # 此处无需传入步长，因为该优化器有一个默认的步长，并且会调整步长的大小
@@ -56,6 +66,10 @@ class Train:
 
                 # 将每个批次的损失都累加起来
                 sum_loss = sum_loss + loss.item()
+            # 每一轮保存一次训练好的参数
+            torch.save(self.net.state_dict(), f"./checkpoint/{epoch}.t")
+            print("参数保存成功！")
+
             avg_loss = sum_loss / len(self.train_loader)
             print("============>", avg_loss)
 
@@ -88,6 +102,10 @@ class Train:
             test_avg_loss = test_sum_loss / len(self.test_loader)
             test_avg_score = sum_score / len(self.test_loader)
             print("epoch:", epoch, "test_loss:", test_avg_loss, "test_score:", test_avg_score)
+
+            # 使用writer收集标量数据
+            self.writer.add_scalars("loss", {"train_loss": avg_loss, "test_loss": test_avg_loss}, epoch)
+            self.writer.add_scalar("score", test_avg_score, epoch)
 
 
 if __name__ == '__main__':

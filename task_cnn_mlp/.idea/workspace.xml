@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7efff1cf-926f-4bd4-8b71-b83d53097a0b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../task321/test01.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task321/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../task321/train.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/net.py" beforeDir="false" afterPath="$PROJECT_DIR$/net.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
@@ -20,6 +22,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="26myvCGpMcCX7mfF8X8GNdAXrHz" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -101,8 +106,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.task_cnn_mlp" />
       <item itemvalue="Python.net" />
+      <item itemvalue="Python.task_cnn_mlp" />
       <item itemvalue="Python.train" />
     </list>
     <recent_temporary>
@@ -134,6 +139,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
