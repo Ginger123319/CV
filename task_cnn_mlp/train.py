@@ -31,16 +31,16 @@ class Train:
                                         transform=transforms.ToTensor())
         self.test_loader = DataLoader(self.test_data, batch_size=100, shuffle=True)
 
-        # CIFAR10数据集
-        self.train_data = datasets.CIFAR10(root=r"..\..\source\CIFAR10_DATA", train=True, download=True,
-                                           transform=transforms.ToTensor())
-        self.train_loader = DataLoader(self.train_data, batch_size=500, shuffle=True)
-
-        self.test_data = datasets.CIFAR10(root=r"..\..\source\CIFAR10_DATA", train=False, download=False,
-                                          transform=transforms.ToTensor())
-        self.test_loader = DataLoader(self.test_data, batch_size=100, shuffle=True)
-        print(self.test_data.data.shape)
-        print(len(self.test_data.targets))
+        # # CIFAR10数据集
+        # self.train_data = datasets.CIFAR10(root=r"..\..\source\CIFAR10_DATA", train=True, download=True,
+        #                                    transform=transforms.ToTensor())
+        # self.train_loader = DataLoader(self.train_data, batch_size=500, shuffle=True)
+        #
+        # self.test_data = datasets.CIFAR10(root=r"..\..\source\CIFAR10_DATA", train=False, download=False,
+        #                                   transform=transforms.ToTensor())
+        # self.test_loader = DataLoader(self.test_data, batch_size=100, shuffle=True)
+        # print(self.test_data.data.shape)
+        # print(len(self.test_data.targets))
 
         # 创建网络对象
         self.net = Net()
