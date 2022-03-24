@@ -44,7 +44,7 @@ class MnistDataset(Dataset):
 
 
 if __name__ == '__main__':
-    dataset = MnistDataset(r"..\source\MNIST_IMG")
+    dataset = MnistDataset(r"..\..\source\MNIST_IMG")
     # print(dataset.dataset)
     dataLoader = DataLoader(dataset, batch_size=600, shuffle=True)
     for i, (x, y) in enumerate(dataLoader):
