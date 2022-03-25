@@ -55,7 +55,7 @@ class Train:
             sum_loss = 0.
             sum_score = 0.
             for i, (images, tags) in enumerate(self.train_loader):
-                print(i)
+                # print(i)
                 # 对图片数据进行处理
                 # print(images.shape)
                 # 全连接时使用
