@@ -1,7 +1,9 @@
 import torch
 # from net import Net
-from net_v2 import Net
-from torchvision import datasets, transforms
+from torch.utils.tensorboard import SummaryWriter
+
+from data_cat_dog import CIFARDataset
+from net_cat_dog import Net
 from torch.utils.data import DataLoader
 from torch import optim
 from torch import nn
@@ -13,37 +15,17 @@ DEVICE = "cuda"
 
 
 class Train:
-    def __init__(self):
-        # 导入数据集，处理数据集中的data和targets
-        # transforms.ToTensor()只是对数据进行基本的转换
-        # 从PILImage转为tensor类型
-        # 归一化处理，数据处理为0到1之间的浮点数
-        # 换轴，从HWC->CHW
-        # 不过只有在加载数据之后的调用过程中才会对图片进行实时处理
-        # 数据也需要处理，需要转化（reshape）为全连接网络能够输入的形状
-        # 标签的one-hot转换还没有做，需要保证输出的结果与标签的形状一致
-        self.train_data = datasets.MNIST(root=r"..\..\source\MNIST_DATA", train=True, download=True,
-                                         transform=transforms.ToTensor())
+    def __init__(self, root):
+        # 数据可视化工具使用
+        self.writer = SummaryWriter("./log")
+
+        self.train_data = CIFARDataset(root, True)
         # print(self.train_data.data.shape)
         # print(self.train_data.targets.shape)
-        # # torch.Size([60000, 28, 28])
-        # # torch.Size([60000])
-        self.train_loader = DataLoader(self.train_data, batch_size=600, shuffle=True)
+        self.train_loader = DataLoader(self.train_data, batch_size=120, shuffle=True)
 
-        self.test_data = datasets.MNIST(root=r"..\..\source\MNIST_DATA", train=False, download=False,
-                                        transform=transforms.ToTensor())
-        self.test_loader = DataLoader(self.test_data, batch_size=100, shuffle=True)
-
-        # CIFAR10数据集
-        self.train_data = datasets.CIFAR10(root=r"..\..\source\CIFAR10_DATA", train=True, download=True,
-                                           transform=transforms.ToTensor())
-        self.train_loader = DataLoader(self.train_data, batch_size=250, shuffle=True)
-
-        self.test_data = datasets.CIFAR10(root=r"..\..\source\CIFAR10_DATA", train=False, download=False,
-                                          transform=transforms.ToTensor())
-        self.test_loader = DataLoader(self.test_data, batch_size=100, shuffle=True)
-        # print(self.test_data.data.shape)
-        # print(len(self.test_data.targets))
+        self.test_data = CIFARDataset(root, False)
+        self.test_loader = DataLoader(self.test_data, batch_size=60, shuffle=True)
 
         # 创建网络对象
         self.net = Net().to(DEVICE)
@@ -52,14 +34,15 @@ class Train:
         # 创建损失函数
         # loss = torch.mean((out - tag_data) ** 2)
         # self.loss_func = nn.MSELoss()  # 均方差损失函数
-        self.loss_func = nn.CrossEntropyLoss()  # 内部带有Softmax函数对输出进行归一化处理
+        # self.loss_func = nn.CrossEntropyLoss()  # 内部带有Softmax函数对输出进行归一化处理
         # self.loss_func = nn.NLLLoss()
         # self.loss_func = nn.BCEWithLogitsLoss()  # 内部带有Sigmoid函数对输出进行归一化处理
-        # self.loss_func = nn.BCELoss()
+        self.loss_func = nn.BCELoss()
 
     def __call__(self, *args, **kwargs):
         # 训练
         for epoch in range(10000):
+            # self.net.train()
             sum_loss = 0.
             for i, (images, tags) in enumerate(self.train_loader):
                 self.net.train()
@@ -77,12 +60,13 @@ class Train:
 
                 # tag_data = one_hot(tags, 10)
                 tag_data = tags.to(DEVICE)
+                # tag_data = tag_data[:, None]
 
                 # print(tags_data.shape)
 
                 # 注意，输出时600*10，标签也是600*10，所以减法的结果时600*10
                 # 结果无法求导，涉及损失函数时得求一个平均值
-                out = self.net.forward(img_data)
+                out = self.net.forward(img_data).reshape(-1)
                 # loss = torch.mean((out - tag_data) ** 2)
                 loss = self.loss_func(out, tag_data)
                 self.opt.zero_grad()
@@ -91,11 +75,11 @@ class Train:
                 sum_loss = sum_loss + loss.item()
 
             train_avg_loss = sum_loss / len(self.train_loader)
-            print(f"训练轮次：{epoch}==========平均损失：{train_avg_loss}")
+            print(f"训练轮次：{epoch + 1}==========平均损失：{train_avg_loss}")
 
-            # 测试,输出与标签作比较，求精度
             test_sum_loss = 0.
             sum_score = 0.
+            # 测试,输出与标签作比较，求精度
             for i, (images, tags) in enumerate(self.test_loader):
                 self.net.eval()
                 # print(i)
@@ -113,16 +97,18 @@ class Train:
 
                 # tag_data = one_hot(tags, 10)
                 tag_data = tags.to(DEVICE)
+                # tag_data = tag_data[:, None]
                 # print(tags_data.shape)
 
                 # 注意，输出时600*10，标签也是600*10，所以减法的结果时600*10
                 # 结果无法求导，涉及损失函数时得求一个平均值
-                test_out = self.net.forward(img_data)
+                test_out = self.net.forward(img_data).reshape(-1)
                 # loss = torch.mean((out - tag_data) ** 2)
                 test_loss = self.loss_func(test_out, tag_data)
                 test_sum_loss = test_sum_loss + test_loss.item()
                 # 把输出中数值最大处的索引取出来就是类别名称0~9
-                outs = torch.argmax(test_out, dim=1)
+                # outs = torch.argmax(out, dim=1)
+                outs = (test_out > 0.5).float()
                 # print(outs.shape)
                 # 转换后是长度为100的矢量
                 # 从one-hot模式转换回来
@@ -137,13 +123,16 @@ class Train:
             test_avg_loss = test_sum_loss / len(self.test_loader)
             test_avg_score = sum_score / len(self.test_loader)
             # print(type(test_avg_score))
-            print(f"测试轮次：{epoch}==========平均损失：{test_avg_loss}")
-            print(f"测试轮次：{epoch}==========平均精度：{test_avg_score}")
+            print(f"测试轮次：{epoch + 1}==========平均损失：{test_avg_loss}")
+            print(f"测试轮次：{epoch + 1}==========平均精度：{test_avg_score}")
             print()
+            # # 使用writer收集标量数据
+            # self.writer.add_scalars("loss", {"train_loss": train_avg_loss, "test_loss": test_avg_loss}, epoch + 1)
+            # self.writer.add_scalar("score", test_avg_score, epoch + 1)
 
 
 if __name__ == '__main__':
-    train = Train()
+    train = Train(r"..\..\source\cat_dog\cat_dog")
     train()
 
 # 错误1：AttributeError: 'Tensor' object has no attribute 'float32'
@@ -152,4 +141,3 @@ if __name__ == '__main__':
 # 注意计算后的数据类型，与期望的数据类型是否一致，比如loss以及score
 # 转为one-hot的函数需要两个参数，一个是输入，一个是矢量的元素个数
 # 使用函数的时候，一个是确认函数是哪个库中的，另一个是确认函数需要的参数有哪些，需要看源码
-# 注意不同含义的变量要使用不同的名字,避免使用的时候产生歧义
