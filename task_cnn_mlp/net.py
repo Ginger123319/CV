@@ -24,21 +24,24 @@ class Net(nn.Module):
         # 构建卷积神经网络CNN
         self.layer = nn.Sequential(
             # 卷积CIFAR10使用
-            nn.Conv2d(3, 16, 3, 1),
+            nn.Conv2d(3, 16, 3, 1, padding=1),
             # nn.Conv2d(1, 16, 3, 1),
+            nn.MaxPool2d(2),
             nn.ReLU(),
-            nn.Conv2d(16, 32, 3, 1),
+            nn.Conv2d(16, 32, 3, 1, padding=1),
+            nn.MaxPool2d(2),
             nn.ReLU(),
-            nn.Conv2d(32, 64, 3, 1),
+            nn.Conv2d(32, 64, 3, 1, padding=1),
+            nn.MaxPool2d(2),
             nn.ReLU(),
-            nn.Conv2d(64, 128, 3, 1),
+            nn.Conv2d(64, 128, 3, 1, padding=1),
             nn.ReLU(),
             nn.Conv2d(128, 256, 3, 1)
         )
         self.out_layer = nn.Sequential(
             # nn.Linear(256 * 18 * 18, 10),
             # 卷积CIFAR10使用
-            nn.Linear(256 * 22 * 22, 10),
+            nn.Linear(256 * 2 * 2, 10),
             nn.Softmax(dim=1)
         )
 
@@ -51,7 +54,7 @@ class Net(nn.Module):
 
 if __name__ == '__main__':
     net = Net()
-    test_data = torch.randn(3, 1, 28, 28)
+    test_data = torch.randn(3, 3, 32, 32)
     out = net.forward(test_data)
     print(out.shape)
     print(out)
