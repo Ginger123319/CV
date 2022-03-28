@@ -60,6 +60,7 @@ class Train:
     def __call__(self, *args, **kwargs):
         # 训练
         for epoch in range(10000):
+            # 记录训练的损失和
             sum_loss = 0.
             for i, (images, tags) in enumerate(self.train_loader):
                 self.net.train()

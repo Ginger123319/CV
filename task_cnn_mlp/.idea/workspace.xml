@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7efff1cf-926f-4bd4-8b71-b83d53097a0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data_cat_dog.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/net_cat_dog.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/net_v2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test01.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/train_cat_dog.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task321/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/../task321/data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/net.py" beforeDir="false" afterPath="$PROJECT_DIR$/net.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/net_v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/net_v2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test01.py" beforeDir="false" afterPath="$PROJECT_DIR$/test01.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_cat_dog.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_cat_dog.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +42,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../task321" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.train">
+  <component name="RunManager" selected="Python.train_cat_dog">
     <configuration name="net_cat_dog" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="task_cnn_mlp" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -154,18 +150,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.net_cat_dog" />
-      <item itemvalue="Python.train_cat_dog" />
-      <item itemvalue="Python.test01" />
       <item itemvalue="Python.net_v2" />
+      <item itemvalue="Python.test01" />
       <item itemvalue="Python.train" />
+      <item itemvalue="Python.train_cat_dog" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.train_cat_dog" />
+        <item itemvalue="Python.test01" />
+        <item itemvalue="Python.net_cat_dog" />
         <item itemvalue="Python.train" />
         <item itemvalue="Python.net_v2" />
-        <item itemvalue="Python.train_cat_dog" />
-        <item itemvalue="Python.net_cat_dog" />
-        <item itemvalue="Python.test01" />
       </list>
     </recent_temporary>
   </component>
@@ -190,6 +186,15 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test01.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

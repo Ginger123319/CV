@@ -2,9 +2,12 @@ import torch
 from torch import nn
 
 
+# 残差层：输入和输出通道数目一致
+# 池化层：第一层改变输出通道为输入通道的2倍（借用步长减小特征图尺寸）；第二层就是输入和输出通道一致
+# BN：除输出层都可以添加这一层，约束数据到一定范围，凸显数据差异;使用时要将网络层的bias设为False，BN中带有bias
+# 保持输入尺寸和输出尺寸一致使用padding
+
 # 残差层
-# 池化层
-# BN
 class ResBlock(nn.Module):
     def __init__(self, c):
         super(ResBlock, self).__init__()
@@ -22,6 +25,7 @@ class ResBlock(nn.Module):
         return self.layer(x) + x
 
 
+# 池化层
 class Pool(nn.Module):
     def __init__(self, c_in, c_out):
         super(Pool, self).__init__()
@@ -38,7 +42,7 @@ class Pool(nn.Module):
     def forward(self, x):
         return self.layer(x)
 
-
+# 网络层
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
@@ -83,6 +87,7 @@ class Net(nn.Module):
         #     nn.Linear(256 * 2 * 2, 10),
         #     nn.Softmax(dim=1)
         # )
+
         # 构建带有残差层和池化层以及BN的卷积神经网络CNN
         self.layer = nn.Sequential(
             # 卷积CIFAR10使用
