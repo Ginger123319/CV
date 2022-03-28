@@ -23,5 +23,6 @@ if __name__ == '__main__':
     # print(models.resnet34())
     demo = torch.randn(480)
     print(demo.shape)
-    print((demo > 0.5).float())
+    # # 张量的条件筛选，大于0.5的值会转为True，再转为浮点就变成了1.
+    # print((demo > 0.5).float())
     print((demo[:, None]).shape)

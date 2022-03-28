@@ -1,7 +1,9 @@
+import shutil
+
 import torch
+import os
 # from net import Net
 from torch.utils.tensorboard import SummaryWriter
-
 from data_cat_dog import CIFARDataset
 from net_cat_dog import Net
 from torch.utils.data import DataLoader
@@ -126,12 +128,17 @@ class Train:
             print(f"测试轮次：{epoch + 1}==========平均损失：{test_avg_loss}")
             print(f"测试轮次：{epoch + 1}==========平均精度：{test_avg_score}")
             print()
-            # # 使用writer收集标量数据
-            # self.writer.add_scalars("loss", {"train_loss": train_avg_loss, "test_loss": test_avg_loss}, epoch + 1)
-            # self.writer.add_scalar("score", test_avg_score, epoch + 1)
+            # 使用writer收集标量数据
+            self.writer.add_scalars("loss", {"train_loss": train_avg_loss, "test_loss": test_avg_loss}, epoch + 1)
+            self.writer.add_scalar("score", test_avg_score, epoch + 1)
 
 
 if __name__ == '__main__':
+    # 删除log文件
+    if os.path.exists(r"./log"):
+        shutil.rmtree(r"./log")
+        print("log is deleted！")
+
     train = Train(r"..\..\source\cat_dog\cat_dog")
     train()
 
