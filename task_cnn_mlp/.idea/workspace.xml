@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7efff1cf-926f-4bd4-8b71-b83d53097a0b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../task_cnn_mlp.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test01.py" beforeDir="false" afterPath="$PROJECT_DIR$/test01.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,10 +153,10 @@
     </configuration>
     <list>
       <item itemvalue="Python.net_cat_dog" />
+      <item itemvalue="Python.net_resnet18" />
+      <item itemvalue="Python.net_resnet50" />
       <item itemvalue="Python.test01" />
       <item itemvalue="Python.train_cat_dog" />
-      <item itemvalue="Python.net_resnet50" />
-      <item itemvalue="Python.net_resnet18" />
     </list>
     <recent_temporary>
       <list>
@@ -191,6 +189,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
