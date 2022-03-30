@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7efff1cf-926f-4bd4-8b71-b83d53097a0b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../task_cnn_mlp.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/net_resnet50.py" beforeDir="false" afterPath="$PROJECT_DIR$/net_resnet50.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test01.py" beforeDir="false" afterPath="$PROJECT_DIR$/test01.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +47,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../task321" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.net_resnet50">
+  <component name="RunManager" selected="Python.test01">
     <configuration name="net_cat_dog" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="task_cnn_mlp" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -162,8 +162,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.net_resnet50" />
         <item itemvalue="Python.test01" />
+        <item itemvalue="Python.net_resnet50" />
         <item itemvalue="Python.net_resnet18" />
         <item itemvalue="Python.train_cat_dog" />
         <item itemvalue="Python.net_cat_dog" />
@@ -191,7 +191,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
