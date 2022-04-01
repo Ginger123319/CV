@@ -66,15 +66,22 @@ print(torch.__version__)
 # # 堆叠后的结果会比原始张量升高一个维度；高维空间是由低维空间堆叠而来
 g = torch.tensor([[[4]], [[1]]])
 h = torch.tensor([[[1]], [[3]]])
+print("g is:")
+print(g)
+print("h is:")
+print(h)
 # print(g[1])
 # # 为了保持原始张量的维度
 # print(g[[1]])
 # # stack expects each tensor to be equal size, but got [2, 2, 2] at entry 0 and [2, 2] at entry 1
 # # print(torch.stack((g, e), dim=0))
-# # dim可以取[-4,3]取负数是什么含义？
+# # dim可以取[-4,3]取负数是什么含义-就和切片的-1，-2，-3一样，也是索引值
 # print(g.shape)
 # print(h.shape)
-# print(torch.stack((g, h), dim=1))
+print("torch.stack((g, h), dim=1) result:")
+print(torch.stack((g, h), dim=2))
+print("torch.cat([g, h], dim=1) result:")
+print(torch.cat([g, h], dim=1))
 
 # # randn()函数可以生成指定形状的张量[至少是矢量]，其中元素值是随机生成的
 # print(torch.randn(2))
