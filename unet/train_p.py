@@ -26,11 +26,11 @@ else:
 if not os.path.exists(img_save_path):
     os.makedirs(img_save_path)
 
-epoch = 22
+epoch = 1
 img = torch.zeros(4)
 tag = torch.zeros(4)
 out = torch.zeros(4)
-while epoch <= 79:
+while True:
     for i, (img, tag) in enumerate(data_loader):
         img = img.cuda()
         tag = tag.cuda()
@@ -43,7 +43,7 @@ while epoch <= 79:
 
         if i % 5 == 0:
             print("epoch:{},count:{},loss:{}".format(epoch, i, loss.item()))
-    # 取一张原图，一张输出图，一张标签图拼接到一起进行保存
+        # 取一张原图，一张输出图，一张标签图拼接到一起进行保存
     x = img[0]
     x_ = out[0]
     y = tag[0]
