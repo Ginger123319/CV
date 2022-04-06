@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7efff1cf-926f-4bd4-8b71-b83d53097a0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../unet/mydata_p.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../unet/train_p.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../unet/unet_p.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../unet/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../unet/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../unet/unet.py" beforeDir="false" afterPath="$PROJECT_DIR$/../unet/unet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resnet50_p.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/net_resnet50.py" beforeDir="false" afterPath="$PROJECT_DIR$/net_resnet50.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,10 +44,10 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mobilenet_v2" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.1">
+  <component name="RunManager" selected="Python.resnet50_p">
     <configuration name="1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="task_cnn_mlp" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -113,6 +111,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="resnet50_p" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="task_cnn_mlp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/resnet50_p.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test01" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="task_cnn_mlp" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -134,41 +153,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="train_cat_dog" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="task_cnn_mlp" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/train_cat_dog.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.1" />
       <item itemvalue="Python.net_resnet18" />
       <item itemvalue="Python.net_resnet50" />
       <item itemvalue="Python.test01" />
-      <item itemvalue="Python.train_cat_dog" />
+      <item itemvalue="Python.resnet50_p" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.resnet50_p" />
+        <item itemvalue="Python.net_resnet50" />
         <item itemvalue="Python.1" />
         <item itemvalue="Python.test01" />
-        <item itemvalue="Python.net_resnet50" />
         <item itemvalue="Python.net_resnet18" />
-        <item itemvalue="Python.train_cat_dog" />
       </list>
     </recent_temporary>
   </component>

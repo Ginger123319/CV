@@ -2,6 +2,7 @@ import torch
 from torch import nn
 
 
+# 这个与真实的resnet50不一样，仅作代码练习
 class DownSample(nn.Module):
     def __init__(self, c_in, c_out, flag=False, stride=1):
         super(DownSample, self).__init__()
@@ -109,11 +110,12 @@ class Resnet50(nn.Module):
 
 
 if __name__ == '__main__':
+    # ValueError: Expected more than 1 value per channel when training, got input size torch.Size([1, 512, 1, 1])
     test_input = torch.randn(3, 64, 32, 32)
     net = Resnet50(64)
     # # print(net.ds_net(test_input).shape)
     # ds_net = DownSample(64, 256)
-    # # print(net)
+    print(net)
     # print(net.forward(test_input).shape)  # torch.Size([3, 128, 32, 32])
     # # 进去和出来的形状一模一样，可以直接相加
 
