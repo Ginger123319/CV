@@ -33,9 +33,10 @@ if __name__ == '__main__':
     print(out.shape)
     print(out)
     # 使用reshape操作进行通道混洗
-    out_v1 = out.reshape(1,2,3,1,1)
+    out_v1 = out.reshape(1, 2, 3, 1, 1)
     # print(out_v1)
-    out_v2 = out_v1.permute(0,2,1,3,4)
+    out_v2 = out_v1.permute(0, 2, 1, 3, 4)
     # print(out_v2.shape)
-    result = out_v2.reshape(1,6,1,1)
+    result = out_v2.reshape(1, 6, 1, 1)
     print(result)
+    print(torch.Tensor([1]))

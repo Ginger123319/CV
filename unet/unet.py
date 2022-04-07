@@ -145,7 +145,7 @@ class UNet(nn.Module):
         self.center_conv = DoubleConv(512, 1024)
 
         # right
-        self.up_1 = nn.ConvTranspose2d(1024, 512, 2, 2)
+        self.up_1 = nn.ConvTranspose2d(1024, 512, kernel_size=2, stride=2)
         self.right_conv_1 = DoubleConv(1024, 512)
 
         self.up_2 = nn.ConvTranspose2d(512, 256, 2, 2)
