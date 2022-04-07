@@ -64,12 +64,12 @@ print(torch.__version__)
 
 # # stack函数:同维度的元素按照对应的索引位置堆叠在一起
 # # 堆叠后的结果会比原始张量升高一个维度；高维空间是由低维空间堆叠而来
-g = torch.tensor([[[4]], [[1]]])
-h = torch.tensor([[[1]], [[3]]])
+g = torch.randn(3, 28, 28)
+h = torch.randn(3, 28, 28)
 print("g is:")
-print(g)
+print(g.shape)
 print("h is:")
-print(h)
+print(h.shape)
 # print(g[1])
 # # 为了保持原始张量的维度
 # print(g[[1]])
@@ -78,10 +78,10 @@ print(h)
 # # dim可以取[-4,3]取负数是什么含义-就和切片的-1，-2，-3一样，也是索引值
 # print(g.shape)
 # print(h.shape)
-print("torch.stack((g, h), dim=1) result:")
-print(torch.stack((g, h), dim=2))
+print("torch.stack((g, h), dim=0) result:")
+print(torch.stack((g, h), dim=0).shape)
 print("torch.cat([g, h], dim=1) result:")
-print(torch.cat([g, h], dim=1))
+print(torch.cat([g, h], dim=1).shape)
 
 # # randn()函数可以生成指定形状的张量[至少是矢量]，其中元素值是随机生成的
 # print(torch.randn(2))
@@ -93,7 +93,7 @@ print(torch.cat([g, h], dim=1))
 # randint()函数可以生成指定形状的张量[至少是矢量]，其中元素值是随机生成的
 # print(torch.randint(0, 4, (1,)))
 # 其中参数a是下限，参数b是上限，生成的随机数n: a <= n <= b
-print(random.randint(0, 4))
+# print(random.randint(0, 4))
 
 # 张量的运算
 # 张量【形状相同的时候】可以进行基本的加减乘除操作

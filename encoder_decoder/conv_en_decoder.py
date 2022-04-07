@@ -12,7 +12,7 @@ from torchvision import datasets, transforms
 from torchvision.utils import save_image
 import torch.nn.functional as F
 
-LEARNING_RATE = 1e-3
+# LEARNING_RATE = 1e-3
 
 
 # 编解码网络模型
@@ -58,8 +58,8 @@ if __name__ == '__main__':
 
     net = Autoencoder()
     # print(net)
-
-    opt = optim.Adam(net.parameters(), lr=LEARNING_RATE)
+    # 该优化器的默认值就是 lr=1e-3
+    opt = optim.Adam(net.parameters())
     # 返回一个函数，重命名为loss_fun
     loss_fun = nn.MSELoss()
     counter = 1
