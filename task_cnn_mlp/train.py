@@ -42,7 +42,7 @@ class Train:
         self.test_data = datasets.CIFAR10(root=r"..\..\source\CIFAR10_DATA", train=False, download=False,
                                           transform=transforms.ToTensor())
         self.test_loader = DataLoader(self.test_data, batch_size=100, shuffle=True)
-        # print(self.test_data.data.shape)
+        print(self.test_data.data.shape)
         # print(len(self.test_data.targets))
 
         # 创建网络对象
