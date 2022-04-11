@@ -1,11 +1,8 @@
 # coding=gbk
 import shutil
-
 import torch
 import os
-
 from torchvision.utils import save_image
-
 from model.data_eye import DataEye
 from model.u2net import U2NET
 from torch.utils.data import DataLoader
@@ -13,20 +10,26 @@ from torch import optim
 from torch.nn import BCELoss
 from torch.utils.tensorboard import SummaryWriter
 
+# 参数存储路径
 params_path = r"..\..\..\source\EYE_DATA\params_path"
 
-# 删除log文件
+# 运行前删除SummaryWriter生成的log目录
 if os.path.exists(r"./log"):
     shutil.rmtree(r"./log")
     print("log is deleted！")
+
+# 实例化SummaryWriter
 summaryWriter = SummaryWriter(r"./log")
+
 # 导入训练集
 train_data = DataEye(r"..\..\..\source\EYE_DATA", is_train=True)
 train_loader = DataLoader(train_data, batch_size=2, shuffle=True)
+
 # 导入测试集
 test_data = DataEye(r"..\..\..\source\EYE_DATA", is_train=False)
 test_loader = DataLoader(test_data, batch_size=1, shuffle=True)
-# 网络相关实例化
+
+# 网络模型相关实例化
 net = U2NET()
 opt = optim.Adam(net.parameters())
 loss_func = BCELoss()
@@ -39,6 +42,7 @@ else:
     print("No params_path!")
 
 
+# 定义损失函数
 def multi_loss_func(r0, r1, r2, r3, r4, r5, r6, labels):
     loss0 = loss_func(r0, labels)
     loss1 = loss_func(r1, labels)
@@ -59,8 +63,10 @@ def multi_loss_func(r0, r1, r2, r3, r4, r5, r6, labels):
 labels_v = torch.zeros(4)
 out = torch.zeros(4)
 for epoch in range(100):
+    # 每一轮重置一次loss累计值
     sum_loss = 0.
     last_loss = 0.
+    # 开启训练模式
     net.train()
     for i, (img, tag) in enumerate(train_loader):
         print(f"第{i}批")
@@ -74,6 +80,7 @@ for epoch in range(100):
         opt.zero_grad()
         total_loss.backward()
         opt.step()
+
         sum_loss += total_loss.item()
         last_loss += final_loss.item()
 
@@ -81,16 +88,20 @@ for epoch in range(100):
     avg_last_loss = last_loss / len(train_loader)
 
     summaryWriter.add_scalars("loss", {"avg_sum_loss": avg_sum_loss, "avg_last_loss": avg_last_loss}, epoch + 1)
-    print("损失添加成功！")
+    print("SummaryWriter添加成功！")
 
     print(f"第{epoch}轮：avg_sum_loss is {avg_sum_loss}")
     print(f"第{epoch}轮：avg_last_loss is {avg_last_loss}")
+
+    # 保存图片
     save_image(out, r"..\..\..\source\EYE_DATA\savedImg\fake_img{}.png".format(epoch), nrow=1)
     save_image(labels_v, r"..\..\..\source\EYE_DATA\savedImg\real_img{}.png".format(epoch), nrow=1)
+
+    # 每一轮保存一次训练参数
     torch.save(net.state_dict(), params_path)
     print("参数保存成功！")
 
-    # 开始测试
+    # 开启测试模式
     net.eval()
     for i, test_img in enumerate(test_loader):
         print(f"第{i}次测试：")
