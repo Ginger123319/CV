@@ -2,95 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="822f338a-3eb8-41d7-b6fe-5d05db4c20ea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../faceDetection.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../faceDetection/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../faceDetection/.idea/faceDetection.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../faceDetection/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../faceDetection/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../faceDetection/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../faceDetection/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../faceDetection/dataDeal.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../faceDetection/net.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../faceDetection/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../faceDetection/test01.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../faceDetection/train.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../faceDetection/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../targetDetection.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/crawler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataDeal.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/net.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sample.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test01.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yellow/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yellow/10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yellow/11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yellow/12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yellow/13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yellow/14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yellow/15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yellow/16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yellow/17.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yellow/18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yellow/19.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yellow/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yellow/20.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yellow/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yellow/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yellow/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yellow/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yellow/7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yellow/8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yellow/9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/.idea/test_20210714_02.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/bg_pic/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/bg_pic/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/bg_pic/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/bg_pic/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/bg_pic/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/bg_pic/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/crawler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/dataset.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/model/net_v2.pt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/net.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/sample.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/test01.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/test02.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/test03.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/testdata/15.111.46.247.182.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/train.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/yellow/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/yellow/10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/yellow/11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/yellow/12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/yellow/13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/yellow/14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/yellow/15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/yellow/16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/yellow/17.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/yellow/18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/yellow/19.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/yellow/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/yellow/20.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/yellow/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/yellow/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/yellow/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/yellow/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/yellow/7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/yellow/8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test_20210714_02/yellow/9.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test01.py" beforeDir="false" afterPath="$PROJECT_DIR$/test01.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +19,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="27eWugP3zPSuN5YPbdCHqo8CuHk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -127,7 +43,7 @@
       <recent name="D:\Python\code\targetDetection" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.test01 (1)">
     <configuration name="dataDeal" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="targetDetection" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -235,8 +151,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test" />
         <item itemvalue="Python.test01 (1)" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.utils" />
         <item itemvalue="Python.dataDeal" />
         <item itemvalue="Python.sample" />
@@ -264,6 +180,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
