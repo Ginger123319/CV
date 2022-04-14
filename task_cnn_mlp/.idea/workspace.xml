@@ -2,23 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7efff1cf-926f-4bd4-8b71-b83d53097a0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../my_U2_Net/model/data_eye.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../my_U2_Net/model/log/events.out.tfevents.1649488181.Ginger-LAPTOP-L8GFNL9E.37728.0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../my_U2_Net/model/log/loss_avg_last_loss/events.out.tfevents.1649488268.Ginger-LAPTOP-L8GFNL9E.37728.2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../my_U2_Net/model/log/loss_avg_sum_loss/events.out.tfevents.1649488268.Ginger-LAPTOP-L8GFNL9E.37728.1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../my_U2_Net/model/train_eye.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/events.out.tfevents.1649502019.Ginger-LAPTOP-L8GFNL9E.42896.0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/loss_test_loss/events.out.tfevents.1649502055.Ginger-LAPTOP-L8GFNL9E.42896.2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/loss_train_loss/events.out.tfevents.1649502055.Ginger-LAPTOP-L8GFNL9E.42896.1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../my_U2_Net/crop.py" beforeDir="false" afterPath="$PROJECT_DIR$/../my_U2_Net/crop.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../my_U2_Net/model/u2net.py" beforeDir="false" afterPath="$PROJECT_DIR$/../my_U2_Net/model/u2net.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../my_U2_Net/test_demo/test01.py" beforeDir="false" afterPath="$PROJECT_DIR$/../my_U2_Net/test_demo/test01.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../my_U2_Net/test_demo/test_assert.py" beforeDir="false" afterPath="$PROJECT_DIR$/../my_U2_Net/test_demo/test_assert.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../my_U2_Net/u2net_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../my_U2_Net/u2net_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../my_U2_Net/u2net_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../my_U2_Net/u2net_train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/events.out.tfevents.1648450016.DESKTOP-P6O1K2C.16456.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../targetDetection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../targetDetection/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../targetDetection/dataDeal.py" beforeDir="false" afterPath="$PROJECT_DIR$/../targetDetection/dataDeal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../targetDetection/net.py" beforeDir="false" afterPath="$PROJECT_DIR$/../targetDetection/net.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../targetDetection/sample.py" beforeDir="false" afterPath="$PROJECT_DIR$/../targetDetection/sample.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

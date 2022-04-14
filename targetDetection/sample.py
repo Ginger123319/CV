@@ -2,9 +2,9 @@ import os
 from PIL import Image, UnidentifiedImageError
 import numpy as np
 
-bg_path = "../../source/target_detection/test_pic"
-x = 1
-for filename in os.listdir(bg_path):
+bg_path = "../../source/target_detection/test_pic_original"
+x = 401
+for filename in os.listdir(bg_path)[::-1]:
     print(filename)
     # print(f"x is {x}")
     # new_name = filename.split(".")
@@ -44,6 +44,16 @@ for filename in os.listdir(bg_path):
         ran_y2 = ran_y1 + ran_w
 
         background_resize.save(
-            "../../source/target_detection/test_pic1/{0}{1}.png".format(x, "." + str(ran_x1) + "." + str(ran_y1) +
-                                                                        "." + str(ran_x2) + "." + str(ran_y2)))
+            "../../source/target_detection/test_pic_plus/{0}{1}.png".format(x, "." + str(ran_x1) + "." + str(ran_y1) +
+                                                                             "." + str(ran_x2) + "." + str(
+                ran_y2) + ".1"))
+
+        # background_resize.save(
+        #     "../../source/target_detection/test_pic_plus/{0}{1}.png".format(x, "." + str(0) + "." + str(0) +
+        #                                                                     "." + str(0) + "." + str(
+        #         0) + ".0"))
+
+        if x >= 1000:
+            print(x)
+            break
         x += 1
