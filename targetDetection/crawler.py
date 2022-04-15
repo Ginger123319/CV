@@ -21,7 +21,7 @@ def main(save_img_dir="bg_pic"):
     session.headers = headers
 
     pn = 0
-    num = 1021
+    num = 1
     print(f"准备下载关于 {word} 的图片，保存在文件夹 {img_dir} 中")
 
     url_list = []
@@ -52,4 +52,4 @@ def main(save_img_dir="bg_pic"):
 
 
 if __name__ == '__main__':
-    main(save_img_dir="../../source/target_detection/test_pic")
+    main(save_img_dir="../../source/solo_pic")

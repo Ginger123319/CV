@@ -17,6 +17,7 @@ class DownSample(nn.Module):
 
 
 # 分析，残差块有两种，一种是带有下采样的（stride=2），一种不带，用标签来区分
+# 这两个网络都可以直接使用，和自带的网络差不多
 class BasicBlock(nn.Module):
     def __init__(self, c_in, c_out, is_down=False):
         super(BasicBlock, self).__init__()
@@ -144,6 +145,7 @@ if __name__ == '__main__':
     test_input = torch.randn(3, 128, 64, 64)
     # print(net.forward(test_input).shape)
     # # print(models.BasicBlock())
-    net = Resnet34(128)
+    net = Resnet18(128)
     # print(net)
+    print(models.resnet18())
     print(net.forward(test_input).shape)
