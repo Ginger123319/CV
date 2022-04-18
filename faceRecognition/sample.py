@@ -5,11 +5,11 @@ import numpy as np
 from PIL import Image, ImageDraw
 from utils import iou
 
-anno_src = r"D:\MTCNN\数据集\Anno\list_bbox_celeba.txt"
-img_dir = r"D:\MTCNN\数据集\img_align_celeba"
+anno_src = r"D:\Python\source\FACE\celebA\Anno\list_bbox_celeba.txt"
+img_dir = r"D:\Python\source\FACE\celebA\img\img_celeba\img_celeba"
 
-save_path = r"D:\MTCNN\数据集\savepictures"
-validate_path = r"D:\MTCNN\数据集\Validate"
+save_path = r"D:\Python\source\FACE\celebA\save_pic"
+validate_path = r"D:\Python\source\FACE\celebA\validate"
 
 
 # ratio_arr表示正\部分\负样本比例，例如[2,5,3]或者【1，3，1】
