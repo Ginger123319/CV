@@ -45,7 +45,7 @@ for filename in os.listdir(bg_path)[::-1]:
 
         background_resize.save(
             "../../source/target_detection/test_pic_plus/{0}{1}.png".format(x, "." + str(ran_x1) + "." + str(ran_y1) +
-                                                                             "." + str(ran_x2) + "." + str(
+                                                                            "." + str(ran_x2) + "." + str(
                 ran_y2) + ".1"))
 
         # background_resize.save(

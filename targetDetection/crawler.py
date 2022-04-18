@@ -25,7 +25,7 @@ def main(save_img_dir="bg_pic"):
     print(f"准备下载关于 {word} 的图片，保存在文件夹 {img_dir} 中")
 
     url_list = []
-    while (pn + 60) < 1500:
+    while (pn + 60) < 100:
         url = f"https://image.baidu.com/search/flip?tn=baiduimage&ie=utf-8&word={word}&pn={pn}"
         pn = pn + 60
         result = session.get(url, timeout=10, allow_redirects=False)
@@ -47,9 +47,8 @@ def main(save_img_dir="bg_pic"):
             except BaseException as e:
                 # print(e)
                 print("当前图片下载出错")
-
     print('下载完成')
 
 
 if __name__ == '__main__':
-    main(save_img_dir="../../source/solo_pic")
+    main(save_img_dir=r"D:\Python\source\FACE\celebA\test_pic")

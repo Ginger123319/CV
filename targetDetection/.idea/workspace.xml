@@ -2,16 +2,76 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="822f338a-3eb8-41d7-b6fe-5d05db4c20ea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../faceRecognition/gen_celel_data_12.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../faceRecognition/gen_celel_data_24.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../faceRecognition/gen_celel_data_48.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../faceRecognition/sample.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../faceRecognition/soft_nms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../faceRecognition/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/.idea/20190624-MTCNN.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/data/000001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/data/000002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/detect.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/font/arial.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/gen_celel_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/nets.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/1-correct_face_box/1-correct_box.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/1-correct_face_box/Anno/list_attr_celeba.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/1-correct_face_box/Anno/list_bbox_celeba.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/1-correct_face_box/Anno/list_landmarks_align_celeba.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/1-correct_face_box/Anno/list_landmarks_celeba.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/1-correct_face_box/img_celeba/000001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/1-correct_face_box/img_celeba/000002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/1-correct_face_box/img_celeba/000003.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/1-correct_face_box/img_celeba/000004.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/1-correct_face_box/img_celeba/000005.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/1-correct_face_box/img_celeba/000006.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/1-correct_face_box/img_celeba/000007.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/1-correct_face_box/img_celeba/000008.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/1-correct_face_box/img_celeba/000009.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/1-correct_face_box/img_celeba/000010.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/10-append-extend.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/11-masked_select.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/12-nonzero.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/13-detect.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/2-placeholder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/3-pnet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/4-onet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/5-rnet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/6-sort-a[index].py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/7-mask.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/8-np.stack.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/notes/9-split.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/param_0/onet.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/param_0/pnet.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/param_0/rnet.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/sampling.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/test01.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/test02.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/test03.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/test04.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/test05.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/test_images/0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/test_images/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/test_images/10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/test_images/11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/test_images/12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/test_images/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/test_images/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/test_images/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/test_images/7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/test_images/9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/tool/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/tool/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/train.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/train_onet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/train_pnet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mtcnn/train_rnet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../faceRecognition/sample.py" beforeDir="false" afterPath="$PROJECT_DIR$/../faceRecognition/sample.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../faceRecognition/test01.py" beforeDir="false" afterPath="$PROJECT_DIR$/../faceRecognition/test01.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crawler.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task_cnn_mlp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../task_cnn_mlp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task_cnn_mlp/net_resnet18.py" beforeDir="false" afterPath="$PROJECT_DIR$/../task_cnn_mlp/net_resnet18.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample.py" beforeDir="false" afterPath="$PROJECT_DIR$/sample.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,5 +248,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
