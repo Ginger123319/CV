@@ -11,11 +11,11 @@ import traceback
 
 # 正式生成样本
 # 原始数据样本、标签路径
-anno_src = r"D:\markHelper\data\solo_pic\result\solo_pic.txt"
-img_dir = r"D:\markHelper\data\solo_pic"
+anno_src = r"G:\liewei\source\FACE\imgdata\img.txt"
+img_dir = r"G:\liewei\source\FACE\imgdata"
 
 # 样本保存路径
-save_path = r"D:\Python\source\FACE\celebA\save_pic_label"
+save_path = r"G:\liewei\source\FACE"
 
 # 生成不同尺寸的人脸样本，包括人脸（正样本）、非人脸（负样本）、部分人脸
 for face_size in [12, 24, 48]:
@@ -137,7 +137,7 @@ for face_size in [12, 24, 48]:
                                                        Image.ANTIALIAS)  # ★按照人脸尺寸（“像素矩阵大小”）进行缩放：12/24/48；坐标没放缩
 
                         iou = utils.iou(crop_box, np.array(boxes))[0]  # 抠出来的框和原来的框计算IOU
-                        if iou > 0.6:  # 正样本；原为0.65
+                        if iou > 0.65:  # 正样本；原为0.65
                             positive_anno_file.write(
                                 "positive/{0}.jpg {1} {2} {3} {4} {5} {6} {7} {8} {9} {10} {11} {12} {13} {14} {15}\n".format(
                                     positive_count, 1, offset_x1, offset_y1,
@@ -146,7 +146,7 @@ for face_size in [12, 24, 48]:
                             positive_anno_file.flush()  # flush：将缓存区的数据写入文件
                             face_resize.save(os.path.join(positive_image_dir, "{0}.jpg".format(positive_count)))  # 保存
                             positive_count += 1
-                        elif iou > 0.35:  # 部分样本；原为0.4
+                        elif iou > 0.4:  # 部分样本；原为0.4
                             part_anno_file.write(
                                 "part/{0}.jpg {1} {2} {3} {4} {5} {6} {7} {8} {9} {10} {11} {12} {13} {14} {15}\n".format(
                                     part_count, 2, offset_x1, offset_y1, offset_x2,
@@ -182,8 +182,8 @@ for face_size in [12, 24, 48]:
                             negative_count += 1
             except Exception as e:
                 traceback.print_exc()  # 如果出现异常，把异常打印出来
-            # if i > 2:
-            #     break
+            if i > 20:
+                break
 
     # 关闭写入文件
     finally:
