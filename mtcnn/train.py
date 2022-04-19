@@ -37,11 +37,12 @@ class Trainer:
     # 训练方法
     def train(self):
         faceDataset = FaceDataset(self.dataset_path)  # 数据集
-        dataloader = DataLoader(faceDataset, batch_size=2000, shuffle=True, num_workers=0, drop_last=False)  # 数据加载器
+        dataloader = DataLoader(faceDataset, batch_size=1000, shuffle=True, num_workers=0, drop_last=False)  # 数据加载器
         # num_workers=4：有4个线程在加载数据(加载数据需要时间，以防空置)；drop_last：为True时表示，防止批次不足报错。
-
+        loss_flag = 1.
         # while True:
-        for _ in range(500):
+        for epoch in range(500):
+            sum_loss = 0.
             for i, (img_data_, category_, offset_) in enumerate(dataloader):
                 # 样本，置信度，偏移量
                 if self.isCuda:  # cuda把数据读到显存里去了(先经过内存)；没有cuda在内存，有cuda在显存
@@ -72,6 +73,7 @@ class Trainer:
 
                 # 总损失
                 loss = cls_loss + offset_loss
+                sum_loss += loss
 
                 # 反向传播，优化网络
                 self.optimizer.zero_grad()  # 清空之前的梯度
@@ -87,8 +89,15 @@ class Trainer:
                 # if (i+1)/1000==0:
                 #     torch.save(self.net.state_dict(), self.save_path) # state_dict保存网络参数，save_path参数保存路径
                 #     print("save success")                            # 每轮次保存一次；最好做一判断：损失下降时保存一次
-            torch.save(self.net.state_dict(), self.save_path)  # state_dict保存网络参数，save_path参数保存路径
-            print("save success")  # 每轮次保存一次；最好做一判断：损失下降时保存一次
+            avg_loss = sum_loss / len(dataloader)
+            print("第{0}轮的平均损失为{1}".format(epoch, avg_loss))
+            if avg_loss < loss_flag:
+                torch.save(self.net.state_dict(), self.save_path)  # state_dict保存网络参数，save_path参数保存路径
+                print("save success")  # 每轮次保存一次；最好做一判断：损失下降时保存一次
+                loss_flag = avg_loss
+            else:
+                loss_flag = loss_flag
+            print(loss_flag)
 # 备注：
 # [1] num_workers:表示有多少线程在工作;
 # [2] lt:小于；gt:大于；eq:等于；le：小于等于；ge:大于等于

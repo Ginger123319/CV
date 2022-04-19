@@ -14,12 +14,12 @@ import os
 # 网络调参
 # P网络:
 p_cls = 0.6  # 原为0.6
-p_nms = 0.1  # 原为0.5
+p_nms = 0.5  # 原为0.5
 # R网络：
 r_cls = 0.6  # 原为0.6
 r_nms = 0.5  # 原为0.5
 # O网络：
-o_cls = 0.8  # 原为0.97
+o_cls = 0.9  # 原为0.97
 o_nms = 0.5  # 原为0.7
 
 
@@ -29,7 +29,7 @@ class Detector:
     def __init__(self, pnet_param=r'D:\Python\source\FACE\celebA\save_pic_label\12\pnet.pt',
                  rnet_param=r'D:\Python\source\FACE\celebA\save_pic_label\24\rnet.pt',
                  onet_param=r'D:\Python\source\FACE\celebA\save_pic_label\48\onet.pt',
-                 isCuda=True):
+                 isCuda=False):
 
         self.isCuda = isCuda
 
@@ -265,7 +265,7 @@ if __name__ == '__main__':
                 print((x1, y1, x2, y2))
 
                 print("conf:", box[4])  # 置信度
-                imDraw.rectangle((x1, y1, x2, y2), outline='red')
+                imDraw.rectangle((x1, y1, x2, y2), outline='yellow',width=2)
                 # imDraw.text((x1, y1), "{:.2f}".format(box[4]), font=font, fill=(255, 0, 255))
                 # im.show() # 每循环一次框一个人脸
             # im.show()
