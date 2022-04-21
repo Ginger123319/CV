@@ -4,23 +4,20 @@ import numpy as np
 from tool import utils
 import traceback
 
-# 测试查看：生成样本（以5张图片为例）
-# anno_src = r"D:\MTCNN-lihao\Cebela-new\Anno\list_bbox_celeba.txt"
-# img_dir = r"D:\MTCNN-lihao\Cebela-new\img_celeba"
-# save_path = r"D:\celeba_testing"
-
 # 正式生成样本
 # 原始数据样本、标签路径
-anno_src = r"D:\Python\source\FACE\celebA\Anno\list_bbox_celeba.txt"
-img_dir = r"D:\Python\source\FACE\celebA\img\img_celeba\img_celeba"
+anno_src = r"G:\liewei\source\FACE\imgdata\img.txt"
+img_dir = r"G:\liewei\source\FACE\imgdata"
 
 # 样本保存路径
-save_path = r"D:\Python\source\FACE\celebA\save_pic_label"
+save_path = r"G:\liewei\source\FACE"
+
+# 传入图片以及标签文本和保存路径以及生成图片的尺寸（可能有生成图片的数量）即可
 
 # 生成不同尺寸的人脸样本，包括人脸（正样本）、非人脸（负样本）、部分人脸
 for face_size in [12, 24, 48]:
 
-    print("gen %i image" % face_size)  # %i:十进制数占位符
+    print("gen {} image".format(face_size))  # %i:十进制数占位符
     # “样本图片”存储路径--image
     positive_image_dir = os.path.join(save_path, str(face_size), "positive")  # 三级文件路径
     negative_image_dir = os.path.join(save_path, str(face_size), "negative")
@@ -34,29 +31,30 @@ for face_size in [12, 24, 48]:
     positive_anno_filename = os.path.join(save_path, str(face_size), "positive.txt")  # 创建正样本txt文件
     negative_anno_filename = os.path.join(save_path, str(face_size), "negative.txt")
     part_anno_filename = os.path.join(save_path, str(face_size), "part.txt")
+    # 如果不存在在打开文件的时候会自动创建
 
     # 计数初始值:给文件命名
     if face_size == 12:
-        positive_count = 37223  # 计数器初始值
-        negative_count = 137445
-        part_count = 63418
+        positive_count = 0  # 计数器初始值
+        negative_count = 0
+        part_count = 0
     elif face_size == 24:
-        positive_count = 36981  # 计数器初始值
-        negative_count = 126232
-        part_count = 63675
+        positive_count = 0  # 计数器初始值
+        negative_count = 0
+        part_count = 0
     else:
-        positive_count = 37103  # 计数器初始值
-        negative_count = 109632
-        part_count = 63543
+        positive_count = 0  # 计数器初始值
+        negative_count = 0
+        part_count = 0
 
     # 凡是文件操作，最好try一下，防止程序出错奔溃
     try:
-        positive_anno_file = open(positive_anno_filename, "a")  # 以写入的模式打开txt文档
-        negative_anno_file = open(negative_anno_filename, "a")
-        part_anno_file = open(part_anno_filename, "a")
+        positive_anno_file = open(positive_anno_filename, "w")  # 以写入的模式打开txt文档
+        negative_anno_file = open(negative_anno_filename, "w")
+        part_anno_file = open(part_anno_filename, "w")
 
         for i, line in enumerate(open(anno_src)):  # 枚举出所有信息
-            if i < 20002:
+            if i < 2:
                 continue  # i小于2时继续读文件readlines
             try:
                 print(line)
@@ -115,7 +113,7 @@ for face_size in [12, 24, 48]:
                         crop_box = np.array([x1_, y1_, x2_, y2_])  # 偏移后的新框
 
                         # 计算坐标的偏移值
-                        offset_x1 = (x1 - x1_) / side_len  # 偏移量△δ=(x1-x1_)/side_len;新框的宽度;★????还要梳理，可打印出来观察
+                        offset_x1 = (x1 - x1_) / side_len  # 偏移量△δ=(x1-x1_)/side_len;新框的宽度;
                         offset_y1 = (y1 - y1_) / side_len
                         offset_x2 = (x2 - x2_) / side_len
                         offset_y2 = (y2 - y2_) / side_len
@@ -182,7 +180,7 @@ for face_size in [12, 24, 48]:
                             negative_count += 1
             except ValueError as e:
                 traceback.print_exc()  # 如果出现异常，把异常打印出来
-            if i > 25002:
+            if i > 20:
                 break
 
     # 关闭写入文件
