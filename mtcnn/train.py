@@ -37,7 +37,7 @@ class Trainer:
     # 训练方法
     def train(self):
         faceDataset = FaceDataset(self.dataset_path)  # 数据集
-        dataloader = DataLoader(faceDataset, batch_size=1000, shuffle=True, num_workers=0, drop_last=False)  # 数据加载器
+        dataloader = DataLoader(faceDataset, batch_size=2000, shuffle=True, num_workers=0, drop_last=False)  # 数据加载器
         # num_workers=4：有4个线程在加载数据(加载数据需要时间，以防空置)；drop_last：为True时表示，防止批次不足报错。
         loss_flag = 1.
         # while True:
@@ -80,16 +80,16 @@ class Trainer:
                 loss.backward()  # 计算梯度
                 self.optimizer.step()  # 优化网络
 
-                # 输出损失：loss-->gpu-->cup（变量）-->tensor-->array
-                print("i=", i, "loss:", loss.cpu().data.numpy(), " cls_loss:", cls_loss.cpu().data.numpy(),
-                      " offset_loss",
-                      offset_loss.cpu().data.numpy())
 
                 # 保存
                 # if (i+1)/1000==0:
                 #     torch.save(self.net.state_dict(), self.save_path) # state_dict保存网络参数，save_path参数保存路径
                 #     print("save success")                            # 每轮次保存一次；最好做一判断：损失下降时保存一次
             avg_loss = sum_loss / len(dataloader)
+            # 输出损失：loss-->gpu-->cup（变量）-->tensor-->array
+            print("loss:", loss.cpu().data.numpy(), " cls_loss:", cls_loss.cpu().data.numpy(),
+                  " offset_loss",
+                  offset_loss.cpu().data.numpy())
             print("第{0}轮的平均损失为{1}".format(epoch, avg_loss))
             if avg_loss < loss_flag:
                 torch.save(self.net.state_dict(), self.save_path)  # state_dict保存网络参数，save_path参数保存路径

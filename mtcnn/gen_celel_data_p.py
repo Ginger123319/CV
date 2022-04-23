@@ -6,16 +6,16 @@ import traceback
 
 # 正式生成样本
 # 原始数据样本、标签路径
-anno_src = r"G:\liewei\source\FACE\imgdata\img.txt"
-img_dir = r"G:\liewei\source\FACE\imgdata"
+anno_src = r"D:\Python\source\FACE\celebA\Anno\list_bbox_celeba.txt"
+img_dir = r"D:\Python\source\FACE\celebA\img\img_celeba\img_celeba"
 
 # 样本保存路径
-save_path = r"G:\liewei\source\FACE"
+save_path = r"D:\Python\source\FACE\celebA\save_pic_label"
 
 # 传入图片以及标签文本和保存路径以及生成图片的尺寸（可能有生成图片的数量）即可
 
 # 生成不同尺寸的人脸样本，包括人脸（正样本）、非人脸（负样本）、部分人脸
-for face_size in [12, 24, 48]:
+for face_size in [12]:
 
     print("gen {} image".format(face_size))  # %i:十进制数占位符
     # “样本图片”存储路径--image
@@ -180,7 +180,7 @@ for face_size in [12, 24, 48]:
                             negative_count += 1
             except ValueError as e:
                 traceback.print_exc()  # 如果出现异常，把异常打印出来
-            if i > 20:
+            if i > 20000:
                 break
 
     # 关闭写入文件
