@@ -2,57 +2,75 @@ import numpy as np
 
 
 # 重叠率
-def iou(box, boxes, isMin=False):  # 1st框，一堆框，inMin(IOU有两种：一个除以最小值，一个除以并集)
+def iou(box, boxes, isMin=False):  # 1st框，一堆框
     # 计算面积：box = [x1,y1,x2,y2] boxes = [[x1,y1,x2,y2],[x1,y1,x2,y2],[x1,y1,x2,y2]]
-    box_area = (box[2] - box[0]) * (box[3] - box[1])  # 原始框的面积
+    box_area = (box[2] - box[0]) * (box[3] - box[1])
+    # 张量乘法，对应位置相乘，计算出各个矩形框的面积大小，用一个矢量装起来
+    # boxes[:, 2]这就是一个矢量
     area = (boxes[:, 2] - boxes[:, 0]) * (boxes[:, 3] - boxes[:, 1])
 
-    # 找交集：
-    xx1 = np.maximum(box[0], boxes[:, 0])  # 横坐标，左上角最大值
-    yy1 = np.maximum(box[1], boxes[:, 1])  # 纵坐标，左上角最大值
-    xx2 = np.minimum(box[2], boxes[:, 2])  # 横坐标，右下角最小值
-    yy2 = np.minimum(box[3], boxes[:, 3])  # 纵坐标，右小角最小值
+    # 找交集的左上角和右下角坐标
+    # 实际上还是两个两个框进行求IOU，只是通过张量的运算将重复步骤合并了
+    # 假设框之间有交集：那么左上角的坐标为两个框中左上角坐标的最大值
+    xx1 = np.maximum(box[0], boxes[:, 0])
+    yy1 = np.maximum(box[1], boxes[:, 1])
+    # 交集右上角坐标为两个框中的最小值
+    xx2 = np.minimum(box[2], boxes[:, 2])
+    yy2 = np.minimum(box[3], boxes[:, 3])
 
-    # 判断是否有交集
+    # 判断是否有交集:有交集，交集的右下角坐标一定大于左上角坐标
+    # 因此在求交集矩形的宽高时与0作比较就能判断是否有交集
     w = np.maximum(0, xx2 - xx1)
     h = np.maximum(0, yy2 - yy1)
 
     # 交集的面积
     inter = w * h  # 对应位置元素相乘
-    if isMin:  # 若果为False
-        ovr = np.true_divide(inter, np.minimum(box_area, area))  # 最小面积的IOU：O网络用
+    # isMin(IOU有两种：一个除以最小值，一个除以并集)
+    if isMin:
+        # 最小面积的IOU：O网络用.避免出现大框套小框的情况
+        ovr = np.true_divide(inter, np.minimum(box_area, area))
     else:
         ovr = np.true_divide(inter, (box_area + area - inter))  # 并集的IOU：P和R网络用；交集/并集
 
     return ovr
 
 
-# 非极大值抑制
-# 思路：首先根据对置信度进行排序，找出最大值框与每个框做IOU比较，再讲保留下来的框再进行循环比较，知道符合条件，保留其框
-def nms(boxes, thresh=0.3, isMin=False):
-    # 框的长度为0时(防止程序有缺陷报错)
+# 非极大值抑制[借助iou计算来淘汰框]
+# 思路：首先根据对置信度进行排序，找出最大值框与剩下的每个框做IOU比较
+# 再将保留下来的框再进行循环比较，每次保留置信度最大的框
+def nms(boxes, thresh=0.5, isMin=False):
+    # 当输入的数组中没有元素时返回空数组(防止程序有缺陷报错)
+    # print(boxes.shape)
     if boxes.shape[0] == 0:
         return np.array([])
 
-    # 框的长度不为0时
     # 根据置信度排序：[x1,y1,x2,y2,C]
-    _boxes = boxes[(-boxes[:, 4]).argsort()]  # #根据置信度“由大到小”，默认有小到大（加符号可反向排序）
+    # 有很多框,不止一个,首先进行切片获取到置信度,拿到排序后的索引,再用索引去取原张量的元素赋给新张量
+    # np.argsort(boxes[:, 4])返回的是从小到大排序的索引
+    # np.argsort(-boxes[:, 4])返回的是从大到小排序的索引
+    _boxes = boxes[np.argsort(-boxes[:, 4])]
+    # print(boxes)
     # 创建空列表，存放保留剩余的框
     r_boxes = []
-    # 用1st个框，与其余的框进行比较，当长度小于等于1时停止（比len(_boxes)-1次）
-    while _boxes.shape[0] > 1:  # shape[0]等价于shape(0),代表0轴上框的个数（维数）
+    # 用1st个框，与其余的框进行比较，当长度等于1时停止
+    while _boxes.shape[0] > 1:  # shape[0]代表0轴上框的个数
         # 取出第1个框
         a_box = _boxes[0]
         # 取出剩余的框
         b_boxes = _boxes[1:]
 
         # 将1st个框加入列表
-        r_boxes.append(a_box)  # 每循环一次往，添加一个框
+        r_boxes.append(a_box)  # 每循环一次往，添加一个置信度最高的框
         # print(iou(a_box, b_boxes))
 
         # 比较IOU，将符合阈值条件的的框保留下来
-        index = np.where(iou(a_box, b_boxes, isMin) < thresh)  # 将阈值小于0.3的建议框保留下来，返回保留框的索引
-        _boxes = b_boxes[index]  # 循环控制条件；取出阈值小于0.3的建议框
+        # iou(a_box, b_boxes)返回的是一个矢量,表示第一个框和各个框的IOU大小
+        # 将阈值小于thresh的建议框保留下来，返回保留框的索引
+        index = np.where(iou(a_box, b_boxes) < thresh)
+        print(index)
+        # 在剩下的框中选择需要保留框加入到下一次比较的数组中
+        _boxes = b_boxes[index]
+        # print(_boxes)
 
     if _boxes.shape[0] > 0:  # 最后一次，结果只用1st个符合或只有一个符合，若框的个数大于1；★此处_boxes调用的是whilex循环里的，此判断条件放在循环里和外都可以（只有在函数类外才可产生局部作用于）
         r_boxes.append(_boxes[0])  # 将此框添加到列表中
@@ -86,11 +104,13 @@ def prewhiten(x):
 
 
 if __name__ == '__main__':
-    # a = np.array([1,1,11,11])
-    # bs = np.array([[1,1,10,10],[11,11,20,20]])
-    # print(iou(a,bs))
+    # a = np.array([1, 1, 11, 11])
+    # bs = np.array([[1, 1, 10, 10], [11, 11, 20, 20]])
+    # # 使用isMin，iou会大一些
+    # print(iou(a, bs, True))
 
     bs = np.array([[1, 1, 10, 10, 40], [1, 1, 9, 9, 10], [9, 8, 13, 20, 15], [6, 11, 18, 17, 13]])
+    # bs = np.array([])
     # print(bs[:,3].argsort())
     print(nms(bs))
 
