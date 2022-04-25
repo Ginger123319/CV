@@ -52,7 +52,10 @@ class Train:
         # 创建损失函数
         # loss = torch.mean((out - tag_data) ** 2)
         # self.loss_func = nn.MSELoss()  # 均方差损失函数
-        self.loss_func = nn.CrossEntropyLoss()  # 内部带有Softmax函数对输出进行归一化处理
+        # 内部带有Softmax函数对输出进行归一化处理
+        # 内部实现了one-hot，因此标签不用做one-hot处理
+        # 两个参数为输出（N,C）和标签(N)或者(NCHW)与(NHW)
+        self.loss_func = nn.CrossEntropyLoss()
         # self.loss_func = nn.NLLLoss()
         # self.loss_func = nn.BCEWithLogitsLoss()  # 内部带有Sigmoid函数对输出进行归一化处理
         # self.loss_func = nn.BCELoss()
