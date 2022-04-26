@@ -143,7 +143,7 @@ if __name__ == '__main__':
     # print(data[0][0][...,1:5].shape)
     # print("============")
     # print(data[0][0][...,5:])
-    print(data[0][0].shape)
+    print(type(data[0][0]))
     print(data[0][1].shape)
     print(data[0][2].shape)
     print(data[0][3].shape)
