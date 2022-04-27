@@ -2,9 +2,9 @@ import os
 import numpy as np
 import torch
 # 非常宝贵的一次南辕北辙，搞清楚问题在行动吧
-data_path = r"G:\liewei\source\enzyme\data"
-train_file = r"G:\liewei\source\enzyme\train\train_file.txt"
-test_file = r"G:\liewei\source\enzyme\test\test_file.txt"
+data_path = r"..\..\source\enzyme\data"
+train_file = r"..\..\source\enzyme\train\train_file.txt"
+test_file = r"..\..\source\enzyme\test\test_file.txt"
 train = open(train_file, 'w')
 test = open(test_file, 'w')
 
