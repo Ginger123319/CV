@@ -54,7 +54,7 @@ if __name__ == '__main__':
 
     net = Darknet53().cuda()
     # 判断是否有权重，有就加载权重
-    # 不适用于给一个异常的预权重且名字为param_path+ "_old"的情况
+    # 局限性：不适用于给一个异常的预权重且名字为param_path+ "_old"的情况
     # old和new有四种组成：空，old，new，old和new
     # 在保存结果异常的时候会启用old，如果old不存在则重新训练，所以不会出现将异常的结果重命名的情况
     # 只有old时也启用old（此处old一定是一个正常保存的参数）
@@ -76,9 +76,13 @@ if __name__ == '__main__':
                 print("没有可以回退的参数，将开始重新训练")
                 print("error is", r)
     elif os.path.exists(param_path + "_old"):
-        net.load_state_dict(torch.load(param_path + "_old"))
-        os.rename(param_path + "_old", param_path)
-        print("Only old param is loaded")
+        try:
+            net.load_state_dict(torch.load(param_path + "_old"))
+            os.rename(param_path + "_old", param_path)
+            print("Only old param is loaded")
+        except RuntimeError as r:
+            print(r)
+            print("参数错误，将开始重新训练")
     else:
         print("NO Param!")
 
