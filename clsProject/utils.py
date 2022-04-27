@@ -4,9 +4,9 @@ import random
 import numpy as np
 import torch
 
-data_path = r"G:\liewei\source\enzyme\data"
-train_file = r"G:\liewei\source\enzyme\train\train_file.txt"
-test_file = r"G:\liewei\source\enzyme\test\test_file.txt"
+data_path = r"..\..\source\enzyme\data"
+train_file = r"..\..\source\enzyme\train\train_file.txt"
+test_file = r"..\..\source\enzyme\test\test_file.txt"
 
 
 # train = open(train_file, 'w')
@@ -43,18 +43,18 @@ test_file = r"G:\liewei\source\enzyme\test\test_file.txt"
 
 def sample_add(l0, l1, max_len, min_len, is_train=True):
     if is_train:
-        print(len(l0))
+        # print(len(l0))
         for i, elem in enumerate(l0):
-            l0[i] = elem.ljust(max_len, "0") + '.0'
+            l0[i] = elem.ljust(max_len, "0")
         for i, elem in enumerate(l1):
-            l1[i] = elem.ljust(max_len, "0") + '.1'
+            l1[i] = elem.ljust(max_len, "0")
         # print(len(l0[30]))
         # print(l1)
         # print(target_len)
         r_list0 = []
         r_list1 = []
         # print(len(r_list1))
-        for i in range(400):
+        for i in range(300):
             x, y = [random.randint(0, len(l0) - 1) for _ in range(2)]
             x1, y1 = [random.randint(0, min_len // 8) for _ in range(2)]
             # print(min_len // 3)
@@ -65,7 +65,7 @@ def sample_add(l0, l1, max_len, min_len, is_train=True):
             if min_len <= len(res_str) <= max_len:
                 r_list0.append(res_str)
 
-        for i in range(150):
+        for i in range(100):
             x, y = [random.randint(0, len(l1) - 1) for _ in range(2)]
             x1, y1 = [random.randint(0, min_len // 8) for _ in range(2)]
             # print(min_len // 3)
@@ -76,29 +76,30 @@ def sample_add(l0, l1, max_len, min_len, is_train=True):
         # print(res_str)
         # print(len(res_str))
         # print(x1, y1, x2, y2)
-        print(len(r_list0), len(r_list1))
+
         for i, elem in enumerate(r_list0):
             r_list0[i] = elem.ljust(max_len, "0")
         for i, elem in enumerate(r_list1):
             r_list1[i] = elem.ljust(max_len, "0")
         r_list0.extend(l0)
         r_list1.extend(l1)
+        # print(len(r_list0), len(r_list1))
 
         # s = "LPTSNPAQELEARQLGR".ljust(32,'0')
         # print(s)
         # print(len(r_list0[i]))
         # print(r_list0[i])
         # exit()
-        print(len(l0[5]), len(l1[5]))
+        # print(len(l0[5]), len(l1[5]))
 
-        print(len(r_list0[100]), len(r_list1[100]))
+        # print(len(r_list0[100]), len(r_list1[100]))
         return r_list0, r_list1, l0, l1
     else:
         for i, elem in enumerate(l0):
             l0[i] = elem.ljust(632, "0")
         for i, elem in enumerate(l1):
             l1[i] = elem.ljust(632, "0")
-        print(len(l0[2]))
+        # print(len(l0[2]))
         return l0, l1
 
 
