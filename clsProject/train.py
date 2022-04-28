@@ -10,7 +10,7 @@ from dataset import MyData
 from net import Net
 from torch.utils.data import DataLoader
 
-param_path = r"./param_pt"
+param_path = r"param_pt"
 log_path = r"./log"
 
 
@@ -19,11 +19,12 @@ class Trainer:
         # 图形化展示损失
         self.writer = SummaryWriter(log_path)
         # 加载数据集
-        self.train_loader = DataLoader(MyData(True), batch_size=30, shuffle=True)
-        self.test_loader = DataLoader(MyData(False), batch_size=2, shuffle=True)
+        self.train_loader = DataLoader(MyData(True), batch_size=20, shuffle=True)
+        self.test_loader = DataLoader(MyData(False), batch_size=20, shuffle=True)
         # 加载网络
         self.net = Net()
-        self.opt = optim.Adam(self.net.parameters())
+        self.opt = optim.SGD(self.net.parameters(), lr=0.01)
+        # self.opt = optim.Adam(self.net.parameters())
         self.loss_fun = BCELoss()
         # 加载参数
         if os.path.exists(param_path):
@@ -75,9 +76,9 @@ class Trainer:
             print("epoch {} avg_loss is {}".format(epoch, avg_loss))
             # 保存参数
             torch.save(self.net.state_dict(), param_path)
-            print("save success!")
+            # print("save success!")
             # 测试
-            test_avg_loss = sum_loss / len(self.test_loader)
+            test_avg_loss = sum_test_loss / len(self.test_loader)
             test_avg_score = sum_score / len(self.test_loader)
             print("epoch {} test_avg_loss is {}".format(epoch, test_avg_loss))
             print("epoch {} test_avg_score is {}".format(epoch, test_avg_score))
