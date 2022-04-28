@@ -7,6 +7,8 @@ import torch
 data_path = r"..\..\source\enzyme\data"
 train_file = r"..\..\source\enzyme\train\train_file.txt"
 test_file = r"..\..\source\enzyme\test\test_file.txt"
+train_0_file = r"..\..\source\enzyme\train\train_0_file.txt"
+train_1_file = r"..\..\source\enzyme\train\train_1_file.txt"
 
 
 # train = open(train_file, 'w')
@@ -44,17 +46,13 @@ test_file = r"..\..\source\enzyme\test\test_file.txt"
 def sample_add(l0, l1, max_len, min_len, is_train=True):
     if is_train:
         # print(len(l0))
-        for i, elem in enumerate(l0):
-            l0[i] = elem.ljust(max_len, "0")
-        for i, elem in enumerate(l1):
-            l1[i] = elem.ljust(max_len, "0")
         # print(len(l0[30]))
         # print(l1)
         # print(target_len)
         r_list0 = []
         r_list1 = []
         # print(len(r_list1))
-        for i in range(300):
+        for i in range(400):
             x, y = [random.randint(0, len(l0) - 1) for _ in range(2)]
             x1, y1 = [random.randint(0, min_len // 8) for _ in range(2)]
             # print(min_len // 3)
@@ -65,7 +63,7 @@ def sample_add(l0, l1, max_len, min_len, is_train=True):
             if min_len <= len(res_str) <= max_len:
                 r_list0.append(res_str)
 
-        for i in range(100):
+        for i in range(200):
             x, y = [random.randint(0, len(l1) - 1) for _ in range(2)]
             x1, y1 = [random.randint(0, min_len // 8) for _ in range(2)]
             # print(min_len // 3)
@@ -81,8 +79,12 @@ def sample_add(l0, l1, max_len, min_len, is_train=True):
             r_list0[i] = elem.ljust(max_len, "0")
         for i, elem in enumerate(r_list1):
             r_list1[i] = elem.ljust(max_len, "0")
-        r_list0.extend(l0)
-        r_list1.extend(l1)
+        for i, elem in enumerate(l0):
+            l0[i] = elem.ljust(632, "0")
+        for i, elem in enumerate(l1):
+            l1[i] = elem.ljust(632, "0")
+        # r_list0.extend(l0)
+        # r_list1.extend(l1)
         # print(len(r_list0), len(r_list1))
 
         # s = "LPTSNPAQELEARQLGR".ljust(32,'0')
@@ -125,5 +127,14 @@ with open(test_file) as t:
     # print(len(list0))
     # print(len(list1))
 if __name__ == '__main__':
-    sample_add(list0, list1, max(lens), min(lens), False)
+    positive_file = open(train_1_file, 'w')
+    neg_file = open(train_0_file, 'w')
+    r_list0, r_list1 = sample_add(list0, list1, max(lens), min(lens), True)[0:2]
+    print(len(r_list0), len(r_list1))
     # print(len(list0) + len(list1))
+    for i in r_list0:
+        neg_file.write(i + '\n')
+    for i in r_list1:
+        positive_file.write(i + '\n')
+    positive_file.close()
+    neg_file.close()
