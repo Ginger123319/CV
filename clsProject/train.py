@@ -6,7 +6,8 @@ from torch import optim
 from torch.nn import BCELoss
 from torch.utils.tensorboard import SummaryWriter
 
-from dataset import MyData
+# from dataset import MyData
+from dataset_changed import MyData
 from net import Net
 from torch.utils.data import DataLoader
 
@@ -19,7 +20,8 @@ class Trainer:
         # 图形化展示损失
         self.writer = SummaryWriter(log_path)
         # 加载数据集
-        self.train_loader = DataLoader(MyData(True), batch_size=20, shuffle=True)
+        # 增样的训练集效果更好，用真实的训练集训练反而精度在下降
+        self.train_loader = DataLoader(MyData(True, True), batch_size=30, shuffle=True)
         self.test_loader = DataLoader(MyData(False), batch_size=20, shuffle=True)
         # 加载网络
         self.net = Net()
