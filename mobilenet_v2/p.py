@@ -105,6 +105,7 @@ if __name__ == '__main__':
     # 测试
     test = torch.randn(1, 3, 224, 224)
     net = MobileNetV2()
+    print(net)
     print(net.forward(test).shape)
     # 计算模型的浮点运算量以及参数量统计，默认单位为字节
     # clever_format换算为M
