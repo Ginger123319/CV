@@ -4,13 +4,14 @@ import shutil
 import torch
 from torch.nn import BCELoss
 
-from dataset import MyData
+# from dataset import MyData
+from dataset_changed import MyData
 from net import Net
 from torch.utils.data import DataLoader
 
 param_path = r"./param_pt"
 
-test_loader = DataLoader(MyData(False), batch_size=20, shuffle=True)
+test_loader = DataLoader(MyData(False), batch_size=40, shuffle=True)
 net = Net()
 loss_fun = BCELoss()
 # 加载参数
@@ -32,7 +33,7 @@ for i, (test_data, test_tag) in enumerate(test_loader):
     sum_test_loss += loss.item()
     # 精度计算
     score = torch.mean((torch.eq((out.reshape(-1) > 0.5).float(), test_tag.float())).float())
-    print((out.reshape(-1) > 0.5).float(), test_tag.float())
+    print("out:{}\ntag:{}".format((out.reshape(-1) > 0.5).float(), test_tag.float()))
     sum_score += score.item()
     # print(torch.mean((torch.eq((out.squeeze() > 0.5).float(), test_tag.float())).float()))
     # print(test_tag.float())
@@ -42,3 +43,4 @@ test_avg_loss = sum_test_loss / len(test_loader)
 test_avg_score = sum_score / len(test_loader)
 print("epoch {} test_avg_loss is {}".format(i, test_avg_loss))
 print("epoch {} test_avg_score is {}".format(i, test_avg_score))
+# 计算召回率
