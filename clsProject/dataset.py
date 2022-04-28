@@ -66,8 +66,8 @@ class MyData(Dataset):
             r_list0, r_list1, l0, l1 = sample_add(self.list0, self.list1, max(self.lens), min(self.lens))
             # 先用增样后的数据训练，因此往dataset中添加的是增样后的数据r_list0, r_list1
             # 当需要用真实数据训练时，将l0, l1添加到dataset中
-            # r_list0 = l0
-            # r_list1 = l1
+            r_list0 = l0
+            r_list1 = l1
             for i in r_list0:
                 tag = 0
                 num_list = string_2num_list(i)

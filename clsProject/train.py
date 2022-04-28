@@ -20,7 +20,7 @@ class Trainer:
         self.writer = SummaryWriter(log_path)
         # 加载数据集
         self.train_loader = DataLoader(MyData(True), batch_size=30, shuffle=True)
-        self.test_loader = DataLoader(MyData(False), batch_size=8, shuffle=True)
+        self.test_loader = DataLoader(MyData(False), batch_size=2, shuffle=True)
         # 加载网络
         self.net = Net()
         self.opt = optim.Adam(self.net.parameters())
