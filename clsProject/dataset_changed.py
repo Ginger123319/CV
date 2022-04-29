@@ -1,9 +1,5 @@
-import numpy as np
 import torch
 from torch.utils.data import Dataset, DataLoader
-from torchvision.transforms import transforms
-
-from utils import sample_add, split_data
 
 train_file = r"..\..\source\enzyme\train\train_file.txt"
 train_0_file = r"..\..\source\enzyme\train\train_0_file.txt"
@@ -25,7 +21,6 @@ def string_2num_list(s):
 
 def my_one_hot(n_list):
     result = []
-    # print(base)
     for i in n_list:
         if i == 0:
             base = [0 for x in range(cls_num)]
@@ -66,7 +61,6 @@ if __name__ == '__main__':
     print(data[10][0].shape)
     data_loader = DataLoader(data, batch_size=30, shuffle=True)
     for i, (x, y) in enumerate(data_loader):
-        # print(i)
         print(x.shape)
         print(y)
         break

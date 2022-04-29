@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="822f338a-3eb8-41d7-b6fe-5d05db4c20ea" name="Default Changelist" comment="" />
+    <list default="true" id="822f338a-3eb8-41d7-b6fe-5d05db4c20ea" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../clsProject/dataset_changed.py" beforeDir="false" afterPath="$PROJECT_DIR$/../clsProject/dataset_changed.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clsProject/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../clsProject/test.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,7 +35,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mtcnn" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
@@ -177,6 +180,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
