@@ -3,12 +3,15 @@ import random
 
 data_path = r"..\..\source\enzyme\data"
 train_file = r"..\..\source\enzyme\train\train_file.txt"
+# train_file = r"train"
 test_file = r"..\..\source\enzyme\test\test_file.txt"
 train_0_file = r"..\..\source\enzyme\train\train_0_file.txt"
 
 
 def split_data():
     lens = []
+    # w模式能在多级目录下创建文件，可以用os.makedirs()
+    # 前提是你的所有目录都存在，只是文件不存在
     train = open(train_file, 'w')
     test = open(test_file, 'w')
     #  将原始数据整理为数据加上标签的形式
@@ -18,14 +21,14 @@ def split_data():
             # 记录写入的行数
             count = 0
             # 记录测试集写入的行数
-            test_count = 30 if i == 0 else 10
+            test_count = 106 if i == 0 else 27
             for line in f:
                 line.split()
                 # print(len(line))
                 # 去除空行
                 if len(line) != 1:
                     # 去除数字行的换行符
-                    data_file = test if count < test_count else train
+                    data_file = test if count > test_count else train
                     if not line[0].isdigit():
                         # print(line)
                         length = len(line[:-1])
