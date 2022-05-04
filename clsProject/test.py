@@ -6,12 +6,13 @@ from torch.nn import BCELoss
 
 # from dataset import MyData
 from dataset_changed import MyData
-from net import Net
+# from net import Net
+from net2 import Net
 from torch.utils.data import DataLoader
 
 param_path = r"./param_pt"
 
-test_loader = DataLoader(MyData(False), batch_size=40, shuffle=True)
+test_loader = DataLoader(MyData(False), batch_size=50, shuffle=False)
 net = Net()
 loss_fun = BCELoss()
 # 加载参数
@@ -26,10 +27,13 @@ else:
     print("No Param!")
 sum_test_loss = 0.
 sum_score = 0.
-for epoch in range(10):
+for epoch in range(1):
     for i, (test_data, test_tag) in enumerate(test_loader):
         net.eval()
-        out = net(test_data)
+        # 新加的
+        test_data = test_data.permute(0, 3, 1, 2)
+        out = net(test_data)[0]
+        out1 = net(test_data)[1]
         loss = loss_fun(out.reshape(-1), test_tag.float())
 
         # 精度计算
@@ -42,6 +46,7 @@ for epoch in range(10):
     print("epoch {} score {} ".format(epoch, score))
     sum_test_loss += loss.item()
     sum_score += score.item()
+    print((out1.permute(0, 2, 3, 1) > 0.5).float())
 # 测试
 test_avg_loss = sum_test_loss / (epoch + 1)
 test_avg_score = sum_score / (epoch + 1)

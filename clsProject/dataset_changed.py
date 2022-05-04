@@ -61,6 +61,7 @@ if __name__ == '__main__':
     print(data[10][0].shape)
     data_loader = DataLoader(data, batch_size=30, shuffle=True)
     for i, (x, y) in enumerate(data_loader):
+        # x = x.permute(0, 3, 1, 2)
         print(x.shape)
         print(y)
         break
