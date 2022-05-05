@@ -89,7 +89,7 @@ class Trainer:
             self.writer.add_scalars("loss", {"avg_loss": avg_loss, "test_avg_loss": test_avg_loss}, epoch)
             self.writer.add_scalar("test_avg_score", test_avg_score, epoch)
             # 保存参数
-            if save_flag < test_avg_score:
+            if save_flag <= test_avg_score:
                 torch.save(self.net.state_dict(), param_path)
                 save_flag = test_avg_score
                 print("save success!")

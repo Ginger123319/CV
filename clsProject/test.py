@@ -36,6 +36,7 @@ for epoch in range(1):
         test_data = test_data.permute(0, 3, 1, 2)
         out = net(test_data)[0]
         out1 = net(test_data)[1]
+        out2 = net(test_data)[2]
         loss = loss_fun(out.reshape(-1), test_tag.float())
 
         # 精度计算
@@ -51,12 +52,17 @@ for epoch in range(1):
     # print((out1.permute(0, 2, 3, 1)).float())
     mask_out = (out1.permute(0, 2, 3, 1) > 0.8).float()
     # print(mask_out.shape)
+    # for i in range(mask_out.squeeze().shape[0]):
+    #     print(mask_out.squeeze()[i])
+    #     for index, elem in enumerate(mask_out.squeeze()[i]):
+    #         print(index, elem)
+    #     break
     test_data = test_data.permute(0, 2, 3, 1)
     # print(test_data.shape)
     mask_data = mask_out * test_data
     print(mask_data.shape)
     for i in range(mask_data.shape[0]):
-        print(i)
+        # print(i)
         # break
         mask_list = []
         for index, elem in enumerate(mask_data[i][0]):
@@ -64,7 +70,11 @@ for epoch in range(1):
             length = len(torch.nonzero(elem))
             if length > 0:
                 s_index = torch.nonzero(elem).item()
+                # mask_list.append(str(index))
                 mask_list.append(s_sequence[s_index])
+            else:
+                # mask_list.append(str(index))
+                mask_list.append("_")
 
         with open(mask_path, 'a') as m:
             m.write("".join(mask_list))
@@ -75,4 +85,3 @@ test_avg_loss = sum_test_loss / (epoch + 1)
 test_avg_score = sum_score / (epoch + 1)
 print("{} epochs: test_avg_loss is {}".format((epoch + 1), test_avg_loss))
 print("{} epochs: test_avg_score is {}".format((epoch + 1), test_avg_score))
-# 计算召回率
