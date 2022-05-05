@@ -10,9 +10,11 @@ from dataset_changed import MyData
 from net2 import Net
 from torch.utils.data import DataLoader
 
-param_path = r"./param_pt"
+param_path = r"param_pt"
+mask_path = r"..\..\source\enzyme\mask_result\mask.txt"
+s_sequence = "0GAVLIPFYWSTCMNQDEKRHX"
 
-test_loader = DataLoader(MyData(False), batch_size=50, shuffle=False)
+test_loader = DataLoader(MyData(False), batch_size=40, shuffle=False)
 net = Net()
 loss_fun = BCELoss()
 # 加载参数
@@ -46,7 +48,28 @@ for epoch in range(1):
     print("epoch {} score {} ".format(epoch, score))
     sum_test_loss += loss.item()
     sum_score += score.item()
-    print((out1.permute(0, 2, 3, 1) > 0.5).float())
+    # print((out1.permute(0, 2, 3, 1)).float())
+    mask_out = (out1.permute(0, 2, 3, 1) > 0.8).float()
+    # print(mask_out.shape)
+    test_data = test_data.permute(0, 2, 3, 1)
+    # print(test_data.shape)
+    mask_data = mask_out * test_data
+    print(mask_data.shape)
+    for i in range(mask_data.shape[0]):
+        print(i)
+        # break
+        mask_list = []
+        for index, elem in enumerate(mask_data[i][0]):
+            # print(len(torch.nonzero(elem)))
+            length = len(torch.nonzero(elem))
+            if length > 0:
+                s_index = torch.nonzero(elem).item()
+                mask_list.append(s_sequence[s_index])
+
+        with open(mask_path, 'a') as m:
+            m.write("".join(mask_list))
+            m.write("\n")
+
 # 测试
 test_avg_loss = sum_test_loss / (epoch + 1)
 test_avg_score = sum_score / (epoch + 1)

@@ -13,17 +13,17 @@ class Net(nn.Module):
             nn.Conv2d(32, 64, 3, 1, 1, bias=False),
             nn.BatchNorm2d(64),
             nn.ReLU(),
-            nn.Conv2d(64, 22, 1, 1, 0, bias=False),
-            nn.BatchNorm2d(22),
-            nn.AdaptiveAvgPool2d((1, 1)),
+            nn.Conv2d(64, 1, 1, 1, 0, bias=False),
+            nn.BatchNorm2d(1),
+            # nn.AdaptiveAvgPool2d((1, 1)),
             nn.Sigmoid()
         )
         self.layer = nn.Sequential(
-            nn.Conv2d(1, 32, 3, 2, 1, bias=False),
+            nn.Conv2d(22, 32, 3, 1, 1, bias=False),
             nn.BatchNorm2d(32),
             nn.ReLU(),
-            nn.MaxPool2d(3),
-            nn.Conv2d(32, 64, 3, 2, 1, bias=False),
+            # nn.MaxPool2d(3),
+            nn.Conv2d(32, 64, 3, 1, 1, bias=False),
             nn.BatchNorm2d(64),
             nn.ReLU(),
             nn.Conv2d(64, 128, 3, 1, 1, bias=False),
@@ -38,13 +38,15 @@ class Net(nn.Module):
 
     def forward(self, x):
         out1 = self.layer1(x)
+        # thresh = torch.mean(out1)
+        # out1 = (out1 > thresh).float()
         out2 = out1 * x
-        out = out2.permute(0, 2, 3, 1)
-        out = self.layer(out)
+        # out = out2.permute(0, 2, 3, 1)
+        out = self.layer(out2)
         out = out.reshape(-1, 128 * 1 * 1)
         out = self.out_layer(out)
         return out, out1, out2
-        # return out2
+        # return out.shape
 
 
 if __name__ == '__main__':
