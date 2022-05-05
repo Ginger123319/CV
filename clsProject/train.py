@@ -21,7 +21,7 @@ class Trainer:
         self.writer = SummaryWriter(log_path)
         # 加载数据集
         # 增样的训练集效果更好，用真实的训练集训练反而精度在下降
-        self.train_loader = DataLoader(MyData(True, True), batch_size=40, shuffle=True)
+        self.train_loader = DataLoader(MyData(True, False), batch_size=40, shuffle=True)
         self.test_loader = DataLoader(MyData(False), batch_size=50, shuffle=True)
         # 加载网络
         self.net = Net()

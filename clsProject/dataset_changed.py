@@ -63,5 +63,6 @@ if __name__ == '__main__':
     for i, (x, y) in enumerate(data_loader):
         # x = x.permute(0, 3, 1, 2)
         print(x.shape)
+        print(x[1][0][1])
         print(y)
         break
