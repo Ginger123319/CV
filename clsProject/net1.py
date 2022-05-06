@@ -13,11 +13,11 @@ class Net(nn.Module):
             nn.Conv2d(32, 64, 3, 1, 1, bias=False),
             nn.BatchNorm2d(64),
             nn.ReLU(),
-            nn.Conv2d(64, 11, 3, 1, 1, bias=False),
-            nn.BatchNorm2d(11),
+            nn.Conv2d(64, 1, 3, 1, 1, bias=False),
+            nn.BatchNorm2d(1),
             # nn.AdaptiveAvgPool2d((1, 1)),
             # nn.Sigmoid()
-            nn.Softmax(dim=2)
+            nn.Softmax(dim=3)
         )
         self.layer = nn.Sequential(
             nn.Conv2d(22, 32, 3, 1, 1, bias=False),
@@ -40,8 +40,8 @@ class Net(nn.Module):
     def forward(self, x):
         out1 = self.layer1(x)
         # thresh = torch.mean(out1)
-        out1_rpt = torch.repeat_interleave(out1, 2, 1)
-        out2 = out1_rpt * x
+        # out1 = (out1 > thresh).float()
+        out2 = out1 * x
         # out = out2.permute(0, 2, 3, 1)
         out = self.layer(out2)
         out = out.reshape(-1, 128 * 1 * 1)
@@ -51,6 +51,6 @@ class Net(nn.Module):
 
 
 if __name__ == '__main__':
-    data = torch.randn(30, 22, 632, 1)
+    data = torch.randn(30, 22, 1, 632)
     net = Net()
     print(net(data)[1].shape)
