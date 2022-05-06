@@ -41,47 +41,50 @@ for epoch in range(1):
 
         # 精度计算
         score = torch.mean((torch.eq((out.reshape(-1) > 0.5).float(), test_tag.float())).float())
-        print("out:{}\ntag:{}".format((out.reshape(-1)).float(), test_tag.float()))
+        # print("out:{}\ntag:{}".format((out.reshape(-1)).float(), test_tag.float()))
 
         # print(torch.mean((torch.eq((out.squeeze() > 0.5).float(), test_tag.float())).float()))
         # print(test_tag.float())
         # exit()
-    print("epoch {} score {} ".format(epoch, score))
+    # print("epoch {} score {} ".format(epoch, score))
     sum_test_loss += loss.item()
     sum_score += score.item()
-    # print((out1.permute(0, 2, 3, 1)).float())
-    mask_out = (out1.permute(0, 2, 3, 1) > 0.8).float()
-    # print(mask_out.shape)
-    # for i in range(mask_out.squeeze().shape[0]):
-    #     print(mask_out.squeeze()[i])
-    #     for index, elem in enumerate(mask_out.squeeze()[i]):
-    #         print(index, elem)
-    #     break
-    test_data = test_data.permute(0, 2, 3, 1)
+    # print(out1.permute(0, 2, 3, 1).shape)
+    # print(out1.permute(0, 2, 3, 1))
+    # print(torch.argmax(out1.permute(0, 2, 3, 1)).shape)
+    mask_out = (out1.permute(0, 2, 3, 1))
+    # print(mask_out)
+    for i in range(mask_out.shape[0]):
+        for idx, elem in enumerate(mask_out[i]):
+            # print(elem.squeeze())
+            print(torch.argmax(elem.squeeze()))
+            result = test_data.permute(0, 2, 3, 1)[i][0][torch.argmax(elem.squeeze())]
+            print(result)
+    # test_data = test_data.permute(0, 2, 3, 1)
     # print(test_data.shape)
-    mask_data = mask_out * test_data
-    print(mask_data.shape)
-    for i in range(mask_data.shape[0]):
-        # print(i)
-        # break
-        mask_list = []
-        for index, elem in enumerate(mask_data[i][0]):
-            # print(len(torch.nonzero(elem)))
-            length = len(torch.nonzero(elem))
-            if length > 0:
-                s_index = torch.nonzero(elem).item()
-                # mask_list.append(str(index))
-                mask_list.append(s_sequence[s_index])
-            else:
-                # mask_list.append(str(index))
-                mask_list.append("_")
+    # mask_data = mask_out * test_data
+    # # print(mask_data.shape)
+    # for i in range(mask_data.shape[0]):
+    #     # print(i)
+    #     # break
+    #     mask_list = []
+    #     for index, elem in enumerate(mask_data[i][0]):
+    #         # print(len(torch.nonzero(elem)))
+    #         length = len(torch.nonzero(elem))
+    #         if length > 0:
+    #             s_index = torch.nonzero(elem).item()
+    #             # mask_list.append(str(index))
+    #             mask_list.append(s_sequence[s_index])
+    #         else:
+    #             # mask_list.append(str(index))
+    #             mask_list.append("_")
 
-        with open(mask_path, 'a') as m:
-            m.write("".join(mask_list))
-            m.write("\n")
+    # with open(mask_path, 'a') as m:
+    #     m.write("".join(mask_list))
+    #     m.write("\n")
 
 # 测试
 test_avg_loss = sum_test_loss / (epoch + 1)
 test_avg_score = sum_score / (epoch + 1)
-print("{} epochs: test_avg_loss is {}".format((epoch + 1), test_avg_loss))
-print("{} epochs: test_avg_score is {}".format((epoch + 1), test_avg_score))
+# print("{} epochs: test_avg_loss is {}".format((epoch + 1), test_avg_loss))
+# print("{} epochs: test_avg_score is {}".format((epoch + 1), test_avg_score))

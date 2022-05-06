@@ -44,8 +44,8 @@ class MyData(Dataset):
             for elem in f:
                 elem = elem.split('.')
                 tag = int(elem[1].strip('\n'))
-                elem = elem[0].ljust(632, "0")
-                elem = my_one_hot(string_2num_list(elem))
+                elem_org = elem[0].ljust(632, "0")
+                elem = my_one_hot(string_2num_list(elem_org))
                 self.dataset.append((elem.unsqueeze(dim=0), tag))
 
     def __len__(self):
