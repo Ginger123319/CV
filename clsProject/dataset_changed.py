@@ -46,23 +46,23 @@ class MyData(Dataset):
                 tag = int(elem[1].strip('\n'))
                 elem_org = elem[0].ljust(632, "0")
                 elem = my_one_hot(string_2num_list(elem_org))
-                self.dataset.append((elem.unsqueeze(dim=0), tag))
+                self.dataset.append((elem.unsqueeze(dim=1), tag, elem_org))
 
     def __len__(self):
         return len(self.dataset)
 
     def __getitem__(self, index):
         d = self.dataset[index]
-        return d[0], d[1]
+        return d[0], d[1], d[2]
 
 
 if __name__ == '__main__':
     data = MyData(is_train=False, is_add=False)
     print(data[10][0].shape)
     data_loader = DataLoader(data, batch_size=30, shuffle=True)
-    for i, (x, y) in enumerate(data_loader):
+    for i, (x, y, z) in enumerate(data_loader):
         # x = x.permute(0, 3, 1, 2)
         print(x.shape)
-        print(x[1][0][1])
-        print(y)
+        # print(x[1][0][1])
+        print(z)
         break

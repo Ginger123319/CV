@@ -25,8 +25,8 @@ class Trainer:
         self.test_loader = DataLoader(MyData(False), batch_size=50, shuffle=True)
         # 加载网络
         self.net = Net()
-        # self.opt = optim.SGD(self.net.parameters(), lr=0.01)
-        self.opt = optim.Adam(self.net.parameters())
+        self.opt = optim.SGD(self.net.parameters(), lr=0.01)
+        # self.opt = optim.Adam(self.net.parameters())
         self.loss_fun = BCELoss()
         # 加载参数
         if os.path.exists(param_path):
@@ -47,7 +47,7 @@ class Trainer:
             sum_loss = 0.
             sum_test_loss = 0.
             sum_score = 0.
-            for i, (data, tag) in enumerate(self.train_loader):
+            for i, (data, tag, _) in enumerate(self.train_loader):
                 # print(data.shape)
                 # print(tag)
                 # exit()
@@ -66,7 +66,7 @@ class Trainer:
                 # print(loss.item())
                 # exit()
             self.net.eval()
-            for i, (test_data, test_tag) in enumerate(self.test_loader):
+            for i, (test_data, test_tag, _) in enumerate(self.test_loader):
                 # 新加的
                 test_data = test_data.permute(0, 3, 1, 2)
                 out = self.net(test_data)[0]
