@@ -73,7 +73,7 @@ class Trainer:
                 loss = self.loss_fun(out.squeeze(), test_tag.float())
                 sum_test_loss += loss.item()
                 # 精度计算
-                score = torch.mean((torch.eq((out.squeeze() > 0.5).float(), test_tag.float())).float())
+                score = torch.mean((torch.eq((out.squeeze() > 0.9).float(), test_tag.float())).float())
                 sum_score += score.item()
                 # print(torch.mean((torch.eq((out.squeeze() > 0.5).float(), test_tag.float())).float()))
                 # print(test_tag.float())
