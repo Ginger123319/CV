@@ -67,16 +67,16 @@ class Net(nn.Module):
         # out = out.permute(0, 3, 1, 2)
         out = out.expand(-1, 4, -1)
         # out = out.squeeze()
-        out, hn = self._rnn_net(out, None)
+        out,_ = self._rnn_net(out, None)
         out = self._out_net(out)
-        return out,hn
+        return out
 
 
 if __name__ == '__main__':
     test_data = torch.randn(5, 3, 60, 240)
     net = Net()
     print(net)
-    out1 = net(test_data)
+    out1, hn1 = net(test_data)
     print(out1.shape)
     # print(torch.argmax(out1, dim=-1))
     # print(hn1)

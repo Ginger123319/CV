@@ -2,29 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10beec9b-56d9-44f6-8134-d3786ec80bc5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Rnn/net2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Rnn/net3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Rnn/param_pt_net2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/images/1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/images/10.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/images/2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/images/3.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/images/4.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/images/5.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/images/6.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/images/7.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/images/8.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/images/9.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/label.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Rnn/cfg.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Rnn/cfg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rnn/gen_number.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Rnn/gen_number.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Rnn/net.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Rnn/net.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Rnn/param_pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rnn/param_pt" beforeDir="false" afterPath="$PROJECT_DIR$/../Rnn/param_pt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Rnn/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Rnn/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Rnn/test02.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Rnn/test02.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Rnn/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Rnn/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clsProject/log/events.out.tfevents.1651852444.Ginger-LAPTOP-L8GFNL9E.24420.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clsProject/log/loss_avg_loss/events.out.tfevents.1651852445.Ginger-LAPTOP-L8GFNL9E.24420.1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clsProject/log/loss_test_avg_loss/events.out.tfevents.1651852445.Ginger-LAPTOP-L8GFNL9E.24420.2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clsProject/param_pt" beforeDir="false" afterPath="$PROJECT_DIR$/../clsProject/param_pt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../yolov3/.idea/20220112_YOLOv3_03.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../yolov3/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../yolov3/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../yolov3/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/.idea/.gitignore" beforeDir="false" />
@@ -87,13 +79,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Rnn" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\liewei\liewei\test_yolo_anchor" />
-    </key>
   </component>
   <component name="RunManager" selected="Python.test01">
     <configuration name="kmeans" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -139,8 +126,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.kmeans" />
       <item itemvalue="Python.test01" />
+      <item itemvalue="Python.kmeans" />
     </list>
     <recent_temporary>
       <list>
@@ -162,16 +149,5 @@
       <updated>1578921443170</updated>
     </task>
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>

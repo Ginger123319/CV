@@ -33,7 +33,6 @@ h = 60
 
 font = ImageFont.truetype("arial.ttf", 40)
 for i in range(1):
-
     image = Image.new("RGB", (w, h), (255, 255, 255))
     draw = ImageDraw.Draw(image)
 
@@ -50,6 +49,7 @@ for i in range(1):
     # 模糊:
     image = image.filter(ImageFilter.BLUR)
     # image.show()
+
     if not os.path.exists("../../source/code"):
         os.makedirs("../../source/code")
     image_path = r"../../source/code"
