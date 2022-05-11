@@ -16,7 +16,7 @@ class Rnn(nn.Module):
         for i in range(x.shape[1]):
             hx, cx = self._rnn_cell(x[:, i], (hx, cx))
             outputs.append(hx)
-        return torch.stack(outputs).permute(1, 0, 2)
+        return torch.stack(outputs, dim=1)
 
 
 if __name__ == '__main__':

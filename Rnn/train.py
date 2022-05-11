@@ -4,10 +4,12 @@ import shutil
 import torch
 from torch.nn import MSELoss
 import cfg
-from net import Net
+# from net import Net
+from net4 import Net
+# from net2 import Net
 from dataset import CodeData
 from torch.utils.data import DataLoader
-from torch.optim import Adam, SGD
+from torch.optim import Adam
 from torch.utils.tensorboard import SummaryWriter
 
 
@@ -29,7 +31,7 @@ class Trainer:
         self._opt = Adam(self._net.parameters())
 
         self._train_loader = DataLoader(CodeData(cfg.train_dir), batch_size=cfg.train_batch_size, shuffle=True)
-        self._validate_loader = DataLoader(CodeData(cfg.test_dir), batch_size=cfg.validate_batch_size,
+        self._validate_loader = DataLoader(CodeData(cfg.train_dir), batch_size=cfg.validate_batch_size,
                                            shuffle=True)
 
         self._loss_fn = MSELoss()
@@ -43,7 +45,8 @@ class Trainer:
             for _i, (_data, _target) in enumerate(self._train_loader):
                 _data, _target = _data.to(cfg.device), _target.to(cfg.device)
 
-                _y, _ = self._net(_data)
+                _y = self._net(_data)
+                # print(_y)
                 # print(_y.shape)
                 # print(_target.shape)
                 # _y = torch.argmax(_y, dim=-1)
@@ -64,10 +67,12 @@ class Trainer:
             # 开始验证
             self._net.eval()
             _sum_loss, _sum_acc = 0., 0.
+
             for _i, (_data, _target) in enumerate(self._validate_loader):
                 _data, _target = _data.to(cfg.device), _target.to(cfg.device)
 
-                _y, _ = self._net(_data)
+                _y = self._net(_data)
+
                 _loss = self._loss_fn(_y, _target)
                 _sum_loss += _loss.cpu().detach().item()
 
@@ -80,7 +85,7 @@ class Trainer:
             self._log.add_scalar("val_loss", _sum_loss / len(self._validate_loader), _epoch)
             self._log.add_scalar("val_acc", _sum_acc / len(self._validate_loader), _epoch)
             print(_sum_loss / len(self._validate_loader))
-            print( _sum_acc / len(self._validate_loader))
+            print(_sum_acc / len(self._validate_loader))
 
 
 if __name__ == '__main__':
