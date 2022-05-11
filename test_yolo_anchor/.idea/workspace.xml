@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="10beec9b-56d9-44f6-8134-d3786ec80bc5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Rnn/net2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rnn/net3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rnn/param_pt_net2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/10.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/4.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/5.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/6.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/7.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/8.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/9.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/label.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rnn/cfg.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Rnn/cfg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rnn/net.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Rnn/net.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rnn/param_pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rnn/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Rnn/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rnn/test02.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Rnn/test02.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Rnn/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Rnn/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/.idea/20220112_YOLOv3_03.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/.idea/yolov3.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/cfg.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/data/images/1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/data/images/10.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/data/images/2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/data/images/3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/data/images/4.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/data/images/5.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/data/images/6.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/data/images/7.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/data/images/8.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/data/images/9.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/data/label.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/dataset.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/detector.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/images/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/images/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/module.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/person_label.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/test01.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/test02.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/test03.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/test04.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/trainer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/utils.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="1WNXRoH3qZdlamyj2S7eNB52FCk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\liewei\liewei\test_yolo_anchor" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.test01">
+    <configuration name="kmeans" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="test_yolo_anchor" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/kmeans.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test01" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="test_yolo_anchor" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test01.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.kmeans" />
+      <item itemvalue="Python.test01" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.test01" />
+        <item itemvalue="Python.kmeans" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="10beec9b-56d9-44f6-8134-d3786ec80bc5" name="Default Changelist" comment="" />
+      <created>1578921443170</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578921443170</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
