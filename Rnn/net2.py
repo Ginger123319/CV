@@ -56,30 +56,34 @@ class Net(nn.Module):
             # nn.AdaptiveAvgPool2d((1, 1)),
             nn.Sigmoid()
         )
-        self._rnn_net = nn.GRU(64 * 6 * 29, 128, 2, batch_first=True, bidirectional=False)
+        self._rnn_net = nn.GRU(64 * 6, 128, 2, batch_first=True, bidirectional=False)
         self._out_net = nn.Sequential(
-            nn.Linear(128, 10),
-            nn.Softmax(-1)
+            nn.Linear(29 * 128, 40),
+            # nn.Softmax(-1)
         )
 
     def forward(self, x):
         out = self._conv_net(x)
-        out = out.reshape(-1, 64 * 6 * 29)
-        out = out[:, None, :]
+        out = out.reshape(-1, 64 * 6, 29)
+        out = out.permute(0, 2, 1)
+        # out = out[:, None, :]
         # out = out.permute(0, 3, 1, 2)
-        out = out.expand(-1, 4, -1)
+        # out = out.expand(-1, 4, -1)
         # out = out.squeeze()
-        out,_ = self._rnn_net(out, None)
+        out, _ = self._rnn_net(out, None)
+        out = out.reshape(-1, 29 * 128)
         out = self._out_net(out)
+        out = out.reshape(-1, 4, 10)
+        out = nn.Softmax(dim=2)(out)
         return out
 
 
 if __name__ == '__main__':
     test_data = torch.randn(5, 3, 60, 240)
     net = Net()
-    print(net)
+    # print(net)
     # out1, hn1 = net(test_data)
-    out1, _ = net(test_data)
+    out1 = net(test_data)
     print(out1.shape)
     # print(torch.argmax(out1, dim=-1))
     # print(hn1)

@@ -4,7 +4,7 @@ import shutil
 import torch
 from torch.nn import MSELoss
 import cfg
-# from net import Net
+# from net3 import Net
 from net4 import Net
 # from net2 import Net
 from dataset import CodeData
@@ -31,7 +31,7 @@ class Trainer:
         self._opt = Adam(self._net.parameters())
 
         self._train_loader = DataLoader(CodeData(cfg.train_dir), batch_size=cfg.train_batch_size, shuffle=True)
-        self._validate_loader = DataLoader(CodeData(cfg.train_dir), batch_size=cfg.validate_batch_size,
+        self._validate_loader = DataLoader(CodeData(cfg.test_dir), batch_size=cfg.validate_batch_size,
                                            shuffle=True)
 
         self._loss_fn = MSELoss()
