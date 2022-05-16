@@ -37,6 +37,6 @@ if __name__ == '__main__':
     # SNV形状
     text = torch.randn(5, 30, 6)
 
-    transformer = Transformer(3, 60)
+    transformer = Transformer(3, 6)
     y = transformer(text)
     print(y.shape)
