@@ -12,11 +12,11 @@ print('login respond  error_msg:' + lg.error_msg)
 # 详细指标参数，参见“历史行情指标参数”章节；“分钟线”参数与“日线”参数不同。“分钟线”不包含指数。
 # 分钟线指标：date,time,code,open,high,low,close,volume,amount,adjustflag
 # 周月线指标：date,code,open,high,low,close,volume,amount,adjustflag,turn,pctChg
-for head in cfg.code:
-    for i in range(1000):
+for i, head in enumerate(cfg.code):
+    for j in range(3044):
         # 原有字符往右边调整，左边不足的位置补零
-        print(head + str(i).rjust(3, "0"))
-        code = head + str(i).rjust(3, "0")
+        print(head + str(j).rjust(4, "0"))
+        code = head + str(j).rjust(4, "0")
         rs = bs.query_history_k_data_plus(code,
                                           "date,code,open,high,low,close,preclose,volume,amount,adjustflag,turn,"
                                           "tradestatus, "
@@ -36,7 +36,7 @@ for head in cfg.code:
         #### 结果集输出到csv文件 ####
         if len(result):
             # print(1)
-            result.to_csv(r"..\..\source\stock\history_A_stock_k_data.csv", index=False, mode='a')
+            result.to_csv(r"..\..\source\stock\history_{}_{}_stock_k_data.csv".format(i, j), index=False, mode='w')
             # print(result)
 
 #### 登出系统 ####
