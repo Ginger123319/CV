@@ -4,6 +4,7 @@ import torch
 from torch.nn import BCELoss
 import cfg
 from module.stock_net import Net
+# from module.mlp_net import Net
 from stock_dataset import StockData
 from torch.utils.data import DataLoader
 from torch.optim import Adam
@@ -76,7 +77,7 @@ class Trainer:
                 _sum_loss += _loss.cpu().detach().item()
 
                 # 求精度
-                # print((_out > 0.5).float())
+                print(_out)
                 # print(_target)
                 _sum_acc += torch.mean(torch.eq((_out > 0.5).float(), _target).float())
                 _sum_acc = _sum_acc.cpu().detach().item()

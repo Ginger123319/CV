@@ -11,7 +11,9 @@ class Net(nn.Module):
         # 此处也是SNV结构，torch版本过低，无法调整batch_first参数，默认为false
         encoder_layer = nn.TransformerEncoderLayer(d_model=6, nhead=2)
         # 多层transformer网络
-        self._sub_net = nn.TransformerEncoder(encoder_layer, num_layers=6)
+        self._sub_net = nn.TransformerEncoder(encoder_layer, num_layers=1)
+        # self._sub_net = nn.Transformer(d_model=6, nhead=2, num_encoder_layers=1, num_decoder_layers=1,
+        #                                dim_feedforward=512)
 
         self._output_net = nn.Sequential(
             nn.Linear(6, 1),
@@ -30,6 +32,7 @@ class Net(nn.Module):
 if __name__ == '__main__':
     # 此处是SNV结构
     text = torch.randn(5, 30, 6)
+    # tag = torch.randn(1, 30, 6)
     transformer_encoder = Net()
     y = transformer_encoder(text)
 
