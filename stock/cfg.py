@@ -2,7 +2,7 @@ param_path = r"param_pt"
 log_path = r"./log"
 device = "cuda:0"
 
-train_batch_size = 4000
+train_batch_size = 2000
 test_batch_size = 10
 
 data_dir = r"..\..\source\stock\data"
