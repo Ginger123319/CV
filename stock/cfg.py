@@ -2,11 +2,11 @@ param_path = r"param_pt"
 log_path = r"./log"
 device = "cuda:0"
 
-train_batch_size = 2000
+train_batch_size = 256
 test_batch_size = 10
 
 data_dir = r"..\..\source\stock\data"
-train_dir = r"..\..\source\stock\csv"
+train_dir = r"..\..\source\stock\train"
 test_dir = r"..\..\source\stock\test"
 
 

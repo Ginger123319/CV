@@ -21,7 +21,7 @@ for i, head in enumerate(cfg.code):
                                           "date,code,open,high,low,close,preclose,volume,amount,adjustflag,turn,"
                                           "tradestatus, "
                                           "pctChg,isST",
-                                          start_date='2021-5-12', end_date='2022-5-12',
+                                          start_date='2022-3-13', end_date='2022-5-18',
                                           frequency="d", adjustflag="2")
         # print('query_history_k_data_plus respond error_code:' + rs.error_code)
         # print('query_history_k_data_plus respond  error_msg:' + rs.error_msg)
@@ -36,7 +36,7 @@ for i, head in enumerate(cfg.code):
         #### 结果集输出到csv文件 ####
         if len(result):
             # print(1)
-            result.to_csv(r"..\..\source\stock\history_{}_{}_stock_k_data.csv".format(i, j), index=False, mode='w')
+            result.to_csv(r"..\..\source\stock\test\{}.csv".format(code), index=False, mode='w')
             # print(result)
 
 #### 登出系统 ####

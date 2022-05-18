@@ -30,7 +30,7 @@ class Trainer:
 
         self._train_loader = DataLoader(StockData(cfg.data_dir, is_train=True), batch_size=cfg.train_batch_size,
                                         shuffle=True)
-        self._test_loader = DataLoader(StockData(cfg.data_dir, is_train=False), batch_size=cfg.test_batch_size,
+        self._test_loader = DataLoader(StockData(cfg.data_dir, is_train=True), batch_size=cfg.test_batch_size,
                                        shuffle=True)
 
         self._loss_fn = BCELoss()
@@ -77,7 +77,7 @@ class Trainer:
                 _sum_loss += _loss.cpu().detach().item()
 
                 # 求精度
-                print(_out)
+                # print(_out)
                 # print(_target)
                 _sum_acc += torch.mean(torch.eq((_out > 0.5).float(), _target).float())
                 _sum_acc = _sum_acc.cpu().detach().item()
