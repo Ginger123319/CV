@@ -1,7 +1,6 @@
 import os
 import torch
 from sklearn import preprocessing
-
 import cfg
 from torch.utils.data import Dataset
 
@@ -32,7 +31,7 @@ class StockData(Dataset):
         _elem = torch.Tensor(_elem)
         # print(z_score)
         # exit()
-        # # 归一化处理
+        # # 归一化处理,此处需要根据老师的代码进行修改
         # for i in range(len(_elem)):
         #     # 成交量归一化
         #     _elem[i][-2] /= 1e+8
@@ -45,7 +44,7 @@ class StockData(Dataset):
 
 
 if __name__ == '__main__':
-    test_data = StockData(cfg.data_dir)
+    test_data = StockData(cfg.data_dir, is_train=False)
     print(test_data[0][1].shape)
-    print(test_data[50003][1].dtype)
-    print(test_data[50003][0].dtype)
+    print(test_data[300][1].dtype)
+    print(test_data[300][0].dtype)
