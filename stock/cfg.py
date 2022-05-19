@@ -3,7 +3,7 @@ log_path = r"./log"
 device = "cuda:0"
 
 train_batch_size = 256
-test_batch_size = 10
+test_batch_size = 256
 
 data_dir = r"..\..\source\stock\data"
 train_dir = r"..\..\source\stock\train"
