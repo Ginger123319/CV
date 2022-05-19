@@ -42,6 +42,7 @@ class Pool(nn.Module):
     def forward(self, x):
         return self.layer(x)
 
+
 # 网络层
 class Net(nn.Module):
     def __init__(self):

@@ -3,7 +3,7 @@ import shutil
 import torch
 from torch.nn import BCELoss
 import cfg
-from module.stock_net import Net
+from module.stock_net2 import Net
 # from module.mlp_net import Net
 from stock_dataset import StockData
 from torch.utils.data import DataLoader
