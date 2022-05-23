@@ -51,4 +51,4 @@ if __name__ == '__main__':
     for i, (x, y) in enumerate(dataLoader):
         print(i)
         print(x.shape)
-        print(y.shape)
+        print(y)
