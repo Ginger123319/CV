@@ -1,5 +1,5 @@
-param_path = r"param_pt"
-opt_path = r"opt_pt"
+param_path = r"..\..\source\cat_dog\param_pt"
+opt_path = r"..\..\source\cat_dog\opt_pt"
 log_path = r"./log"
 device = "cuda:0"
 
@@ -9,7 +9,6 @@ test_batch_size = 256
 data_dir = r"..\..\source\stock\data"
 train_dir = r"..\..\source\stock\train"
 test_dir = r"..\..\source\stock\test"
-
 
 code = ["sh.60", "sz.30", "sz.00"]
 
