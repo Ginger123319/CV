@@ -22,6 +22,7 @@ class VitNet(nn.Module):
         # 放入cnn网络提取特征
         feature = self._cnn_layer(feature)
         # 放入vit网络进行全局相关性处理，qkv都是自身，自注意力
+
         feature = self._ts_layer(feature)
         # 还原为原来的批次
         _, c, h, w = feature.shape
