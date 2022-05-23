@@ -8,9 +8,13 @@ class CnnNet(nn.Module):
         # 构建卷积神经网络CNN
         self.layer = nn.Sequential(
             # 卷积CIFAR10使用
-            nn.Conv2d(3, 16, 3, 1, padding=1),
-            nn.BatchNorm2d(16),
-            nn.ReLU()
+            nn.Conv2d(3, 64, 3, 1, padding=1, bias=False),
+            nn.MaxPool2d(2),
+            nn.BatchNorm2d(64),
+            nn.ReLU(),
+            nn.Conv2d(64, 64, 3, 1, padding=1, bias=False),
+            nn.BatchNorm2d(64),
+            nn.ReLU(),
         )
 
     # 返回N*10的矩阵

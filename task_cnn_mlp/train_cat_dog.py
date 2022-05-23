@@ -1,11 +1,11 @@
 import shutil
-
 import torch
 import os
 # from net import Net
 from torch.utils.tensorboard import SummaryWriter
+import cfg
 from data_cat_dog import CIFARDataset
-from net_cat_dog import Net
+from net_cat_dog2 import Net
 from torch.utils.data import DataLoader
 from torch import optim
 from torch import nn
@@ -24,15 +24,27 @@ class Train:
         self.train_data = CIFARDataset(root, True)
         # print(self.train_data.data.shape)
         # print(self.train_data.targets.shape)
-        self.train_loader = DataLoader(self.train_data, batch_size=120, shuffle=True)
+        self.train_loader = DataLoader(self.train_data, batch_size=32, shuffle=True)
 
         self.test_data = CIFARDataset(root, False)
-        self.test_loader = DataLoader(self.test_data, batch_size=60, shuffle=True)
+        self.test_loader = DataLoader(self.test_data, batch_size=32, shuffle=True)
 
         # 创建网络对象
         self.net = Net().to(DEVICE)
+        # 加载参数
+        if os.path.exists(cfg.param_path):
+            try:
+                self.net.load_state_dict(torch.load(cfg.param_path))
+                # self.net.load_state_dict(torch.load(cfg.opt_path))
+                print("Loaded!")
+            except RuntimeError:
+                os.remove(cfg.param_path)
+                print("参数异常，重新开始训练")
+        else:
+            print("No Param!")
         # 创建优化器
         self.opt = optim.Adam(self.net.parameters())
+        # self.opt = optim.SGD(self.net.parameters(),lr=0.01)
         # 创建损失函数
         # loss = torch.mean((out - tag_data) ** 2)
         # self.loss_func = nn.MSELoss()  # 均方差损失函数
@@ -71,12 +83,18 @@ class Train:
                 out = self.net.forward(img_data).reshape(-1)
                 # loss = torch.mean((out - tag_data) ** 2)
                 loss = self.loss_func(out, tag_data)
+
                 self.opt.zero_grad()
                 loss.backward()
                 self.opt.step()
-                sum_loss = sum_loss + loss.item()
+
+                # sum_loss += loss.cpu().detach().item()
+                sum_loss += loss.item()
 
             train_avg_loss = sum_loss / len(self.train_loader)
+            # 保存参数
+            torch.save(self.net.state_dict(), cfg.param_path)
+            # torch.save(self.opt.state_dict(), cfg.opt_path)
             print(f"训练轮次：{epoch + 1}==========平均损失：{train_avg_loss}")
 
             test_sum_loss = 0.

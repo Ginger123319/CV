@@ -8,7 +8,7 @@ class VitNet(nn.Module):
     def __init__(self):
         super().__init__()
         self._cnn_layer = CnnNet()
-        self._ts_layer = Net()
+        self._ts_layer = Net(64)
 
     # 返回N*10的矩阵
     def forward(self, x):
@@ -23,13 +23,18 @@ class VitNet(nn.Module):
         feature = self._cnn_layer(feature)
         # 放入vit网络进行全局相关性处理，qkv都是自身，自注意力
         feature = self._ts_layer(feature)
-        # 进行后续的卷积操作 
+        # 还原为原来的批次
+        _, c, h, w = feature.shape
+        feature = feature.reshape(_n, 4, 4, c, h, w)
+        feature = feature.permute(0, 3, 1, 4, 2, 5)
+        feature = feature.reshape(_n, c, 4 * h, 4 * w)
+        # 进行后续的卷积操作
         return feature
 
 
 if __name__ == '__main__':
     net = VitNet()
-    test_data = torch.randn(3, 3, 32, 32)
+    test_data = torch.randn(3, 3, 100, 100)
     out = net.forward(test_data)
     print(out.shape)
     # print(out)

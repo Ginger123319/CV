@@ -1,6 +1,5 @@
 import torch
 from torch import nn
-from VIT import vit_deal
 
 
 # 残差层
@@ -46,7 +45,7 @@ class Net(nn.Module):
         # 构建带有残差层和池化层以及BN的卷积神经网络CNN
         self.layer = nn.Sequential(
             # 卷积CIFAR10使用
-            nn.Conv2d(16, 64, 7, 3, padding=3, bias=False),
+            nn.Conv2d(3, 64, 7, 3, padding=3, bias=False),
             # nn.Conv2d(1, 16, 3, 1),
             # nn.MaxPool2d(2),
             # nn.Dropout(0.2),
@@ -82,7 +81,6 @@ class Net(nn.Module):
 
     # 返回N*10的矩阵
     def forward(self, x):
-        x = vit_deal.original_vit(x)
         inner_out = self.layer(x)
         outer = self.out_layer(inner_out.reshape(inner_out.shape[0], -1))
         # return inner_out
@@ -92,7 +90,7 @@ class Net(nn.Module):
 if __name__ == '__main__':
     net = Net()
     # print(net)
-    test_data = torch.randn(3, 3, 100, 100)
+    test_data = torch.randn(200, 3, 100, 100)
     out = net.forward(test_data)
     print(out.shape)
     # print(out)
