@@ -9,7 +9,7 @@ class Net(nn.Module):
         # 一层transformer网络
         # d_model就是V的长度
         # 此处也是SNV结构，torch版本过低，无法调整batch_first参数，默认为false
-        encoder_layer = nn.TransformerEncoderLayer(d_model=input_dim, nhead=1, dim_feedforward=256, activation="gelu")
+        encoder_layer = nn.TransformerEncoderLayer(d_model=input_dim, nhead=4, dim_feedforward=256)
         # 多层transformer网络
         self._sub_net = nn.TransformerEncoder(encoder_layer, num_layers=1)
 
