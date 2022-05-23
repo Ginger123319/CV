@@ -5,11 +5,11 @@ from torch import nn
 class Net(nn.Module):
 
     def __init__(self, input_dim):
-        super(Net, self).__init__()
+        super().__init__()
         # 一层transformer网络
         # d_model就是V的长度
         # 此处也是SNV结构，torch版本过低，无法调整batch_first参数，默认为false
-        encoder_layer = nn.TransformerEncoderLayer(d_model=input_dim, nhead=1)
+        encoder_layer = nn.TransformerEncoderLayer(d_model=input_dim, nhead=1, dim_feedforward=256, activation="gelu")
         # 多层transformer网络
         self._sub_net = nn.TransformerEncoder(encoder_layer, num_layers=1)
 
@@ -26,9 +26,10 @@ class Net(nn.Module):
 
 if __name__ == '__main__':
     # 此处是SNV结构
-    text = torch.randn(10, 300, 4)
+    # text = torch.randn(10, 300, 4)
+    text = torch.randn(48, 16, 8, 8)
 
-    transformer_encoder = Net(4)
+    transformer_encoder = Net(16)
     y = transformer_encoder(text)
 
     print(y.shape)
