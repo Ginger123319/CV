@@ -62,14 +62,14 @@ class Net(nn.Module):
             ResBlock(256),
             ResBlock(256),
             ResBlock(256),
-            # Pool(256, 512),
-            # ResBlock(512),
-            # ResBlock(512)
+            Pool(256, 512),
+            ResBlock(512),
+            ResBlock(512)
         )
         self.out_layer = nn.Sequential(
             # nn.Linear(256 * 18 * 18, 10),
             # 卷积CIFAR10使用
-            nn.Linear(256 * 6 * 6, 1),
+            nn.Linear(512* 3 * 3, 1),
             nn.Sigmoid()
             # nn.Softmax(dim=1)
         )
