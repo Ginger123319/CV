@@ -111,3 +111,4 @@ if __name__ == '__main__':
     a = torch.randn(3, 3, 100, 100)
     net = VitNet()
     net(a)
+    print("new!")
