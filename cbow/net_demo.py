@@ -24,3 +24,4 @@ class CBow(nn.Module):
 if __name__ == '__main__':
     net = CBow()
     print(net([0, 1, 3, 4]))
+    print("new!")
