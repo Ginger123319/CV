@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7efff1cf-926f-4bd4-8b71-b83d53097a0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/vit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VIT/vit_net.py" beforeDir="false" afterPath="$PROJECT_DIR$/VIT/vit_net.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VIT/vit_transformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/VIT/vit_transformer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/events.out.tfevents.1653292888.DESKTOP-P6O1K2C.10296.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/loss_test_loss/events.out.tfevents.1653292976.DESKTOP-P6O1K2C.10296.2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/loss_train_loss/events.out.tfevents.1653292976.DESKTOP-P6O1K2C.10296.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/net_cat_dog2.py" beforeDir="false" afterPath="$PROJECT_DIR$/net_cat_dog2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/param_pt" beforeDir="false" afterPath="$PROJECT_DIR$/param_cat_pt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vit.py" beforeDir="false" afterPath="$PROJECT_DIR$/vit.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,11 +159,11 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.train_cat_dog" />
       <item itemvalue="Python.net_cat_dog2" />
-      <item itemvalue="Python.vit_transformer" />
-      <item itemvalue="Python.vit_net" />
+      <item itemvalue="Python.train_cat_dog" />
       <item itemvalue="Python.vit" />
+      <item itemvalue="Python.vit_net" />
+      <item itemvalue="Python.vit_transformer" />
     </list>
     <recent_temporary>
       <list>
