@@ -1,7 +1,8 @@
 import torch
 from torch import nn
 # from VIT import vit_deal
-from VIT import vit_net
+# from VIT import vit_net
+from vit import VitNet
 
 
 # 残差层
@@ -45,7 +46,7 @@ class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
         # 构建带有残差层和池化层以及BN的卷积神经网络CNN
-        self.vit_layer = vit_net.VitNet()
+        self.vit_layer = VitNet()
         self.layer = nn.Sequential(
             ResBlock(64),
             ResBlock(64),
@@ -69,7 +70,11 @@ class Net(nn.Module):
         self.out_layer = nn.Sequential(
             # nn.Linear(256 * 18 * 18, 10),
             # 卷积CIFAR10使用
+<<<<<<< HEAD
             nn.Linear(512* 3 * 3, 1),
+=======
+            nn.Linear(512 * 2 * 2, 1),
+>>>>>>> 88f083cfad1253dcd577913ff5a22f6969351530
             nn.Sigmoid()
             # nn.Softmax(dim=1)
         )
