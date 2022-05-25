@@ -1,4 +1,5 @@
 import jieba
+import cfg
 
 
 # 拆词
@@ -10,6 +11,13 @@ def split_word(string):
     # print(ret_set)
     ret_list = list(ret_set)
     # print(len(ret_list))
+    # 将文章的分词表存入到文件中
+    str_write = "\n".join(ret_list)
+    # print(str_write)
+    with open(cfg.word_list_dir, "w", encoding="utf-8") as fi:
+        fi.write(str_write)
+    print("write success!")
+
     return ret_list, len(ret_list)
 
 
