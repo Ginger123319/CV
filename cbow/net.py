@@ -13,13 +13,16 @@ class CBowNet(nn.Module):
             nn.Softmax(dim=-1)
         )
 
+    def get_emb(self):
+        return self._emb
+
     def forward(self, input_index, tag_index):
         # 此处x是词向量的索引
         # 取出来的形状就是SV
         vec = self._emb[input_index]
         tag = self._emb[tag_index]
         # print(vec.shape)
-        # print(tag)
+        # print(tag.shape)
         # 输入全连接之前需要reshape成一个矢量
         vec = vec.reshape(-1, 12)
         vec = self._layer(vec)
@@ -29,4 +32,7 @@ class CBowNet(nn.Module):
 
 if __name__ == '__main__':
     net = CBowNet()
-    print(net([[1, 3, 4, 5],[1, 3, 4, 5]] [2]))
+    inputs = torch.randint(10, (2, 4))
+    tags = torch.randint(10, (2,))
+    print(inputs.shape, tags.shape)
+    print(net(inputs, tags))
