@@ -1,15 +1,12 @@
 import shutil
 import torch
 import os
-from torch.utils.tensorboard import SummaryWriter
 import cfg
-from cbow_dataset import CBowData
 from net import CBowNet
-from torch.utils.data import DataLoader
-from torch import nn, optim
+from torch import optim
 from matplotlib import pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
+
 DEVICE = "cuda"
 
 
@@ -18,15 +15,6 @@ DEVICE = "cuda"
 
 class Test:
     def __init__(self, root):
-        # 数据可视化工具使用
-        self.writer = SummaryWriter("./log")
-
-        self.train_data = CBowData(root)
-        self.train_loader = DataLoader(self.train_data, batch_size=10, shuffle=True)
-
-        # self.test_data = CIFARDataset(root, False)
-        # self.test_loader = DataLoader(self.test_data, batch_size=32, shuffle=True)
-
         # 创建网络对象
         self.net = CBowNet().to(DEVICE)
         # 优化器
@@ -43,31 +31,9 @@ class Test:
                 print("参数异常，重新开始训练")
         else:
             print("No Param!")
-        # 创建损失函数
-        self.loss_func = nn.MSELoss()  # 均方差损失函数
 
     def __call__(self, *args, **kwargs):
-        # 训练
-        sum_loss = 0.
-        for i, (images, tags) in enumerate(self.train_loader):
-            self.net.train()
-            img_data = images.to(DEVICE)
-            tag_data = tags.to(DEVICE)
-
-            out, tag = self.net.forward(img_data, tag_data)
-            loss = self.loss_func(out, tag)
-
-            sum_loss += loss.item()
-
-        train_avg_loss = sum_loss / len(self.train_loader)
-        # 保存参数
-        torch.save(self.net.state_dict(), cfg.param_path)
-        torch.save(self.opt.state_dict(), cfg.opt_path)
-        print(f"训练轮次：{i + 1}==========平均损失：{train_avg_loss}")
-        print()
-        # 使用writer收集标量数据
-        self.writer.add_scalars("loss", {"train_loss": train_avg_loss}, i + 1)
-        return self.net._emb
+        return self.net.get_emb()
 
 
 if __name__ == '__main__':
@@ -78,19 +44,25 @@ if __name__ == '__main__':
 
     train = Test(cfg.train_dir)
     emb = train()
-    print(emb)
-    x1=emb[:,0].cpu().detach().numpy()
-    y1=emb[:,1].cpu().detach().numpy()
-    z1=emb[:,2].cpu().detach().numpy()
-    fig=plt.figure()
-    #fig.figure("3D")
-    ax=plt.gca(projection="3d")
-    num=np.array([i for i in range(40)])
-
-    ax.scatter(x1,y1,z1)
-    for i in range(40):
-
-        ax.text(x1[i],y1[i],z1[i],num[i])
-
+    print(emb.shape)
+    # 词向量画图
+    x1 = emb[:, 0].cpu().detach().numpy()
+    y1 = emb[:, 1].cpu().detach().numpy()
+    z1 = emb[:, 2].cpu().detach().numpy()
+    fig = plt.figure()
+    ax = plt.gca(projection="3d")
+    ax.scatter(x1, y1, z1)
+    # 读取wordlist
+    with open(cfg.word_list_dir, "r", encoding="utf-8") as f:
+        word_list = f.read().split("\n")
+        print(len(word_list))
+    num = np.array(word_list)
+    print(num)
+    for i in range(len(word_list)):
+        ax.text(x1[i], y1[i], z1[i], num[i])
+        print(i)
+    # 设置中文字体
+    plt.rcParams['font.sans-serif'] = 'SimHei'
+    # 设置正常显示符号
+    plt.rcParams['axes.unicode_minus'] = False
     plt.show()
-

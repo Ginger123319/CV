@@ -29,8 +29,8 @@ class CBowData(Dataset):
 if __name__ == '__main__':
     bow = CBowData("word.txt")
     # print(len(bow))
-    # print(bow[0])
-    dataloader = DataLoader(bow, batch_size=5, shuffle=True)
-    for i, (data, tag) in enumerate(dataloader):
+    print(bow[0])
+    loader = DataLoader(bow, batch_size=5, shuffle=True)
+    for i, (data, tag) in enumerate(loader):
         print(data.shape)
         print(tag.shape)
