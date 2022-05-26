@@ -141,100 +141,100 @@ from torch import optim
 （7）重复第二步到第六步，直到产生的损失降到一个理想的大小
 （8）实时画点plt.plot
 """
-# 使用pytorch实现梯度下降法
-# 构造输入数据【每次输入两个x故应该使用两个w作为参数来设计模型】和标签
-train_X = torch.tensor([[1., 1], [1, 0], [0, 1], [0, 0]])
-train_Y = torch.tensor([[0.], [1], [1], [0]])
-# 构建测试集
-test_X = torch.tensor([[2, 1], [0, 0.5], [0.1, 0.1]])
-
-
-# 神经网络类
-class Net(torch.nn.Module):
-
-    def __init__(self):
-        super().__init__()
-        # 此处需要两个参数，所以初始化两个w组成一个矢量
-        self.W = torch.nn.Parameter(torch.randn(2))
-        # 初始化一个偏移量b，也是一个矢量
-        self.b = torch.nn.Parameter(torch.randn(1))
-
-    # 前向计算，代入输入值计算经过模型运算的输出值
-    def forward(self, x):
-        return (x * self.W).sum() + self.b
-
-
-# 训练类
-class Trainer:
-    # 生成一个网络对象以及优化器SGD，lr为步长（学习速度）
-    def __init__(self):
-        self.net = Net()
-        self.opt = optim.SGD(self.net.parameters(), lr=0.01)
-
-    def train(self):
-
-        for _ in range(10000):
-            # 需要将输入值也就是训练集随机输入
-            # i = torch.randint(0, 4, (1,))
-            # 其中参数a是下限，参数b是上限，生成的随机数n: a <= n <= b
-            i = random.randint(0, 3)
-            _x = train_X[i]
-            _y = train_Y[i]
-            # 计算训练后的输出值以及损失
-            y = self.net.forward(_x)
-            loss = (y - _y) ** 2
-
-            # 清除之前保存的梯度值
-            self.opt.zero_grad()
-            # 对损失函数求导，也就是求梯度
-            loss.backward()
-            # 根据梯度来修改w以及b的大小来将损失值减小
-            self.opt.step()
-
-        # 测试训练结果
-        for x in train_X:
-            print(self.net.forward(x))
-
-
-if __name__ == '__main__':
-    trainer = Trainer()
-    trainer.train()
-
-# # 普通实现,前期输入数据处理到0到1之间
-# _x = [i / 100 for i in range(100)]
-# # print(_x)
-# _y = [4 * e + 3 + random.random() for e in _x]
-# # print(type(_y))
-# # plt.plot(_x, _y, ".")
-# # plt.show()
+# # 使用pytorch实现梯度下降法
+# # 构造输入数据【每次输入两个x故应该使用两个w作为参数来设计模型】和标签
+# train_X = torch.tensor([[1., 1], [1, 0], [0, 1], [0, 0]])
+# train_Y = torch.tensor([[0.], [1], [1], [0]])
+# # 构建测试集
+# test_X = torch.tensor([[2, 1], [0, 0.5], [0.1, 0.1]])
 #
-# w = random.random()
-# b = random.random()
-# # 开始画图
-# plt.ion()
-# # 遍历所有的数据对
-# for i in range(30):
-#     for x, y in zip(_x, _y):
-#         z = w * x + b
-#         o = z - y
-#         loss = o ** 2
 #
-#         dw = 2 * o * x
-#         db = 2 * o
+# # 神经网络类
+# class Net(torch.nn.Module):
 #
-#         w = -dw * 0.1 + w
-#         b = -db * 0.1 + b
-#         print(w, b, loss)
-#         # 每次画图之前需要清空画板
-#         plt.cla()
-#         # 画散点
-#         plt.plot(_x, _y, ".")
-#         # 画当前w，b情况下的直线
-#         v = [w * e + b for e in _x]
-#         plt.plot(_x, v)
-#         # 每次画线之后需要暂停一段时间
-#         plt.pause(0.01)
-# # 关闭画图
-# plt.ioff()
-# # 展示循环中最后一次的展示的图像
+#     def __init__(self):
+#         super().__init__()
+#         # 此处需要两个参数，所以初始化两个w组成一个矢量
+#         self.W = torch.nn.Parameter(torch.randn(2))
+#         # 初始化一个偏移量b，也是一个矢量
+#         self.b = torch.nn.Parameter(torch.randn(1))
+#
+#     # 前向计算，代入输入值计算经过模型运算的输出值
+#     def forward(self, x):
+#         return (x * self.W).sum() + self.b
+#
+#
+# # 训练类
+# class Trainer:
+#     # 生成一个网络对象以及优化器SGD，lr为步长（学习速度）
+#     def __init__(self):
+#         self.net = Net()
+#         self.opt = optim.SGD(self.net.parameters(), lr=0.01)
+#
+#     def train(self):
+#
+#         for _ in range(10000):
+#             # 需要将输入值也就是训练集随机输入
+#             # i = torch.randint(0, 4, (1,))
+#             # 其中参数a是下限，参数b是上限，生成的随机数n: a <= n <= b
+#             i = random.randint(0, 3)
+#             _x = train_X[i]
+#             _y = train_Y[i]
+#             # 计算训练后的输出值以及损失
+#             y = self.net.forward(_x)
+#             loss = (y - _y) ** 2
+#
+#             # 清除之前保存的梯度值
+#             self.opt.zero_grad()
+#             # 对损失函数求导，也就是求梯度
+#             loss.backward()
+#             # 根据梯度来修改w以及b的大小来将损失值减小
+#             self.opt.step()
+#
+#         # 测试训练结果
+#         for x in train_X:
+#             print(self.net.forward(x))
+#
+#
+# if __name__ == '__main__':
+#     trainer = Trainer()
+#     trainer.train()
+
+# 普通实现,前期输入数据处理到0到1之间
+_x = [i / 100 for i in range(100)]
+# print(_x)
+_y = [4 * e + 3 + random.random() for e in _x]
+# print(type(_y))
+# plt.plot(_x, _y, ".")
 # plt.show()
+
+w = random.random()
+b = random.random()
+# 开始画图
+plt.ion()
+# 遍历所有的数据对
+for i in range(30):
+    for x, y in zip(_x, _y):
+        z = w * x + b
+        o = z - y
+        loss = o ** 2
+
+        dw = 2 * o * x
+        db = 2 * o
+
+        w = -dw * 0.1 + w
+        b = -db * 0.1 + b
+        print(w, b, loss)
+        # 每次画图之前需要清空画板
+        plt.cla()
+        # 画散点
+        plt.plot(_x, _y, ".")
+        # 画当前w，b情况下的直线
+        v = [w * e + b for e in _x]
+        plt.plot(_x, v)
+        # 每次画线之后需要暂停一段时间
+        plt.pause(0.01)
+# 关闭画图
+plt.ioff()
+# 展示循环中最后一次的展示的图像
+plt.show()
