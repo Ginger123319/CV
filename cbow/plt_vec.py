@@ -17,6 +17,7 @@ class Test:
     def __init__(self, root):
         # 创建网络对象
         self.net = CBowNet().to(DEVICE)
+        self.net.eval()
         # 优化器
         self.opt = optim.Adam(self.net.parameters())
         # 加载参数
@@ -60,7 +61,7 @@ if __name__ == '__main__':
     print(num)
     for i in range(len(word_list)):
         ax.text(x1[i], y1[i], z1[i], num[i])
-        print(i)
+        print(num[i])
     # 设置中文字体
     plt.rcParams['font.sans-serif'] = 'SimHei'
     # 设置正常显示符号
