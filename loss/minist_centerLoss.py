@@ -11,12 +11,14 @@ from CenterLoss import CenterLoss
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # 加载数据集
 # transforms.ToTensor()转Tensor，换轴（HWC->CHW），归一化
-train_data = torchvision.datasets.MNIST(root=r"G:\liewei\source\MNIST_DATA", download=False, train=True,
+train_data = torchvision.datasets.MNIST(root=r"..\..\source\MNIST_DATA", download=False, train=True,
                                         transform=transforms.ToTensor())
 train_loader = DataLoader(dataset=train_data, batch_size=512, shuffle=True)
 
 
 # 特征可视化函数
+
+
 # 此处feature是N，2；tag是N
 def visualize(feature, tag, epoch):
     plt.ion()
@@ -95,7 +97,7 @@ class Net(nn.Module):
     def get_loss_fun(self, outputs, feature, labels):
         ce_loss = self.ce_loss(outputs, labels)
         center_loss = self.center_loss(feature, labels)
-        loss = ce_loss + center_loss
+        loss = ce_loss + 0.7*center_loss
         return loss
 
     def forward(self, x):
