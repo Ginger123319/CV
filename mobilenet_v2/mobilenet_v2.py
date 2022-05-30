@@ -87,4 +87,5 @@ class MobileNetV2(nn.Module):
 if __name__ == '__main__':
     test = torch.randn(1, 3, 224, 224)
     net = MobileNetV2(config)
+    print(net)
     print(net.forward(test).shape)
