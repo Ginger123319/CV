@@ -34,9 +34,12 @@ def visualize(feature, tag, epoch):
     plt.legend(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"], loc="upper right")
     plt.title(epoch)
     plt.savefig("images/epoch=%d.jpg" % epoch)
-    # draw()功能和show类似
-    # plt.draw()
-    plt.show()
+    # draw()功能和show类似,但前者是非阻塞方法，后者是阻塞方法；交互式任务中采用非阻塞方法
+    # 阻塞方法会挂起线程，直到结果返回，展示出来的现象就是一直转圈
+    # 阻塞调用是指调用结果返回之前，当前线程会被挂起。调用线程只有在得到结果之后才会返回。
+    # 非阻塞调用指在不能立刻得到结果之前，该调用不会阻塞当前线程。
+    plt.draw()
+    # plt.show()
     plt.pause(0.01)
 
 
@@ -44,25 +47,36 @@ def visualize(feature, tag, epoch):
 class Net(nn.Module):
     def __init__(self):
         super().__init__()
-        self.loss = CenterLoss(10, 10)
+        self.ce_loss = nn.CrossEntropyLoss()
+        self.center_loss = CenterLoss(10, 2)
         self.cnn_layer = nn.Sequential(
-            nn.Conv2d(1, 16, 3, 1, padding=1),
+            nn.Conv2d(1, 16, 3, 2, padding=1),
             # nn.Conv2d(1, 16, 3, 1),
-            nn.MaxPool2d(2),
+            # nn.MaxPool2d(2),
             nn.BatchNorm2d(16),
-            nn.ReLU(),
-            nn.Conv2d(16, 32, 3, 1, padding=1),
-            nn.MaxPool2d(2),
+            nn.Hardswish(),
+            nn.Conv2d(16, 32, 3, 2, padding=1),
+            # nn.MaxPool2d(2),
             nn.BatchNorm2d(32),
-            nn.ReLU(),
-            nn.Conv2d(32, 64, 3, 1, padding=1),
-            nn.MaxPool2d(2),
+            nn.Hardswish(),
+            nn.Conv2d(32, 64, 3, 2, padding=1),
+            # nn.MaxPool2d(2),
             nn.BatchNorm2d(64),
-            nn.ReLU(),
-            nn.Conv2d(64, 128, 3, 1, padding=1),
+            nn.Hardswish(),
+            nn.Conv2d(64, 32, 1, 1),
+            nn.Conv2d(32, 32, 3, 1, 1),
+            nn.BatchNorm2d(32),
+            nn.Hardswish(),
+            nn.Conv2d(32, 64, 1, 1),
+            nn.Conv2d(64, 128, 3, 2, padding=1),
             nn.BatchNorm2d(128),
-            nn.ReLU(),
-            nn.Conv2d(128, 256, 3, 1),
+            nn.Hardswish(),
+            nn.Conv2d(128, 64, 1, 1),
+            nn.Conv2d(64, 64, 3, 1, 1),
+            nn.BatchNorm2d(64),
+            nn.Hardswish(),
+            nn.Conv2d(64, 128, 1, 1),
+            nn.Conv2d(128, 256, 3, 1, 1),
             nn.BatchNorm2d(256),
             nn.ReLU()
 
@@ -70,19 +84,22 @@ class Net(nn.Module):
         self.fc1 = nn.Sequential(
             # 特征输出，形状为N，2
             # 便于画在二维平面上
-            nn.Linear(256 * 1 * 1, 2)
+            nn.Linear(256 * 2 * 2, 2)
         )
         self.fc2 = nn.Sequential(
             # 十分类输出
             nn.Linear(2, 10),
-            nn.Softmax(dim=-1)
+            # nn.Softmax(dim=-1)
         )
 
-    def get_loss_fun(self):
-        return self.loss
+    def get_loss_fun(self, outputs, feature, labels):
+        ce_loss = self.ce_loss(outputs, labels)
+        center_loss = self.center_loss(feature, labels)
+        loss = ce_loss + center_loss
+        return loss
 
     def forward(self, x):
-        cnn_out = self.cnn_layer(x).reshape(-1, 256 * 1 * 1)
+        cnn_out = self.cnn_layer(x).reshape(-1, 256 * 2 * 2)
         # print(cnn_out.shape)
         out1 = self.fc1(cnn_out)
         out2 = self.fc2(out1)
@@ -92,7 +109,7 @@ class Net(nn.Module):
 if __name__ == '__main__':
     net = Net().to(device)
     # loss_func = net.get_loss_fun()
-    loss_func = FocalCE(1, 2)
+    # loss_func = FocalCE(1, 2)
     # loss_func = nn.MSELoss()
     # loss_func = nn.CrossEntropyLoss()
     # 增大步长lr
@@ -109,8 +126,8 @@ if __name__ == '__main__':
             y = y.to(device)
             target = one_hot(y, 10).float().to(device)
             feature, out = net(x)
-            loss = loss_func(out, target)
-            # loss = loss_func(out, y)
+            # loss = loss_func(out, target)
+            loss = net.get_loss_fun(out, feature, y)
 
             opt.zero_grad()
             loss.backward()
