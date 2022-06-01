@@ -7,6 +7,7 @@ from torch.utils.data import DataLoader
 import matplotlib.pyplot as plt
 from FocalLoss import FocalCE
 from CenterLoss import CenterLoss
+from Arc_softmax import ArcSoftmax
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # 加载数据集
@@ -49,8 +50,10 @@ def visualize(feature, tag, epoch):
 class Net(nn.Module):
     def __init__(self):
         super().__init__()
-        self.ce_loss = nn.CrossEntropyLoss()
-        self.center_loss = CenterLoss(10, 2)
+        # self.ce_loss = nn.CrossEntropyLoss()
+        # self.center_loss = CenterLoss(10, 2)
+        self.ce_loss = nn.NLLLoss()
+        self.arc_loss = ArcSoftmax(2, 10)
         self.cnn_layer = nn.Sequential(
             nn.Conv2d(1, 16, 3, 2, padding=1),
             # nn.Conv2d(1, 16, 3, 1),
@@ -88,24 +91,24 @@ class Net(nn.Module):
             # 便于画在二维平面上
             nn.Linear(256 * 2 * 2, 2)
         )
-        self.fc2 = nn.Sequential(
-            # 十分类输出
-            nn.Linear(2, 10),
-            # nn.Softmax(dim=-1)
-        )
+        # self.fc2 = nn.Sequential(
+        #     # 十分类输出
+        #     nn.Linear(2, 10),
+        #     # nn.Softmax(dim=-1)
+        # )
 
-    def get_loss_fun(self, outputs, feature, labels):
+    def get_loss_fun(self, feature, labels):
+        outputs = self.arc_loss(feature)
         ce_loss = self.ce_loss(outputs, labels)
-        center_loss = self.center_loss(feature, labels)
-        loss = ce_loss + 0.7*center_loss
-        return loss
+        return ce_loss, outputs
 
     def forward(self, x):
         cnn_out = self.cnn_layer(x).reshape(-1, 256 * 2 * 2)
         # print(cnn_out.shape)
         out1 = self.fc1(cnn_out)
-        out2 = self.fc2(out1)
-        return out1, out2
+        # out2 = self.fc2(out1)
+        # return out1, out2
+        return out1
 
 
 if __name__ == '__main__':
@@ -123,13 +126,14 @@ if __name__ == '__main__':
         feat_list = []
         tag_list = []
         train_acc_sum = 0.
+        train_loss_sum = 0.
         for i, (x, y) in enumerate(train_loader):
             x = x.to(device)
             y = y.to(device)
             target = one_hot(y, 10).float().to(device)
-            feature, out = net(x)
+            feature = net(x)
             # loss = loss_func(out, target)
-            loss = net.get_loss_fun(out, feature, y)
+            loss, out = net.get_loss_fun(feature, y)
 
             opt.zero_grad()
             loss.backward()
@@ -137,8 +141,8 @@ if __name__ == '__main__':
 
             feat_list.append(feature)
             tag_list.append(y)
-            if i % 10 == 0:
-                print(loss.item())
+            # if i % 10 == 0:
+            #     print(loss.item())
             # 计算精度
             out = torch.argmax(out, dim=-1)
             # print(out.shape)
@@ -146,8 +150,10 @@ if __name__ == '__main__':
             # print(torch.mean((out == y).float()))
             train_acc = torch.mean((out == y).float())
             train_acc_sum += train_acc.item()
-        print("开始画图{}".format(epoch))
-        print("{}epoch acc:{}".format(epoch, train_acc_sum / len(train_loader)))
+            train_loss_sum += loss.item()
+        print("开始画图--{}".format(epoch))
+        print("epoch--{} acc:{}".format(epoch, train_acc_sum / len(train_loader)))
+        print("epoch--{} loss:{}".format(epoch, train_loss_sum / len(train_loader)))
         # print(feat_list[0].shape)
         # print(tag_list[0].shape)
         # 因为有很多个批次512，所以需要进行cat操作
