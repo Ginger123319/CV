@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a06c10d8-5da5-47a0-86b3-b7573c250b9b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../mtcnn/detect.py" beforeDir="false" afterPath="$PROJECT_DIR$/../mtcnn/detect.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mtcnn/test02.py" beforeDir="false" afterPath="$PROJECT_DIR$/../mtcnn/test02.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mtcnn/test04.py" beforeDir="false" afterPath="$PROJECT_DIR$/../mtcnn/test04.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../drug_name_normalization/data_pre.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../loss/Arc_softmax.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../loss/minist_centerLoss.py" beforeDir="false" afterPath="$PROJECT_DIR$/../loss/minist_centerLoss.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +13,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="27x3BXdKbrAYlP4QqANcaQxQNmM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
