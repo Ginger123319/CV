@@ -24,4 +24,4 @@ class ArcSoftmax(nn.Module):
 if __name__ == '__main__':
     arc = ArcSoftmax()
     feature = torch.randn(3, 2)
-    print(arc(feature))
+    print(arc(feature).shape)
