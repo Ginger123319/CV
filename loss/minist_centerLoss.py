@@ -123,6 +123,7 @@ if __name__ == '__main__':
     opt = torch.optim.Adam(net.parameters())
     epoch = 0
     while True:
+        net.train()
         feat_list = []
         tag_list = []
         train_acc_sum = 0.
