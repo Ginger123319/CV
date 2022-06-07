@@ -17,7 +17,7 @@ class DrugData(Dataset):
             for line in f.readlines():
                 line = line.split()
                 tag = self.utils.get_name_list().index(line[1])
-                self.dataset.append((line[0], tag))
+                self.dataset.append([line[0], tag])
 
     def __len__(self):
         return len(self.dataset)
@@ -32,11 +32,22 @@ class DrugData(Dataset):
             try:
                 vec = self.new_dict[s]
             except:
-                vec = torch.zeros(300, )
+                continue
             word_vec[i] = torch.Tensor(vec)
         elem = word_vec
         tag = self.dataset[index][1]
         return elem, tag
+
+
+class TestData(Dataset):
+    def __init__(self):
+        pass
+
+    def __len__(self):
+        pass
+
+    def __getitem__(self, index):
+        pass
 
 
 if __name__ == '__main__':
