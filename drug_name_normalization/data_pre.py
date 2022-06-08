@@ -1,4 +1,3 @@
-import torchtext
 import openpyxl
 import cfg
 
