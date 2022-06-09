@@ -1,30 +1,33 @@
 import os
 import shutil
 import torch
+from tqdm import tqdm
 import cfg
 from drug_net import Net
 from dataset import DrugData
 from torch.utils.data import DataLoader
 from torch.optim import Adam
 from torch.utils.tensorboard import SummaryWriter
+from tester import Tester
 
 
 class Trainer:
     def __init__(self):
         self._net = Net().to(cfg.device)
+        self._opt = Adam(self._net.parameters())
         # 加载参数
-        if os.path.exists(cfg.param_path):
+        if os.path.exists(cfg.param_path) and os.path.exists(cfg.opt_path):
             try:
                 self._net.load_state_dict(torch.load(cfg.param_path))
+                self._opt.load_state_dict(torch.load(cfg.opt_path))
                 print("Loaded!")
             except RuntimeError:
                 os.remove(cfg.param_path)
+                os.remove(cfg.opt_path)
                 print("参数异常，重新开始训练")
         else:
             print("No Param!")
-
         # self._opt = SGD(self._net.parameters(), lr=5e-4)
-        self._opt = Adam(self._net.parameters())
 
         self._train_loader = DataLoader(DrugData(cfg.save_path), batch_size=cfg.train_batch_size,
                                         shuffle=True)
@@ -33,13 +36,13 @@ class Trainer:
 
         self._log = SummaryWriter("./log")
 
-    def __call__(self, *args, **kwargs):
+    def __call__(self):
         for _epoch in range(1000):
 
             self._net.train()
             _sum_loss = 0.
             _train_acc_sum = 0.
-            for _i, (_data, _target) in enumerate(self._train_loader):
+            for _i, (_data, _target) in enumerate(tqdm(self._train_loader)):
                 _data = _data.to(cfg.device)
                 _target = _target.to(cfg.device)
 
@@ -68,9 +71,13 @@ class Trainer:
 
             torch.save(self._net.state_dict(), cfg.param_path)
             torch.save(self._opt.state_dict(), cfg.opt_path)
+            print("save success!")
             # torch.save(self._opt.state_dict(), "o.pt")
             print("epoch--{} acc:{}".format(_epoch, _train_acc_sum / len(self._train_loader)))
             print("epoch--{} loss:{}".format(_epoch, _sum_loss / len(self._train_loader)))
+
+            tester01 = Tester(self._net)
+            tester01()
 
 
 if __name__ == '__main__':

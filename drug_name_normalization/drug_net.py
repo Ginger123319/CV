@@ -9,28 +9,28 @@ class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
         self.ce_loss = nn.NLLLoss()
-        self.arc_loss = ArcSoftmax(2048, 3864)
+        self.arc_loss = ArcSoftmax(128, 3864)
         # 一层transformer网络
         # d_model就是V的长度
         # 此处也是SNV结构，torch版本过低，无法调整batch_first参数，默认为false
         self._map_layer = nn.Sequential(
-            nn.Conv1d(300, 384, 3, 2, 1),
+            nn.Conv1d(300, 384, 3, 2, 1, bias=False),
             nn.BatchNorm1d(384),
-            nn.ReLU(),
-            nn.Conv1d(384, 512, 3, 2, 1),
+            nn.Hardswish(),
+            nn.Conv1d(384, 512, 3, 2, 1, bias=False),
             nn.BatchNorm1d(512),
-            nn.ReLU()
+            nn.Hardswish()
         )
-        encoder_layer = nn.TransformerEncoderLayer(d_model=512, nhead=64, dim_feedforward=512, activation="gelu")
+        encoder_layer = nn.TransformerEncoderLayer(d_model=512, nhead=8, dim_feedforward=128, activation="gelu")
         # 多层transformer网络
         self._sub_net = nn.TransformerEncoder(encoder_layer, num_layers=2)
         # self._sub_net = nn.Transformer(d_model=6, nhead=2, num_encoder_layers=1, num_decoder_layers=1,
         #                                dim_feedforward=512)
 
         self._output_net = nn.Sequential(
-            nn.Linear(15 * 512, 7 * 512),
-            nn.ReLU(),
-            nn.Linear(7 * 512, 4 * 512)
+            nn.Linear(512, 256),
+            nn.Hardswish(),
+            nn.Linear(256, 128)
         )
 
     def get_loss_fun(self, feature, labels):
@@ -45,8 +45,8 @@ class Net(nn.Module):
         out = self._sub_net(out)
         # print(out.shape)
         out = out.permute(1, 0, 2)
-        out = out.reshape(-1, 15 * 512)
-        # out = out[-1, :]
+        # out = out.reshape(-1, 8 * 512)
+        out = out[:, -1]
         # print(out.shape)
         out = self._output_net(out)
         return out

@@ -11,31 +11,15 @@ from feature_comparison import comparison
 from feature_library_generation import FeatureTrainer
 
 
-class Trainer:
-    def __init__(self):
-        self._net = Net().to(cfg.device)
-        self._featureTrainer = FeatureTrainer()
-        # 加载参数
-        if os.path.exists(cfg.param_path):
-            try:
-                self._net.load_state_dict(torch.load(cfg.param_path))
-                print("Loaded!")
-            except RuntimeError:
-                os.remove(cfg.param_path)
-                print("参数异常，重新开始训练")
-        else:
-            print("No Param!")
-
-        # self._opt = SGD(self._net.parameters(), lr=5e-4)
-        # self._opt = Adam(self._net.parameters())
-
-        # self._train_loader = DataLoader(DrugData(cfg.save_path), batch_size=cfg.train_batch_size,
-        # shuffle = True)
+class Tester:
+    def __init__(self, net):
+        self._net = net.to(cfg.device)
+        self._featureTrainer = FeatureTrainer(self._net)
         self._test_loader = DataLoader(DrugData(cfg.test_path), batch_size=cfg.train_batch_size, shuffle=True)
 
         self._log = SummaryWriter("./log")
 
-    def __call__(self, *args, **kwargs):
+    def __call__(self):
         feature_lib = self._featureTrainer()
         for _epoch in range(1):
 
@@ -55,14 +39,14 @@ class Trainer:
             feature_test = feature_test.detach().cpu()
             feature_lib = feature_lib.detach().cpu()
             _out = comparison(feature_test, feature_lib)
-            print(_out)
+            # print(_out)
             # print(feature.shape)
             #     _loss, _out = self._net.get_loss_fun(feature, _target)
             # 计算精度
             _out = torch.argmax(_out, dim=-1)
-            print(_out)
+            # print(_out)
             _y = _target
-            print(_y)
+            # print(_y)
             # print(torch.mean((out == y).float()))
             _train_acc = torch.mean((_out == _y).float())
             #
@@ -80,5 +64,5 @@ class Trainer:
 if __name__ == '__main__':
     if os.path.exists(cfg.log_path):
         shutil.rmtree(cfg.log_path)
-    train = Trainer()
+    train = Tester()
     train()
