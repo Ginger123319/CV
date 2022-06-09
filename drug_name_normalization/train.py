@@ -37,6 +37,7 @@ class Trainer:
         self._log = SummaryWriter("./log")
 
     def __call__(self):
+        test_acc = 0.
         for _epoch in range(1000):
 
             self._net.train()
@@ -54,6 +55,7 @@ class Trainer:
 
                 self._opt.zero_grad()
                 _loss.backward()
+
                 self._opt.step()
 
                 # 计算精度
@@ -69,15 +71,17 @@ class Trainer:
             self._log.add_scalar("train_loss", _sum_loss / len(self._train_loader), _epoch)
             self._log.add_scalar("train_acc", _train_acc_sum / len(self._train_loader), _epoch)
 
-            torch.save(self._net.state_dict(), cfg.param_path)
-            torch.save(self._opt.state_dict(), cfg.opt_path)
-            print("save success!")
             # torch.save(self._opt.state_dict(), "o.pt")
             print("epoch--{} acc:{}".format(_epoch, _train_acc_sum / len(self._train_loader)))
             print("epoch--{} loss:{}".format(_epoch, _sum_loss / len(self._train_loader)))
 
             tester01 = Tester(self._net)
-            tester01()
+            _test_acc = tester01()
+            if _test_acc >= test_acc:
+                test_acc = _test_acc
+                torch.save(self._net.state_dict(), cfg.param_path)
+                torch.save(self._opt.state_dict(), cfg.opt_path)
+                print("save success!")
 
 
 if __name__ == '__main__':
