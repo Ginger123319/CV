@@ -11,7 +11,7 @@ class DrugData(Dataset):
         self.dataset = []
         self.utils = Utils()
         # print(word_vec.shape)
-        self.new_dict = np.load(cfg.word2vec_path, allow_pickle=True).item()
+        self.new_dict = np.load(cfg.small_word2vec_path, allow_pickle=True).item()
         with open(root, encoding="utf-8") as f:
             f.readline()
             for line in f.readlines():
@@ -45,7 +45,7 @@ class DrugTagData(Dataset):
         self.utils = Utils()
         self.dataset = self.utils.get_name_list()
         # print(word_vec.shape)
-        self.new_dict = np.load(cfg.word2vec_path, allow_pickle=True).item()
+        self.new_dict = np.load(cfg.small_word2vec_path, allow_pickle=True).item()
 
     def __len__(self):
         return len(self.dataset)
@@ -67,17 +67,16 @@ class DrugTagData(Dataset):
 
 
 if __name__ == '__main__':
-    drug_data = DrugData(cfg.test_path)
-    # print(drug_data.__len__())
-    loader = DataLoader(drug_data, batch_size=100, shuffle=True)
-    for i, (inputs, label) in enumerate(loader):
-        print(i)
-        print(inputs.shape)
-        print(label)
-    # drug_tag_data = DrugTagData()
+    # drug_data = DrugData(cfg.save_path)
     # # print(drug_data.__len__())
-    # loader = DataLoader(drug_tag_data, batch_size=100, shuffle=True)
-    # for i, inputs in enumerate(loader):
+    # loader = DataLoader(drug_data, batch_size=100, shuffle=True)
+    # for i, (inputs, label) in enumerate(loader):
     #     print(i)
     #     print(inputs.shape)
-
+    #     print(label)
+    drug_tag_data = DrugTagData()
+    # print(drug_data.__len__())
+    loader = DataLoader(drug_tag_data, batch_size=100, shuffle=True)
+    for i, inputs in enumerate(loader):
+        print(i)
+        print(inputs.shape)

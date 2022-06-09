@@ -10,31 +10,15 @@ from torch.utils.tensorboard import SummaryWriter
 
 
 class FeatureTrainer:
-    def __init__(self):
-
-        self._net = Net().to(cfg.device)
-        self._opt = Adam(self._net.parameters())
-        self._net.eval()
-        # 加载参数
-        if os.path.exists(cfg.param_path) and os.path.exists(cfg.test_path):
-            try:
-                self._net.load_state_dict(torch.load(cfg.param_path))
-                self._opt.load_state_dict(torch.load(cfg.opt_path))
-                print("Loaded!")
-            except RuntimeError:
-                os.remove(cfg.param_path)
-                os.remove(cfg.opt_path)
-                print("参数异常，重新开始训练")
-        else:
-            print("No Param!")
-
-        # self._opt = SGD(self._net.parameters(), lr=5e-4)
+    def __init__(self, net):
+        self._net = net.to(cfg.device)
 
         self._train_loader = DataLoader(DrugTagData(), batch_size=cfg.train_batch_size,
                                         shuffle=False)
         self._log = SummaryWriter("./log")
 
-    def __call__(self, *args, **kwargs):
+    def __call__(self):
+        self._net.eval()
         feature_li = []
         # 解决cuda内存溢出问题，禁用反向传播的求导计算
         with torch.no_grad():
