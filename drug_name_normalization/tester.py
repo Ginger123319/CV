@@ -59,6 +59,7 @@ class Tester:
             # # torch.save(self._opt.state_dict(), "o.pt")
             print("epoch--{} acc:{}".format(_epoch, _train_acc))
             # print("epoch--{} loss:{}".format(_epoch, _sum_loss / len(self._train_loader)))
+            return _train_acc
 
 
 if __name__ == '__main__':

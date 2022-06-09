@@ -16,12 +16,12 @@ class Net(nn.Module):
         self._map_layer = nn.Sequential(
             nn.Conv1d(300, 384, 3, 2, 1, bias=False),
             nn.BatchNorm1d(384),
-            nn.Hardswish(),
+            nn.Mish(),
             nn.Conv1d(384, 512, 3, 2, 1, bias=False),
             nn.BatchNorm1d(512),
-            nn.Hardswish()
+            nn.Mish()
         )
-        encoder_layer = nn.TransformerEncoderLayer(d_model=512, nhead=8, dim_feedforward=128, activation="gelu")
+        encoder_layer = nn.TransformerEncoderLayer(d_model=512, nhead=8, dim_feedforward=64, activation="gelu")
         # 多层transformer网络
         self._sub_net = nn.TransformerEncoder(encoder_layer, num_layers=2)
         # self._sub_net = nn.Transformer(d_model=6, nhead=2, num_encoder_layers=1, num_decoder_layers=1,
@@ -29,7 +29,7 @@ class Net(nn.Module):
 
         self._output_net = nn.Sequential(
             nn.Linear(512, 256),
-            nn.Hardswish(),
+            nn.Mish(),
             nn.Linear(256, 128)
         )
 
