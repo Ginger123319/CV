@@ -8,7 +8,7 @@ class ArcSoftmax(nn.Module):
         super().__init__()
         self.w = nn.Parameter(torch.randn(feature_dim, cls_num))
 
-    def forward(self, x, s=10, m=0.01):
+    def forward(self, x, s=10, m=0.005):
         # 在V的维度进行标准化
         x_norm = F.normalize(x, dim=1)
         w_norm = F.normalize(self.w, dim=0)
