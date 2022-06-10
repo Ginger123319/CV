@@ -18,7 +18,7 @@ class ConvolutionalLayer(torch.nn.Module):
         self.sub_module = torch.nn.Sequential(
             torch.nn.Conv2d(in_channels, out_channels, kernel_size, stride, padding, bias=bias),
             torch.nn.BatchNorm2d(out_channels),
-            torch.nn.LeakyReLU()
+            torch.nn.Hardswish()
         )
 
     def forward(self, x):
@@ -174,7 +174,7 @@ class Darknet53(torch.nn.Module):
 
 if __name__ == '__main__':
     yolo = Darknet53()
-    x = torch.randn(1,3,416,416)
+    x = torch.randn(2,3,416,416)
     y = yolo(x)
     print(y[0].shape)
     print(y[1].shape)
