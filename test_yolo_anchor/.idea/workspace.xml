@@ -2,55 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10beec9b-56d9-44f6-8134-d3786ec80bc5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Rnn/cfg.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Rnn/cfg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Rnn/gen_number.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Rnn/gen_number.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Rnn/net.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Rnn/net.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Rnn/param_pt" beforeDir="false" afterPath="$PROJECT_DIR$/../Rnn/param_pt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Rnn/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Rnn/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Rnn/test02.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Rnn/test02.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Rnn/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Rnn/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../clsProject/log/events.out.tfevents.1651852444.Ginger-LAPTOP-L8GFNL9E.24420.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../clsProject/log/loss_avg_loss/events.out.tfevents.1651852445.Ginger-LAPTOP-L8GFNL9E.24420.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../clsProject/log/loss_test_avg_loss/events.out.tfevents.1651852445.Ginger-LAPTOP-L8GFNL9E.24420.2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../clsProject/param_pt" beforeDir="false" afterPath="$PROJECT_DIR$/../clsProject/param_pt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/.idea/20220112_YOLOv3_03.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/.idea/yolov3.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/cfg.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/data/images/1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/data/images/10.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/data/images/2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/data/images/3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/data/images/4.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/data/images/5.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/data/images/6.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/data/images/7.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/data/images/8.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/data/images/9.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/data/label.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/dataset.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/detector.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/images/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/images/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/module.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/person_label.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/test01.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/test02.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/test03.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/test04.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/trainer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/yolov3/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kmeans.py" beforeDir="false" afterPath="$PROJECT_DIR$/kmeans.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test01.py" beforeDir="false" afterPath="$PROJECT_DIR$/test01.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/.idea/yolov3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3/.idea/yolov3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/cfg.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3/cfg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/module.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3/module.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +36,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Rnn" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.test01">
