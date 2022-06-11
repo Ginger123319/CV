@@ -15,12 +15,13 @@ class Train:
     def __init__(self):
         # CIFAR10数据集
         self.train_data = datasets.CIFAR10(root=r"..\..\source\CIFAR10_DATA", train=True, download=True,
-                                           transform=transforms.ToTensor())
-        self.train_loader = DataLoader(self.train_data, batch_size=500, shuffle=True)
+                                           transform=transforms.Compose(
+                                               [transforms.Resize((224, 224)), transforms.ToTensor()]))
+        self.train_loader = DataLoader(self.train_data, batch_size=16, shuffle=True)
 
         self.test_data = datasets.CIFAR10(root=r"..\..\source\CIFAR10_DATA", train=False, download=False,
                                           transform=transforms.ToTensor())
-        self.test_loader = DataLoader(self.test_data, batch_size=100, shuffle=True)
+        self.test_loader = DataLoader(self.test_data, batch_size=32, shuffle=True)
         # print(self.test_data.data.shape)
         # print(len(self.test_data.targets))
 
@@ -41,6 +42,8 @@ class Train:
                 self.net.train()
                 img_data = images.to(DEVICE)
                 tag_data = tags.to(DEVICE)
+                print(img_data.shape)
+                print(tag_data.shape)
 
                 out = self.net.forward(img_data)
                 loss = self.loss_func(out, tag_data)

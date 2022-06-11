@@ -93,56 +93,11 @@ class MyDataset(Dataset):
                     # np.log(p_w)，因为宽高的偏移量只能是正数，取对数后，标签就可能有正有负
                     labels[feature_size][int(cy_index), int(cx_index), i] = np.array(
                         [iou, cx_offset, cy_offset, np.log(p_w), np.log(p_h), int(cls)])
-                    # labels[feature_size][int(cy_index), int(cx_index), i] = np.array(
-                    #     [iou, cx_offset, cy_offset, np.log(p_w), np.log(p_h), *one_hot(cfg.CLASS_NUM, int(cls))])
-
-                    # print(labels[feature_size][int(cy_index), int(cx_index), i])
-                    # print(cy_index,cx_index)
-
-            #         for j in labels.values():
-            #             print("fiou====>", j[..., 0][int(cy_index), int(cx_index), i])
-            #             print("liou====>",iou)
-            #             # print(j.shape)
-            #             # print(j[...,0][0,0,i])
-            #
-            #             if iou>j[...,0][int(cy_index),int(cx_index),i]:
-            #                 print("cls=====>",cls)
-            #
-            #                 labels[feature_size][int(cy_index), int(cx_index), i] = np.array(
-            #                     [iou, cx_offset, cy_offset, np.log(p_w), np.log(p_h), *one_hot(cfg.CLASS_NUM, int(cls))])
-            #         # print(feature_size,cx_index,cy_index,i)
-            # print(labels.keys())
-            # for i in labels.values():
-            #     print(i.shape)
-            #     print(i[...,0].shape)
-            #     print(i[...,0])
-            #     print("====x====")
-            #     print(i[...,1])
-            #     print("====y====")
-            #     print(i[...,2])
-            #     print("====w====")
-            #     print(i[..., 3])
-            #     print("====h====")
-            #     print(i[..., 4])
-            #     print("====cls====")
-            #     print(i[...,5:][6,6])
-            #
-            # exit()
-        # print(index)
-
         return labels[13], labels[26], labels[52], img_data
 
 
 if __name__ == '__main__':
     data = MyDataset()
-    # img
-    # print(data[0][3].shape)
-    # print(data[0][0].shape)
-    # print(data[0][0][...,0])
-    # print("============")
-    # print(data[0][0][...,1:5].shape)
-    # print("============")
-    # print(data[0][0][...,5:])
     print(type(data[0][0]))
     print(data[0][1].shape)
     print(data[0][2].shape)
