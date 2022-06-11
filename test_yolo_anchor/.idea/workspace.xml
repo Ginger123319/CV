@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="10beec9b-56d9-44f6-8134-d3786ec80bc5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kmeans.py" beforeDir="false" afterPath="$PROJECT_DIR$/kmeans.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test01.py" beforeDir="false" afterPath="$PROJECT_DIR$/test01.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/.idea/yolov3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3/.idea/yolov3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/cfg.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3/cfg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/module.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3/module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3/dataset.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

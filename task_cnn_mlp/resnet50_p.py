@@ -63,6 +63,7 @@ class Resnet50(nn.Module):
         # 全卷积结构
         self.output_layer = nn.Sequential(
             nn.Conv2d(2048, 10, 1, 1),
+            nn.AdaptiveAvgPool2d((1, 1))
             # nn.Softmax(dim=1)
         )
 
@@ -80,7 +81,7 @@ class Resnet50(nn.Module):
 if __name__ == '__main__':
     # ValueError: Expected more than 1 value per channel when training, got input size torch.Size([1, 512, 1, 1])
     # data = torch.randn(1, 3, 32, 32)
-    data = torch.randn(2, 3, 32, 32)
+    data = torch.randn(2, 3, 56, 56)
     net = BasicBlock(256, 128, 512, 1, 1)
     net = Resnet50()
     # print(net)

@@ -39,6 +39,6 @@ if __name__ == '__main__':
     q = torch.randn(8, 3, 5)
     k = torch.randn(8, 7, 5)
     v = torch.randn(8, 7, 4)
-    att = Multi(2, 5, 4)
+    att = MultiAttention(2, 5, 4)
     result = att(q, k, v)
     print(result.shape)
