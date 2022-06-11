@@ -56,7 +56,8 @@ if __name__ == '__main__':
     h_ndarray = np.sort(np.ceil(out[:, 1] * 416)).astype(np.int32)
     # print(w_ndarray.shape)
     ANCHORS_ndarray = np.stack((w_ndarray, h_ndarray), axis=0)
-    print(torch.tensor(ANCHORS_ndarray.T[0:3]), torch.tensor(ANCHORS_ndarray.T[3:6]),
-          torch.tensor(ANCHORS_ndarray.T[6:9]), sep="\n")
+    # print(torch.tensor(ANCHORS_ndarray.T[0:3]), torch.tensor(ANCHORS_ndarray.T[3:6]),
+    #       torch.tensor(ANCHORS_ndarray.T[6:9]), sep="\n")
+    print(np.split(ANCHORS_ndarray.T, len(ANCHORS_ndarray.T) // 3))
     # ratios = np.around(out[:, 0] / out[:, 1], decimals=2).tolist()
     # print("Ratios:\n {}".format(sorted(ratios)))
