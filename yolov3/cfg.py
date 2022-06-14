@@ -1,3 +1,4 @@
+param_path = r"..\..\source\YOLO\param.pt"
 IMG_HEIGHT = 416
 IMG_WIDTH = 416
 

@@ -47,6 +47,7 @@ class MyDataset(Dataset):
 
         # _img_data = _img_data.resize((416, 416))  # 此处要等比缩放
         _img_data, ratio = pic_resize(os.path.join(IMG_BASE_DIR, strs[0]))
+        # print("ratio:", ratio)
         img_data = transforms(_img_data)
         # print(img_data.shape)
         # exit()
@@ -56,8 +57,6 @@ class MyDataset(Dataset):
         # 缩放标签,是否有更好的方式或者更加简洁的写法
         for i in range(len(boxes)):
             boxes[i][1:] = boxes[i][1:] * ratio
-        # print(boxes)
-        # exit()
 
         index = 0
         for feature_size, anchors in cfg.ANCHORS_GROUP.items():
@@ -90,7 +89,7 @@ class MyDataset(Dataset):
                     # 向目标中心点对应到标签上的索引位置填充一个IOU，四个偏移量，以及分类标签
                     # 标签的形状是HWC，所以cy_index在前面
                     # i表示向第几个框中填写这六个标签值
-                    # np.log(p_w)，因为宽高的偏移量只能是正数，取对数后，标签就可能有正有负
+                    # np.log(p_w)，因为宽高的偏移量只能是正数，取对数后，标签就有正有负，更利于模型训练
                     labels[feature_size][int(cy_index), int(cx_index), i] = np.array(
                         [iou, cx_offset, cy_offset, np.log(p_w), np.log(p_h), int(cls)])
         return labels[13], labels[26], labels[52], img_data
@@ -98,7 +97,10 @@ class MyDataset(Dataset):
 
 if __name__ == '__main__':
     data = MyDataset()
-    print(type(data[0][0]))
-    print(data[0][1].shape)
-    print(data[0][2].shape)
+    print(data[1][0].shape)
+    # print(data[0][0][..., 0].shape)
+    # 打印所有的IOU
+    # print(data[2][0][..., 0])
+    # print(data[0][1].shape)
+    # print(data[0][2].shape)
     print(data[0][3].shape)

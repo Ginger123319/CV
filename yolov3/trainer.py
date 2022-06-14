@@ -6,13 +6,14 @@ from module import *
 import torch
 import os
 
-param_path = r"D:\Python\source\YOLO\param.pt"
+param_path = r"..\..\source\YOLO\param.pt"
 
 
 def loss_fn(output, target, alpha):
     output = output.permute(0, 2, 3, 1)  # N,45,13,13==>N,13,13,45
     output = output.reshape(output.size(0), output.size(1), output.size(2), 3, -1)  # N,13,13,3,15
     # print("output:",output.shape)
+    # 辅助选出正样本，mask_obj作为索引
     mask_obj = target[..., 0] > 0  # N,13,13,3
     # print("mask_obj:",mask_obj.shape)
     # mask_noobj = target[..., 0] == 0
@@ -24,8 +25,9 @@ def loss_fn(output, target, alpha):
     # loss_noobj = torch.mean((output[mask_noobj] - target[mask_noobj]) ** 2)
     # loss = alpha * loss_obj + (1 - alpha) * loss_noobj
     # return loss
+    # 置信度实际有两层含义：一是判断一个格子上是否有目标，训练上的二分类问题；二是测试的时候用它的大小来选择合适的建议框
     c_loss_func = nn.BCEWithLogitsLoss()
-    off_loss_func = nn.MSELoss()
+    off_loss_func = nn.SmoothL1Loss()
     cls_loss_func = nn.CrossEntropyLoss()
     # 置信度损失：
     c_loss = c_loss_func(output[..., 0], target[..., 0])
@@ -34,6 +36,8 @@ def loss_fn(output, target, alpha):
     # print(output[mask_obj].shape)
     # print(output[mask_obj][:,1:5])
     # 交叉熵的两个参数分别为浮点数和长整型的long
+    # alpha为权重，权重大的就会加强训练，因为正负样本不均衡，所以需要用权重来处理不好训练的分类损失
+    # 偏移量训练和分类的训练相对来说比较简单，因为只会取正样本来做损失，受到训练样本不均衡的问题影响相对小
     off_loss = off_loss_func(output[mask_obj][:, 1:5].float(), target[mask_obj][:, 1:5].float())
 
     # 多分类损失
@@ -112,7 +116,7 @@ if __name__ == '__main__':
             os.rename(param_path, param_path + "_old")
         # print(param_path)
         torch.save(net.state_dict(), param_path)
-        # print("save success!")
+        print("save success!")
         if os.path.exists(param_path + "_old"):
             os.remove(param_path + "_old")
         # print("delete old param success")
