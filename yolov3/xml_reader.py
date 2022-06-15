@@ -38,9 +38,8 @@ def get_key(d, value):
 
 
 if __name__ == '__main__':
-
+    xml_txt = open(save_file, 'w')
     try:
-        xml_txt = open(save_file, 'w')
         for file in os.listdir(xml_path):
             # print(file)
             file = os.path.join(xml_path, file)

@@ -172,9 +172,10 @@ class Darknet53(torch.nn.Module):
 
         return detetion_out_13, detetion_out_26, detetion_out_52
 
+
 if __name__ == '__main__':
     yolo = Darknet53()
-    x = torch.randn(2,3,416,416)
+    x = torch.randn(1, 3, 416, 416)
     y = yolo(x)
     print(y[0].shape)
     print(y[1].shape)
