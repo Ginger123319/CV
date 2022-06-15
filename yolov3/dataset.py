@@ -84,7 +84,6 @@ class MyDataset(Dataset):
                     # 计算目标框和建议框的IOU
                     p_area = w * h
                     iou = min(p_area, anchor_area) / max(p_area, anchor_area)
-
                     index += 1
                     # 向目标中心点对应到标签上的索引位置填充一个IOU，四个偏移量，以及分类标签
                     # 标签的形状是HWC，所以cy_index在前面
@@ -97,10 +96,10 @@ class MyDataset(Dataset):
 
 if __name__ == '__main__':
     data = MyDataset()
-    print(data[1][0].shape)
+    # print(data[1][0])
     # print(data[0][0][..., 0].shape)
     # 打印所有的IOU
-    # print(data[2][0][..., 0])
+    print(data[2][0][..., -1])
     # print(data[0][1].shape)
     # print(data[0][2].shape)
     print(data[0][3].shape)

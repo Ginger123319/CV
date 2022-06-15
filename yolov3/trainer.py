@@ -1,6 +1,6 @@
 from torch import nn
 from torch.utils.tensorboard import SummaryWriter
-
+from torch.utils.data import DataLoader
 import dataset
 from module import *
 import torch
@@ -27,7 +27,7 @@ def loss_fn(output, target, alpha):
     # return loss
     # 置信度实际有两层含义：一是判断一个格子上是否有目标，训练上的二分类问题；二是测试的时候用它的大小来选择合适的建议框
     c_loss_func = nn.BCEWithLogitsLoss()
-    off_loss_func = nn.SmoothL1Loss()
+    off_loss_func = nn.MSELoss()
     cls_loss_func = nn.CrossEntropyLoss()
     # 置信度损失：
     c_loss = c_loss_func(output[..., 0], target[..., 0])
@@ -54,7 +54,7 @@ def loss_fn(output, target, alpha):
 if __name__ == '__main__':
 
     myDataset = dataset.MyDataset()
-    train_loader = torch.utils.data.DataLoader(myDataset, batch_size=2, shuffle=True)
+    train_loader = DataLoader(myDataset, batch_size=2, shuffle=True)
 
     net = Darknet53().cuda()
     # 判断是否有权重，有就加载权重
@@ -92,8 +92,9 @@ if __name__ == '__main__':
 
     net.train()
     opt = torch.optim.Adam(net.parameters())
+    # opt = torch.optim.SGD(net.parameters(), lr=0.001)
     count = 1
-    while count <= 10000:
+    while count <= 3000:
         sum_loss = 0.
         for target_13, target_26, target_52, img_data in train_loader:
             output_13, output_26, output_52 = net(img_data.cuda())

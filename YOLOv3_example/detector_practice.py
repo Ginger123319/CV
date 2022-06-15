@@ -2,6 +2,7 @@ from Net_Module import *
 import cfg
 import torch
 import numpy as np
+import PIL.Image as pimg
 import PIL.ImageDraw as draw
 import tool1
 import os
@@ -39,7 +40,6 @@ class Detector(torch.nn.Module):  # 定义侦测模块
         mask = output[..., 0] > thresh  # 获取输出自信度大于自信度阀值的目标值的掩码（即布尔值），
         idxs = mask.nonzero()  # 将索引取出来其形状（N,H,W,3）
         vecs = output[mask]  # 通过掩码获取对应的数据
-        # print(vecs)
         return idxs, vecs  # 将索引和数据返回给调用方
 
     def _parse(self, idxs, vecs, t, anchors):  # 定义解析函数，并给4个参数分别是上面筛选合格的框的索引，9个值（中心点偏移和框的偏移即类别数），
@@ -47,7 +47,7 @@ class Detector(torch.nn.Module):  # 定义侦测模块
         anchors = torch.Tensor(anchors)  # 将建议框转为Tensor类型
         # idx形状（n，h，w，3）
         a = idxs[:, 3]  # 表示拿到3个框对应的索引
-        confidence = torch.sigmoid(vecs[:, 0])  # 获取自信度vecs里面有5+类别数个元素，第一个为自信度，因此取所有的第0个,输出的置信度会大于1，这里可以用其压缩到0-1之间。
+        confidence = vecs[:, 0]  # 获取自信度vecs里面有5+类别数个元素，第一个为自信度，因此取所有的第0个
 
         _classify = vecs[:, 5:]  # 获取分类的类别数
         if len(_classify) == 0:  # 判断类别数的长的是否为0为0返回空，避免代码报错
@@ -107,19 +107,19 @@ if __name__ == '__main__':
                 # print(box.shape)
                 img_draw = draw.ImageDraw(im)  # 制作画笔
                 # cls=int(box[5])
-                for i in range(len(box)):  # 循环单个特征图的框,循环框的个数次
-                    c, x1, y1, x2, y2, cls = box[i, :]  # 将自信度和坐标及类别分别解包出来
-                    # print(c,x1, y1, x2, y2)
-                    # print(int(cls.item()))
-                    # print(round(c.item(),4))#取值并保留小数点后4位
-                    img_draw.rectangle((x1, y1, x2, y2), outline=color[int(cls.item())], width=2)  # 画框
 
-                    img_draw.text((max(x1, 0) + 3, max(y1, 0) + 3), fill=color[int(cls.item())],
-                                  text=str(int(cls.item())), font=font, width=2)
-                    img_draw.text((max(x1, 0) + 15, max(y1, 0) + 3), fill=color[int(cls.item())],
-                                  text=name[int(cls.item())], font=font, width=2)
-                    img_draw.text((max(x1, 0) + 3, max(y1, 0) + 20), fill=color[int(cls.item())],
-                                  text=str(round(c.item(), 4)), font=font, width=2)
+                c, x1, y1, x2, y2, cls = box[0, :]  # 将自信度和坐标及类别分别解包出来
+                # print(c,x1, y1, x2, y2)
+                # print(int(cls.item()))
+                # print(round(c.item(),4))#取值并保留小数点后4位
+                img_draw.rectangle((x1, y1, x2, y2), outline=color[int(cls.item())], width=2)  # 画框
+
+                img_draw.text((max(x1, 0) + 3, max(y1, 0) + 3), fill=color[int(cls.item())], text=str(int(cls.item())),
+                              font=font, width=2)
+                img_draw.text((max(x1, 0) + 15, max(y1, 0) + 3), fill=color[int(cls.item())],
+                              text=name[int(cls.item())], font=font, width=2)
+                img_draw.text((max(x1, 0) + 3, max(y1, 0) + 20), fill=color[int(cls.item())],
+                              text=str(round(c.item(), 4)), font=font, width=2)
 
 
             except:
@@ -130,7 +130,7 @@ if __name__ == '__main__':
         plt.axis('off')
         plt.imshow(im)
         plt.show()
-        plt.pause(3)
+        plt.pause(1)
         plt.close()
         # im.show()
 
