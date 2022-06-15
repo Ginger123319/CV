@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<doc>
+	<path>C:\Users\A\Desktop\images\12.jpg</path>
+	<outputs>
+		<object>
+			<item>
+				<name>人</name>
+				<bndbox>
+					<xmin>216</xmin>
+					<ymin>93</ymin>
+					<xmax>278</xmax>
+					<ymax>248</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name>马</name>
+				<bndbox>
+					<xmin>101</xmin>
+					<ymin>142</ymin>
+					<xmax>360</xmax>
+					<ymax>307</ymax>
+				</bndbox>
+			</item>
+		</object>
+	</outputs>
+	<time_labeled>1587639212266</time_labeled>
+	<labeled>true</labeled>
+	<size>
+		<width>416</width>
+		<height>416</height>
+		<depth>3</depth>
+	</size>
+</doc>
