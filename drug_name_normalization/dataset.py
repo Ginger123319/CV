@@ -11,6 +11,7 @@ class DrugData(Dataset):
         self.dataset = []
         self.utils = Utils()
         # print(word_vec.shape)
+        # 写在这只需要加载一次字典
         self.new_dict = np.load(cfg.small_word2vec_path, allow_pickle=True).item()
         with open(root, encoding="utf-8") as f:
             f.readline()
