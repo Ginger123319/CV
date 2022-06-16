@@ -41,9 +41,7 @@ class Detector(torch.nn.Module):  # 定义侦测模块
 
         # 通过reshape变换形状 [N,H,W,C]即[N,H,W,45]-->>[N,H,W,3,15]，分成3个建议框每个建议框有15个值
         output = output.reshape(output.size(0), output.size(1), output.size(2), 3, -1)
-        mask = output[..., 0] > thresh  # 获取输出置信度大于置信度阀值的目标值的掩码（即布尔值），
-        # print(output[..., 5:])
-        # exit()
+        mask = output[..., 0] > thresh  # 获取输出置信度大于置信度阀值的目标值的掩码（即布尔值）
         idxs = mask.nonzero()  # 将索引取出来其形状N,V包含（N,H,W,3）
         vecs = output[mask]  # 通过掩码获取置信度大于阈值的对应数据【iou,cx,cy,w,h,cls】长度为5+10的向量
         # print(vecs.shape)
@@ -94,7 +92,7 @@ if __name__ == '__main__':
     img_name_list = os.listdir(img_path)
     name = xml_reader.class_name
     color = xml_reader.color_name
-    font = ImageFont.truetype("simsun.ttc", 32, encoding="unic")  # 设置字体
+    font = ImageFont.truetype("simsun.ttc", 25, encoding="unic")  # 设置字体
     for image_file in img_name_list:
         im = Image.open(os.path.join(img_path, image_file))
         _img_data, ratio = pic_resize(os.path.join(img_path, image_file))
@@ -123,17 +121,17 @@ if __name__ == '__main__':
                     # print(c,x1, y1, x2, y2)
                     # print(int(cls.item()))
                     # print(round(c.item(),4))#取值并保留小数点后4位
-                    img_draw.rectangle((x1, y1, x2, y2), outline=color[int(cls.item())], width=2)  # 画框
+                    img_draw.rectangle((x1, y1, x2, y2), outline=color[int(cls.item())], width=4)  # 画框
 
-                    img_draw.text((max(x1, 0) + 3, max(y1, 0) + 3), fill=color[int(cls.item())],
+                    img_draw.text((max(x1, 0) + 3, max(y1, 0) + 5), fill=color[int(cls.item())],
                                   text=str(int(cls.item())), font=font, width=2)
-                    img_draw.text((max(x1, 0) + 15, max(y1, 0) + 3), fill=color[int(cls.item())],
+                    img_draw.text((max(x1, 0) + 20, max(y1, 0) + 5), fill=color[int(cls.item())],
                                   text=name[int(cls.item())], font=font, width=2)
-                    img_draw.text((max(x1, 0) + 3, max(y1, 0) + 20), fill=color[int(cls.item())],
+                    img_draw.text((max(x1, 0) + 3, max(y1, 0) + 30), fill=color[int(cls.item())],
                                   text=str(round(c.item(), 4)), font=font, width=2)
             except:
                 continue
-        # im.save(os.path.join('Detector_results/results1_img/',image_file))
+        # im.save(os.path.join('result', image_file))
         plt.clf()
         plt.ion()
         plt.axis('off')

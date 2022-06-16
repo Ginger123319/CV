@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10beec9b-56d9-44f6-8134-d3786ec80bc5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test01.py" beforeDir="false" afterPath="$PROJECT_DIR$/test01.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../yolov3/dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3/dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3/detector_practice.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3/detector_practice.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,8 +79,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.test01" />
       <item itemvalue="Python.kmeans" />
+      <item itemvalue="Python.test01" />
     </list>
     <recent_temporary>
       <list>

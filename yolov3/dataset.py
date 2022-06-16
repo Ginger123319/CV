@@ -54,6 +54,7 @@ class MyDataset(Dataset):
         _boxes = np.array([float(x) for x in strs[1:]])
         # _boxes = np.array(list(map(float, strs[1:])))
         boxes = np.split(_boxes, len(_boxes) // 5)
+        print(len(boxes))
         # 缩放标签,是否有更好的方式或者更加简洁的写法
         for i in range(len(boxes)):
             boxes[i][1:] = boxes[i][1:] * ratio
@@ -98,8 +99,10 @@ if __name__ == '__main__':
     data = MyDataset()
     # print(data[1][0])
     # print(data[0][0][..., 0].shape)
+    for i in range(10):
+        data[i][0].shape
     # 打印所有的IOU
-    print(data[2][0][..., -1])
+    # print(data[2][0][..., -1])
     # print(data[0][1].shape)
     # print(data[0][2].shape)
-    print(data[0][3].shape)
+    # print(data[0][3].shape)
