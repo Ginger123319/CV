@@ -37,4 +37,4 @@ class CodeData(Dataset):
 
 if __name__ == '__main__':
     test_data = CodeData(cfg.validate_dir)
-    print(test_data[0][1].dtype)
+    print(test_data[0][1])

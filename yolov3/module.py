@@ -121,7 +121,7 @@ class Darknet53(torch.nn.Module):
 
         self.detetion_13 = torch.nn.Sequential(
             ConvolutionalLayer(512, 1024, 3, 1, 1),
-            torch.nn.Conv2d(1024, 45, 1, 1, 0)
+            torch.nn.Conv2d(1024, 3*(1+4+6), 1, 1, 0)
         )
 
         self.up_26 = torch.nn.Sequential(
@@ -135,7 +135,7 @@ class Darknet53(torch.nn.Module):
 
         self.detetion_26 = torch.nn.Sequential(
             ConvolutionalLayer(256, 512, 3, 1, 1),
-            torch.nn.Conv2d(512, 45, 1, 1, 0)
+            torch.nn.Conv2d(512,3*(1+4+6), 1, 1, 0)
         )
 
         self.up_52 = torch.nn.Sequential(
@@ -149,7 +149,7 @@ class Darknet53(torch.nn.Module):
 
         self.detetion_52 = torch.nn.Sequential(
             ConvolutionalLayer(128, 256, 3, 1, 1),
-            torch.nn.Conv2d(256, 45, 1, 1, 0)
+            torch.nn.Conv2d(256, 3*(1+4+6), 1, 1, 0)
         )
 
     def forward(self, x):

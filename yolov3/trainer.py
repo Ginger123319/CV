@@ -54,7 +54,7 @@ def loss_fn(output, target, alpha):
 if __name__ == '__main__':
 
     myDataset = dataset.MyDataset()
-    train_loader = DataLoader(myDataset, batch_size=2, shuffle=True)
+    train_loader = DataLoader(myDataset, batch_size=3, shuffle=True)
 
     net = Darknet53().cuda()
     # 判断是否有权重，有就加载权重

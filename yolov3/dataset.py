@@ -10,7 +10,7 @@ from PIL import Image
 import math
 
 LABEL_FILE_PATH = "data/label.txt"
-IMG_BASE_DIR = "data/images"
+IMG_BASE_DIR = "data/img_song"
 
 transforms = torchvision.transforms.Compose([
     torchvision.transforms.ToTensor()
@@ -99,8 +99,8 @@ if __name__ == '__main__':
     data = MyDataset()
     # print(data[1][0])
     # print(data[0][0][..., 0].shape)
-    for i in range(10):
-        data[i][0].shape
+    for i in range(14):
+        print(data[i][0].shape)
     # 打印所有的IOU
     # print(data[2][0][..., -1])
     # print(data[0][1].shape)

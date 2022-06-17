@@ -22,11 +22,11 @@ def ious(box, boxes, isMin=False):  # 定义iou函数
         ovr = inter / torch.min(box_area, area)
     else:
         ovr = inter / (box_area + area - inter)
-    print("ovr is:", ovr)
+    # print("ovr is:", ovr)
     return ovr
 
 
-def nms(boxes, thresh=0.001, isMin=True):  # 定义nms函数并传3个参数，分别是框，置信度阀值，是否最小面积
+def nms(boxes, thresh=0.5, isMin=False):  # 定义nms函数并传3个参数，分别是框，置信度阀值，是否最小面积
 
     if boxes.shape[0] == 0:  # 获取框的个是看是否为0，为0没框就返回一个空的数组防止代码报错
         return np.array([])
