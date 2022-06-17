@@ -78,7 +78,7 @@ class Net(nn.Module):
 if __name__ == '__main__':
     test_data = torch.randn(5, 3, 60, 240)
     net = Net()
-    print(net)
+    # print(net)
     out1 = net(test_data)
     print(out1.shape)
     # print(torch.argmax(out1, dim=-1))

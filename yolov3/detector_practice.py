@@ -1,3 +1,5 @@
+import torch
+
 import tool
 import os
 import cfg
@@ -41,7 +43,11 @@ class Detector(torch.nn.Module):  # 定义侦测模块
 
         # 通过reshape变换形状 [N,H,W,C]即[N,H,W,45]-->>[N,H,W,3,15]，分成3个建议框每个建议框有15个值
         output = output.reshape(output.size(0), output.size(1), output.size(2), 3, -1)
+
         mask = output[..., 0] > thresh  # 获取输出置信度大于置信度阀值的目标值的掩码（即布尔值）
+        print(output.shape)
+        print(mask.shape)
+        exit()
         idxs = mask.nonzero()  # 将索引取出来其形状N,V包含（N,H,W,3）
         vecs = output[mask]  # 通过掩码获取置信度大于阈值的对应数据【iou,cx,cy,w,h,cls】长度为5+10的向量
         # print(vecs.shape)
@@ -84,11 +90,13 @@ class Detector(torch.nn.Module):  # 定义侦测模块
 
 
 if __name__ == '__main__':
-    # 在原图上画框，需要将框的坐标值除以缩放比例？？？
+    # 在原图上画框，需要将输出的坐标值和宽高除以缩放比例，才是在原图上的中心点坐标和宽高
+    # 因为kmeans中产生的建议框也是缩放为416*416尺寸后的，所以输出的宽高也是416*416图片上的宽高，所以需要还原
+    # 标签是缩放后的标签，因此得到的输出值需要还原到原图上
 
     detector = Detector()  # 实例化侦测模块
     # img_path = 'data/img_after/'
-    img_path = 'data/images/'
+    img_path = 'data/img_song/'
     img_name_list = os.listdir(img_path)
     name = xml_reader.class_name
     color = xml_reader.color_name
@@ -106,17 +114,19 @@ if __name__ == '__main__':
         boxes = []  # 定义空列表用来装框
 
         for j in range(10):  # 循环判断类别数
-            classify_mask = (out_value[..., -1] == j)  # 输出的类别如果和类别相同就做nms删掉iou的的框留下iou小的表示这不是同一个物体
+            # 获取同一个类别的掩码
+            # 输出的类别如果和类别相同就做nms删掉iou大于阈值的框留下iou小的表示这不是同一个物体
+            classify_mask = (out_value[..., -1] == j)
 
-            # ，如果不用这个可能会将不同类别因iou大于目标值而不被删除，因此这里做个判断，只在同一类别中做nms，这里是获取同个类别的掩码
-            _boxes = out_value[classify_mask]  # 更具掩码索引对应的输出作为框
-            boxes.append(tool.nms(_boxes))  # 对同一类别做nms删掉不合格的框，并将框添加进列表
+            _boxes = out_value[classify_mask]  # 取出所有同类别的框
+            boxes.append(tool.nms(_boxes))  # 对同一类别做nms删掉不合格的框，将一个类别的框放在一起添加进列表
 
-        for box in boxes:  # 3种特征图的框循环框torch.cat([boxes_13, boxes_26, boxes_52], dim=0),循环3次
+        for box in boxes:  # 遍历各个类别
             try:
-                print(box.shape)
+                # print(box.shape)
+                # exit()
                 img_draw = draw.ImageDraw(im)  # 制作画笔
-                for i in range(len(box)):  # 循环单个特征图的框,循环框的个数次
+                for i in range(len(box)):  # 遍历各个类别的所有框并进行画图
                     c, x1, y1, x2, y2, cls = box[i, :]  # 将自信度和坐标及类别分别解包出来
                     # print(c,x1, y1, x2, y2)
                     # print(int(cls.item()))
