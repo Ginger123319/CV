@@ -45,9 +45,9 @@ class Detector(torch.nn.Module):  # 定义侦测模块
         output = output.reshape(output.size(0), output.size(1), output.size(2), 3, -1)
 
         mask = output[..., 0] > thresh  # 获取输出置信度大于置信度阀值的目标值的掩码（即布尔值）
-        print(output.shape)
-        print(mask.shape)
-        exit()
+        # print(output.shape)
+        # print(mask.shape)
+        # exit()
         idxs = mask.nonzero()  # 将索引取出来其形状N,V包含（N,H,W,3）
         vecs = output[mask]  # 通过掩码获取置信度大于阈值的对应数据【iou,cx,cy,w,h,cls】长度为5+10的向量
         # print(vecs.shape)
@@ -108,7 +108,7 @@ if __name__ == '__main__':
         img_data = transforms(_img_data)
         img = img_data[None, :]
 
-        out_value = detector(img, 0.3, cfg.ANCHORS_GROUP, ratio)  # 调用侦测函数并将数据，置信度阀值和建议框传入
+        out_value = detector(img, 0.25, cfg.ANCHORS_GROUP, ratio)  # 调用侦测函数并将数据，置信度阀值和建议框传入
         # print(out_value.shape)
         # exit()
         boxes = []  # 定义空列表用来装框
@@ -146,7 +146,7 @@ if __name__ == '__main__':
         plt.ion()
         plt.axis('off')
         plt.imshow(im)
-        plt.show()
+        # plt.show()
         plt.pause(3)
         plt.close()
         # im.show()

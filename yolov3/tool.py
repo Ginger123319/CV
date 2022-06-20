@@ -26,7 +26,7 @@ def ious(box, boxes, isMin=False):  # 定义iou函数
     return ovr
 
 
-def nms(boxes, thresh=0.5, isMin=False):  # 定义nms函数并传3个参数，分别是框，置信度阀值，是否最小面积
+def nms(boxes, thresh=0.45, isMin=False):  # 定义nms函数并传3个参数，分别是框，置信度阀值，是否最小面积
 
     if boxes.shape[0] == 0:  # 获取框的个是看是否为0，为0没框就返回一个空的数组防止代码报错
         return np.array([])
