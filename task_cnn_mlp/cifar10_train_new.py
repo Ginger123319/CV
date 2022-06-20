@@ -16,12 +16,12 @@ class Train:
         # CIFAR10数据集
         self.train_data = datasets.CIFAR10(root=r"..\..\source\CIFAR10_DATA", train=True, download=True,
                                            transform=transforms.Compose(
-                                               [transforms.Resize((224, 224)), transforms.ToTensor()]))
-        self.train_loader = DataLoader(self.train_data, batch_size=16, shuffle=True)
+                                               [transforms.ToTensor()]))
+        self.train_loader = DataLoader(self.train_data, batch_size=512, shuffle=True)
 
         self.test_data = datasets.CIFAR10(root=r"..\..\source\CIFAR10_DATA", train=False, download=False,
                                           transform=transforms.ToTensor())
-        self.test_loader = DataLoader(self.test_data, batch_size=32, shuffle=True)
+        self.test_loader = DataLoader(self.test_data, batch_size=512, shuffle=True)
         # print(self.test_data.data.shape)
         # print(len(self.test_data.targets))
 
@@ -42,8 +42,6 @@ class Train:
                 self.net.train()
                 img_data = images.to(DEVICE)
                 tag_data = tags.to(DEVICE)
-                print(img_data.shape)
-                print(tag_data.shape)
 
                 out = self.net.forward(img_data)
                 loss = self.loss_func(out, tag_data)
@@ -66,7 +64,6 @@ class Train:
                 img_data = images.to(DEVICE)
 
                 tag_data = tags.to(DEVICE)
-                print(tag_data.shape)
 
                 test_out = self.net.forward(img_data)
 
@@ -74,7 +71,6 @@ class Train:
                 test_sum_loss = test_sum_loss + test_loss.item()
                 # 把输出中数值最大处的索引取出来就是类别名称0~9
                 outs = torch.argmax(test_out, dim=1)
-                print(outs.shape)
                 # 转换后是长度为100的矢量
 
                 score = torch.mean(torch.eq(outs, tag_data).float())
