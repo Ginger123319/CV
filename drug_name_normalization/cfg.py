@@ -9,4 +9,6 @@ param_path = r"..\..\source\word_vec\param\param.pth"
 opt_path = r"..\..\source\word_vec\param\opt.pth"
 device = "cuda"
 train_batch_size = 512
+test_batch_size = 512
+tag_batch_size = 512
 log_path = r"log"
