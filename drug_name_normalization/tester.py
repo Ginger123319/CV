@@ -15,7 +15,7 @@ class Tester:
     def __init__(self, net):
         self._net = net.to(cfg.device)
         self._featureTrainer = FeatureTrainer(self._net)
-        self._test_loader = DataLoader(DrugData(cfg.test_path), batch_size=cfg.train_batch_size, shuffle=True)
+        self._test_loader = DataLoader(DrugData(cfg.test_path), batch_size=cfg.test_batch_size, shuffle=True)
 
         self._log = SummaryWriter("./log")
 
@@ -24,7 +24,7 @@ class Tester:
         for _epoch in range(1):
 
             self._net.eval()
-            _train_acc_sum = 0.
+            _test_acc_sum = 0.
             feature_li = []
             with torch.no_grad():
                 for _i, (_data, _target) in enumerate(self._test_loader):
@@ -48,22 +48,22 @@ class Tester:
             _y = _target
             # print(_y)
             # print(torch.mean((out == y).float()))
-            _train_acc = torch.mean((_out == _y).float())
+            _test_acc = torch.mean((_out == _y).float())
             #
             #     _sum_loss += _loss.cpu().detach().item()
             #
             # self._log.add_scalar("train_loss", _sum_loss / len(self._train_loader), _epoch)
-            # self._log.add_scalar("train_acc", _train_acc_sum / len(self._train_loader), _epoch)
+            # self._log.add_scalar("train_acc", _test_acc_sum / len(self._train_loader), _epoch)
             #
             # torch.save(self._net.state_dict(), cfg.param_path)
             # # torch.save(self._opt.state_dict(), "o.pt")
-            print("epoch--{} acc:{}".format(_epoch, _train_acc))
+            print("epoch--{} acc:{}".format(_epoch, _test_acc))
             # print("epoch--{} loss:{}".format(_epoch, _sum_loss / len(self._train_loader)))
-            return _train_acc
+            return _test_acc
 
 
 if __name__ == '__main__':
     if os.path.exists(cfg.log_path):
         shutil.rmtree(cfg.log_path)
-    train = Tester()
-    train()
+    test = Tester()
+    test()
