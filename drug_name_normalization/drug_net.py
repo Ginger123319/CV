@@ -9,17 +9,17 @@ class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
         self.ce_loss = nn.NLLLoss()
-        self.arc_loss = ArcSoftmax(128, 3864)
+        self.arc_loss = ArcSoftmax(128, 3846)
         # 一层transformer网络
         # d_model就是V的长度
         # 此处也是SNV结构，torch版本过低，无法调整batch_first参数，默认为false
         self._map_layer = nn.Sequential(
             nn.Conv1d(300, 384, 3, 2, 1, bias=False),
             nn.BatchNorm1d(384),
-            nn.Mish(),
+            nn.Hardswish(),
             nn.Conv1d(384, 512, 3, 2, 1, bias=False),
             nn.BatchNorm1d(512),
-            nn.Mish()
+            nn.Hardswish()
         )
         encoder_layer = nn.TransformerEncoderLayer(d_model=512, nhead=8, dim_feedforward=64, activation="gelu")
         # 多层transformer网络
@@ -29,7 +29,7 @@ class Net(nn.Module):
 
         self._output_net = nn.Sequential(
             nn.Linear(512, 256),
-            nn.Mish(),
+            nn.Hardswish(),
             nn.Linear(256, 128)
         )
 
