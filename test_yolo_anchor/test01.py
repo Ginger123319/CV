@@ -6,7 +6,7 @@ import torch
 
 from kmeans import kmeans, avg_iou
 
-ANNOTATIONS_PATH = r"C:\Users\liev\Pictures\Camera Roll\outputs"
+ANNOTATIONS_PATH = r"D:\Python\source\key_mouse\outputs"
 CLUSTERS = 9
 
 
@@ -54,7 +54,7 @@ if __name__ == '__main__':
     print("Boxes:\n {}-{}".format(np.ceil(out[:, 0] * 416), np.ceil(out[:, 1] * 416)))
     w_ndarray = np.sort(np.ceil(out[:, 0] * 416)).astype(np.int32)
     h_ndarray = np.sort(np.ceil(out[:, 1] * 416)).astype(np.int32)
-    # print(w_ndarray.shape)
+    # print(w_ndarray)
     ANCHORS_ndarray = np.stack((w_ndarray, h_ndarray), axis=0)
     # print(torch.tensor(ANCHORS_ndarray.T[0:3]), torch.tensor(ANCHORS_ndarray.T[3:6]),
     #       torch.tensor(ANCHORS_ndarray.T[6:9]), sep="\n")

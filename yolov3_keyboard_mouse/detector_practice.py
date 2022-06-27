@@ -1,5 +1,4 @@
 import torch
-
 import tool
 import os
 import cfg
@@ -43,8 +42,9 @@ class Detector(torch.nn.Module):  # 定义侦测模块
 
         # 通过reshape变换形状 [N,H,W,C]即[N,H,W,45]-->>[N,H,W,3,15]，分成3个建议框每个建议框有15个值
         output = output.reshape(output.size(0), output.size(1), output.size(2), 3, -1)
-
         mask = output[..., 0] > thresh  # 获取输出置信度大于置信度阀值的目标值的掩码（即布尔值）
+        # print(mask)
+        # exit()
         # print(output.shape)
         # print(mask.shape)
         # exit()
@@ -96,31 +96,31 @@ if __name__ == '__main__':
 
     detector = Detector()  # 实例化侦测模块
     # img_path = 'data/img_after/'
-    img_path = 'data/img_song/'
-    img_name_list = os.listdir(img_path)
+    img_path = cfg.img_path
+    img_name_list = []
+    with open(cfg.val_path) as f:
+        for line in f.readlines():
+            img_name_list.append(line.split()[0])
     name = xml_reader.class_name
     color = xml_reader.color_name
     font = ImageFont.truetype("simsun.ttc", 25, encoding="unic")  # 设置字体
     for image_file in img_name_list:
         im = Image.open(os.path.join(img_path, image_file))
         _img_data, ratio = pic_resize(os.path.join(img_path, image_file))
-        # print("ratio:", ratio)
         img_data = transforms(_img_data)
         img = img_data[None, :]
-
         out_value = detector(img, 0.25, cfg.ANCHORS_GROUP, ratio)  # 调用侦测函数并将数据，置信度阀值和建议框传入
         # print(out_value.shape)
         # exit()
         boxes = []  # 定义空列表用来装框
 
-        for j in range(10):  # 循环判断类别数
+        for j in range(2):  # 循环判断类别数
             # 获取同一个类别的掩码
             # 输出的类别如果和类别相同就做nms删掉iou大于阈值的框留下iou小的表示这不是同一个物体
             classify_mask = (out_value[..., -1] == j)
 
             _boxes = out_value[classify_mask]  # 取出所有同类别的框
             boxes.append(tool.nms(_boxes))  # 对同一类别做nms删掉不合格的框，将一个类别的框放在一起添加进列表
-
         for box in boxes:  # 遍历各个类别
             try:
                 # print(box.shape)
