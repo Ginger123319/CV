@@ -121,7 +121,7 @@ class Darknet53(torch.nn.Module):
 
         self.detetion_13 = torch.nn.Sequential(
             ConvolutionalLayer(512, 1024, 3, 1, 1),
-            torch.nn.Conv2d(1024, 3*(1+4+6), 1, 1, 0)
+            torch.nn.Conv2d(1024, 3*(1+4+2), 1, 1, 0)
         )
 
         self.up_26 = torch.nn.Sequential(
@@ -135,7 +135,7 @@ class Darknet53(torch.nn.Module):
 
         self.detetion_26 = torch.nn.Sequential(
             ConvolutionalLayer(256, 512, 3, 1, 1),
-            torch.nn.Conv2d(512,3*(1+4+6), 1, 1, 0)
+            torch.nn.Conv2d(512,3*(1+4+2), 1, 1, 0)
         )
 
         self.up_52 = torch.nn.Sequential(
@@ -149,7 +149,7 @@ class Darknet53(torch.nn.Module):
 
         self.detetion_52 = torch.nn.Sequential(
             ConvolutionalLayer(128, 256, 3, 1, 1),
-            torch.nn.Conv2d(256, 3*(1+4+6), 1, 1, 0)
+            torch.nn.Conv2d(256, 3*(1+4+2), 1, 1, 0)
         )
 
     def forward(self, x):
@@ -175,7 +175,7 @@ class Darknet53(torch.nn.Module):
 
 if __name__ == '__main__':
     yolo = Darknet53()
-    x = torch.randn(1, 3, 416, 416)
+    x = torch.randn(2, 3, 416, 416)
     y = yolo(x)
     print(y[0].shape)
     print(y[1].shape)

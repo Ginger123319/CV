@@ -4,41 +4,16 @@ import xml.etree.cElementTree as cET
 # 用于将xml文件中的图片名字以及坐标获取到，并转换为中心点坐标和宽高的形式存到txt文档中
 # xml_path = r"C:\Users\liev\Pictures\Camera Roll\outputs"
 # song
-xml_path = r"G:\liewei\source\YOLO\song_yolov3data\outputs"
-save_file = r"data\label.txt"
-# class_name = {
-#     1: "牛",
-#     2: "马",
-#     3: "人",
-#     4: "椅子",
-#     5: "猫",
-#     6: "狗",
-#     7: "猴",
-#     8: "石头",
-#     9: "飞机",
-#     0: "车"
-# }
-# song
+xml_path = r"..\..\source\key_mouse\outputs"
+save_file = r"data\label_ori.txt"
 class_name = {
-    1:  "猫",
-    2: "凳子",
-    3: "汽车",
-    4: "电瓶车",
-    5: "伞",
-    0: "人"
+    1:  "键盘",
+    0: "鼠标"
 }
 
 
 color_name = {
     1: "red",
-    2: "purple",
-    3: "blue",
-    4: "green",
-    5: "yellow",
-    # 6: "pink",
-    # 7: "gray",
-    # 8: "cyan",
-    # 9: "brown",
     0: "black"
 }
 
