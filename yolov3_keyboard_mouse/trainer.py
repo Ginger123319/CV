@@ -1,3 +1,4 @@
+import shutil
 import sys
 from torch import nn
 from torch.utils.tensorboard import SummaryWriter
@@ -57,7 +58,9 @@ def loss_fn(output, target, alpha):
 
 
 if __name__ == '__main__':
-
+    if os.path.exists("log"):
+        shutil.rmtree("log")
+        print("log off")
     myDataset = dataset.MyDataset(cfg.train_path, cfg.img_path)
     train_loader = DataLoader(myDataset, batch_size=3, shuffle=True)
     writer = SummaryWriter("log")
@@ -99,7 +102,7 @@ if __name__ == '__main__':
     opt = torch.optim.Adam(net.parameters())
     # opt = torch.optim.SGD(net.parameters(), lr=0.001)
     count = 1
-    while count <= 1000:
+    while count <= 500:
         sum_loss = 0.
         sum_target = 0.
         pre_target = 0.

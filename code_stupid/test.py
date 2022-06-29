@@ -20,7 +20,7 @@
 # res_string=driver.find_element_by_xpath("//*[@id='1']/h3/a/em").text
 # print(res_string)
 # if(res_string == "selenium"):
-    # print ("ok!")
+# print ("ok!")
 
 # driver.quit()
 
@@ -33,20 +33,19 @@
 # print("Your third variable is:", third)
 
 
-
 print("ex15---------------------------------------------------------------")
 from sys import argv
 
-script, filename=argv
-txt=open(filename,encoding='utf-16')
+script, filename = argv
+txt = open(filename, encoding='utf-16')
 
 print(txt)
- #open()是返回一个文件对象，可以通过read()函数读取到该文件的内容
- #<_io.TextIOWrapper name='ex15_sample.txt' mode='r' encoding='cp936'>
+# open()是返回一个文件对象，可以通过read()函数读取到该文件的内容
+# <_io.TextIOWrapper name='ex15_sample.txt' mode='r' encoding='cp936'>
 print(f"Here's your file {filename}:")
 print(txt.read())
 # print(txt.close())
- #None
+# None
 
 # print("Type the filename again:")
 # file_agian=input('>')
@@ -54,4 +53,4 @@ print(txt.read())
 # txt_again=open(file_agian)
 # print(txt_again.read())
 # print(txt_again.close())
- #文件操作之打开、读取与关闭
+# 文件操作之打开、读取与关闭
