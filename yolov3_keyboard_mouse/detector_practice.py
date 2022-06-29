@@ -98,7 +98,7 @@ if __name__ == '__main__':
     # img_path = 'data/img_after/'
     img_path = cfg.img_path
     img_name_list = []
-    with open(cfg.val_path) as f:
+    with open(cfg.train_path) as f:
         for line in f.readlines():
             img_name_list.append(line.split()[0])
     name = xml_reader.class_name
