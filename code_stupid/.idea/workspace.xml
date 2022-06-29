@@ -2,7 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a06c10d8-5da5-47a0-86b3-b7573c250b9b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/最小二乘法.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/net_cal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/最小二乘法.py" beforeDir="false" afterPath="$PROJECT_DIR$/最小二乘法.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/detector_practice.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3_keyboard_mouse/detector_practice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/log/events.out.tfevents.1656231511.Ginger-LAPTOP-L8GFNL9E.37168.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/log/events.out.tfevents.1656232003.Ginger-LAPTOP-L8GFNL9E.35516.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/log/events.out.tfevents.1656232718.Ginger-LAPTOP-L8GFNL9E.21512.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/log/events.out.tfevents.1656232741.Ginger-LAPTOP-L8GFNL9E.40156.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/log/events.out.tfevents.1656232925.Ginger-LAPTOP-L8GFNL9E.35904.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/log/events.out.tfevents.1656233148.Ginger-LAPTOP-L8GFNL9E.37664.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/log/events.out.tfevents.1656233362.Ginger-LAPTOP-L8GFNL9E.32132.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/log/events.out.tfevents.1656233447.Ginger-LAPTOP-L8GFNL9E.35056.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/log/events.out.tfevents.1656233671.Ginger-LAPTOP-L8GFNL9E.40192.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/log/events.out.tfevents.1656233683.Ginger-LAPTOP-L8GFNL9E.29080.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/log/events.out.tfevents.1656233691.Ginger-LAPTOP-L8GFNL9E.13304.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/log/events.out.tfevents.1656233909.Ginger-LAPTOP-L8GFNL9E.25720.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/log/events.out.tfevents.1656233927.Ginger-LAPTOP-L8GFNL9E.35580.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/log/events.out.tfevents.1656234078.Ginger-LAPTOP-L8GFNL9E.42292.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/log/events.out.tfevents.1656234305.Ginger-LAPTOP-L8GFNL9E.14232.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/log/events.out.tfevents.1656234350.Ginger-LAPTOP-L8GFNL9E.35168.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/log/events.out.tfevents.1656234482.Ginger-LAPTOP-L8GFNL9E.33396.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/log/events.out.tfevents.1656234613.Ginger-LAPTOP-L8GFNL9E.18428.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/log/events.out.tfevents.1656234728.Ginger-LAPTOP-L8GFNL9E.32240.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/log/events.out.tfevents.1656235084.Ginger-LAPTOP-L8GFNL9E.42564.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/log/events.out.tfevents.1656240116.Ginger-LAPTOP-L8GFNL9E.31736.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/log/events.out.tfevents.1656240438.Ginger-LAPTOP-L8GFNL9E.39540.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/log/events.out.tfevents.1656249466.Ginger-LAPTOP-L8GFNL9E.17152.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/log/events.out.tfevents.1656249491.Ginger-LAPTOP-L8GFNL9E.42988.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3_keyboard_mouse/trainer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,9 +60,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../yolov3_keyboard_mouse" />
   </component>
-  <component name="RunManager" selected="Python.最小二乘法">
+  <component name="RunManager" selected="Python.net_cal">
     <configuration name="最小二乘法" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="code_stupid" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -47,6 +76,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/最小二乘法.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="net_cal" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="code_stupid" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/net_cal.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -78,6 +128,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.net_cal" />
         <item itemvalue="Python.最小二乘法" />
         <item itemvalue="Python.test617" />
       </list>
@@ -104,6 +155,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
