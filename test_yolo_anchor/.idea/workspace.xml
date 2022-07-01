@@ -2,78 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10beec9b-56d9-44f6-8134-d3786ec80bc5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../yolov3_keyboard_mouse/acc_cal.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/label_ori.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/label_train.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/label_val.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yolov3_keyboard_mouse/test05.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/10.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/4.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/5.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/6.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/7.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/8.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/images/9.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/label.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test01.py" beforeDir="false" afterPath="$PROJECT_DIR$/test01.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/cfg.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3_keyboard_mouse/cfg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/images/1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/images/10.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/images/2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/images/3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/images/4.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/images/5.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/images/6.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/images/7.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/images/8.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/images/9.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/img_after/1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/img_after/10.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/img_after/2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/img_after/3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/img_after/4.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/img_after/5.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/img_after/6.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/img_after/7.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/img_after/8.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/img_after/9.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/img_song/1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/img_song/10.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/img_song/11.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/img_song/12.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/img_song/13.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/img_song/14.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/img_song/2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/img_song/3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/img_song/4.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/img_song/5.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/img_song/6.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/img_song/7.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/img_song/8.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/img_song/9.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/label.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/label_bak.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/data/pic_resize.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3_keyboard_mouse/dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/detector_practice.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3_keyboard_mouse/detector_practice.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/module.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3_keyboard_mouse/module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/result/1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/result/10.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/result/2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/result/3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/result/4.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/result/5.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/result/6.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/result/7.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/result/8.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/result/9.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/test04.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3_keyboard_mouse/test04.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3_keyboard_mouse/trainer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/xml_reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3_keyboard_mouse/xml_reader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3_keyboard_mouse/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -175,7 +175,7 @@ class Darknet53(torch.nn.Module):
 
 if __name__ == '__main__':
     yolo = Darknet53()
-    x = torch.randn(2, 3, 416, 416)
+    x = torch.randn(2, 3, 128, 128)
     y = yolo(x)
     print(y[0].shape)
     print(y[1].shape)
