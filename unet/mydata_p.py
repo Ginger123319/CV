@@ -19,7 +19,7 @@ class MyData(Dataset):
         return len(self.tag_names)
 
     def __getitem__(self, index):
-        # 生成黑色背景
+        # 生成黑色背景，将等比缩放后的图片粘贴到黑色背景图片上
         # 此处的函数调用像forward函数一样，在调用时可以省略函数名字
         # 在类中被定义为一个call方法，调用的时候可以不写函数名，直接传入参数
         # def __call__(self, pic):
@@ -31,7 +31,6 @@ class MyData(Dataset):
         tag_path = os.path.join(self.path, "SegmentationClass")
         data_path = os.path.join(self.path, "JPEGImages")
         # 打开两张图片
-        # mode=P?
         img_tag = Image.open(os.path.join(tag_path, tag_name))
         img_data = Image.open(os.path.join(data_path, data_name))
         # print("PIL OPEN：{} ".format(type(img_tag)))
@@ -45,7 +44,7 @@ class MyData(Dataset):
 
         img_tag_resize = img_tag.resize(img_resize)
         img_data_resize = img_data.resize(img_resize)
-
+        # 默认是从左上角的00点开始粘贴
         black0.paste(img_data_resize)
         black1.paste(img_tag_resize)
 

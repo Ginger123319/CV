@@ -27,15 +27,15 @@ class Detector(torch.nn.Module):  # 定义侦测模块
         self.net.eval()  # 固化参数即使得BatchNormal不在测试的时候起作用
 
     def forward(self, input, thresh, anchors, ratio):  # 定义前向运算，并给三个参数分别是输入数据，置信度阀值，及建议框
-        output_13, output_26, output_52 = self.net(input)  # 将数据传入网络并获得输出
-        # （n,h,w,3,15）其中n,h,w,3做为索引，即这里的idxs_13，表示定义在那个格子上
-        idxs_13, vecs_13 = self._filter(output_13, thresh)  # 赛选获取13*13特侦图置信度合格的置信度的索引和15个值，赛选函数下面自己定义的
-        boxes_13 = self._parse(idxs_13, vecs_13, 32, anchors[13], ratio)  # 对上面输出的两个值进行解析，获得最终的输出框，解析函数在下面
-        idxs_26, vecs_26 = self._filter(output_26, thresh)  # 赛选获取26*26特侦图置信度合格的置信度的索引和15个值，赛选函数下面自己定义的
-        boxes_26 = self._parse(idxs_26, vecs_26, 16, anchors[26], ratio)  # 对上面输出的两个值进行解析，获得最终的输出框，解析函数在下面
-        idxs_52, vecs_52 = self._filter(output_52, thresh)  # 赛选获取52*52特侦图置信度合格的置信度的索引和15个值，赛选函数下面自己定义的
-        boxes_52 = self._parse(idxs_52, vecs_52, 8, anchors[52], ratio)  # 对上面输出的两个值进行解析，获得最终的输出框，解析函数在下面
-        return torch.cat([boxes_13, boxes_26, boxes_52], dim=0)  # 将三种框在0维度按顺序拼接在一起并返回给调用方
+        output_4, output_8, output_16 = self.net(input)  # 将数据传入网络并获得输出
+        # （n,h,w,3,15）其中n,h,w,3做为索引，即这里的idxs_4，表示定义在那个格子上
+        idxs_4, vecs_4 = self._filter(output_4, thresh)  # 赛选获取4*4特侦图置信度合格的置信度的索引和15个值，赛选函数下面自己定义的
+        boxes_4 = self._parse(idxs_4, vecs_4, 32, anchors[4], ratio)  # 对上面输出的两个值进行解析，获得最终的输出框，解析函数在下面
+        idxs_8, vecs_8 = self._filter(output_8, thresh)  # 赛选获取8*8特侦图置信度合格的置信度的索引和15个值，赛选函数下面自己定义的
+        boxes_8 = self._parse(idxs_8, vecs_8, 16, anchors[8], ratio)  # 对上面输出的两个值进行解析，获得最终的输出框，解析函数在下面
+        idxs_16, vecs_16 = self._filter(output_16, thresh)  # 赛选获取16*16特侦图置信度合格的置信度的索引和15个值，赛选函数下面自己定义的
+        boxes_16 = self._parse(idxs_16, vecs_16, 8, anchors[16], ratio)  # 对上面输出的两个值进行解析，获得最终的输出框，解析函数在下面
+        return torch.cat([boxes_4, boxes_8, boxes_16], dim=0)  # 将三种框在0维度按顺序拼接在一起并返回给调用方
 
     def _filter(self, output, thresh):  # 过滤置信度函数，将置信度合格留下来
         output = output.permute(0, 2, 3, 1)  # 数据形状[N,C,H,W]-->>标签形状[N,H,W,C]，，因此这里通过换轴
@@ -98,7 +98,7 @@ if __name__ == '__main__':
     # img_path = 'data/img_after/'
     img_path = cfg.img_path
     img_name_list = []
-    with open(cfg.val_path) as f:
+    with open(cfg.train_path) as f:
         for line in f.readlines():
             img_name_list.append(line.split()[0])
     name = xml_reader.class_name
@@ -126,7 +126,7 @@ if __name__ == '__main__':
                 # print(box.shape)
                 # exit()
                 img_draw = draw.ImageDraw(im)  # 制作画笔
-                for i in range(len(box)):  # 遍历各个类别的所有框并进行画图
+                for i in range(len(box)):  # 遍历一个类别的所有框；box是NV结构
                     c, x1, y1, x2, y2, cls = box[i, :]  # 将自信度和坐标及类别分别解包出来
                     # print(c,x1, y1, x2, y2)
                     # print(int(cls.item()))
@@ -147,7 +147,7 @@ if __name__ == '__main__':
         plt.axis('off')
         plt.imshow(im)
         # plt.show()
-        plt.pause(3)
+        plt.pause(10)
         plt.close()
         # im.show()
 
