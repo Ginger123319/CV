@@ -36,7 +36,7 @@ class MyDataset(Dataset):
         return len(self.dataset)
 
     def __getitem__(self, index):
-        # 用字典存储三个尺度的标签13，26，52
+        # 用字典存储三个尺度的标签4，8，16
         labels = {}
         # 取出字符串列表中的一条数据
         line = self.dataset[index]
@@ -63,8 +63,8 @@ class MyDataset(Dataset):
 
         index = 0
         for feature_size, anchors in cfg.ANCHORS_GROUP.items():
-            # 创建13尺度的标签，此处labels是个字典
-            # 键值对（13：标签张量）
+            # 创建4尺度的标签，此处labels是个字典
+            # 键值对（4：标签张量）
             labels[feature_size] = np.zeros(shape=(feature_size, feature_size, 3, 5 + cfg.CLASS_NUM))
             # print(labels[feature_size].shape)
             # exit()
@@ -72,7 +72,7 @@ class MyDataset(Dataset):
                 cls, cx, cy, w, h = box
                 # 计算偏移量，以及中心点在标签上的索引位置
                 # math.modf先返回小数部分，再返回整数部分
-                # feature_size / cfg.IMG_WIDTH=(13,26,52)/416
+                # feature_size / cfg.IMG_WIDTH=(4,8,16)/416
                 cx_offset, cx_index = math.modf(cx * feature_size / cfg.IMG_WIDTH)
                 cy_offset, cy_index = math.modf(cy * feature_size / cfg.IMG_WIDTH)
                 # print(cx_index,cx_offset)
@@ -94,12 +94,12 @@ class MyDataset(Dataset):
                     # np.log(p_w)，因为宽高的偏移量只能是正数，取对数后，标签就有正有负，更利于模型训练
                     labels[feature_size][int(cy_index), int(cx_index), i] = np.array(
                         [iou, cx_offset, cy_offset, np.log(p_w), np.log(p_h), int(cls)+1])
-        return labels[13], labels[26], labels[52], img_data
+        return labels[4], labels[8], labels[16], img_data
 
 
 if __name__ == '__main__':
     data = MyDataset(cfg.train_path, cfg.img_path)
-    print(data[0][1].shape)
+    print(data[0][3].shape)
     # loader = DataLoader(data, batch_size=32, shuffle=True)
     # for i, (x1, x2, x3, d) in enumerate(loader):
     #     print(i)
@@ -119,8 +119,8 @@ if __name__ == '__main__':
     # print(data[0][3].shape)
     # myDataset = MyDataset(cfg.train_path, cfg.img_path)
     # train_loader = DataLoader(myDataset, batch_size=3, shuffle=False)
-    # for target_13, target_26, target_52, img_data in train_loader:
-    #     print(target_13.shape)
-    #     # print(torch.sum((target_13[..., -1] > 0), dim=-1))
-    #     print(torch.sum(torch.sum((target_13[..., -1] > 0), dim=-1) == 3))
+    # for target_4, target_8, target_16, img_data in train_loader:
+    #     print(target_4.shape)
+    #     # print(torch.sum((target_4[..., -1] > 0), dim=-1))
+    #     print(torch.sum(torch.sum((target_4[..., -1] > 0), dim=-1) == 3))
     #     exit()
