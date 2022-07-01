@@ -1,7 +1,7 @@
 import torch
 import cv2 as cv
 
-target_len = 416
+target_len = 128
 
 
 def pic_resize(pic_path):
@@ -20,8 +20,8 @@ def pic_resize(pic_path):
     # 按比例缩放
     dst = cv.resize(img_data, (w, h))
     # 给缩放后的图片加黑边，在下面或者右边添加
-    # 不需要分类，有一条边为416，计算结果就为0
-    dst = cv.copyMakeBorder(dst, 0, 416 - h, 0, 416 - w, cv.BORDER_CONSTANT, value=[0, 0, 0])
+    # 不需要分类，有一条边为128，计算结果就为0
+    dst = cv.copyMakeBorder(dst, 0, 128 - h, 0, 128 - w, cv.BORDER_CONSTANT, value=[0, 0, 0])
 
     # print(dst.shape)
     # cv.imshow("pic", dst)

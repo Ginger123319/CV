@@ -62,7 +62,7 @@ if __name__ == '__main__':
         shutil.rmtree("log")
         print("log off")
     myDataset = dataset.MyDataset(cfg.train_path, cfg.img_path)
-    train_loader = DataLoader(myDataset, batch_size=3, shuffle=True)
+    train_loader = DataLoader(myDataset, batch_size=32, shuffle=True)
     writer = SummaryWriter("log")
     net = Darknet53().cuda()
     # 判断是否有权重，有就加载权重
@@ -108,23 +108,23 @@ if __name__ == '__main__':
         pre_target = 0.
         for target_13, target_26, target_52, img_data in tqdm(train_loader, file=sys.stdout):
             output_13, output_26, output_52 = net(img_data.cuda())
-            # 全部放到cuda上运算
-            target_13 = target_13.cuda()
-            target_26 = target_26.cuda()
-            target_52 = target_52.cuda()
-            # 计算标签目标总数
-            t13 = _target_cal(target_13, is_reshape=False)
-            sum_target += t13 * 3
-            # 对输出进行变形，以及对输出的两个分类概率取argmax
-            o13 = _target_cal(output_13)
-            o26 = _target_cal(output_26)
-            o52 = _target_cal(output_52)
-            # 和标签比较
-            r13 = o13.eq(target_13[..., -1] + 1)
-            r26 = o26.eq(target_26[..., -1] + 1)
-            r52 = o52.eq(target_52[..., -1] + 1)
-            # 统计输出中分类正确的预测的目标数
-            pre_target += (_target_cal(r13, False) + _target_cal(r26, False) + _target_cal(r52, False))
+            # # 全部放到cuda上运算
+            # target_13 = target_13.cuda()
+            # target_26 = target_26.cuda()
+            # target_52 = target_52.cuda()
+            # # 计算标签目标总数
+            # t13 = _target_cal(target_13, is_reshape=False)
+            # sum_target += t13 * 3
+            # # 对输出进行变形，以及对输出的两个分类概率取argmax
+            # o13 = _target_cal(output_13)
+            # o26 = _target_cal(output_26)
+            # o52 = _target_cal(output_52)
+            # # 和标签比较
+            # r13 = o13.eq(target_13[..., -1] + 1)
+            # r26 = o26.eq(target_26[..., -1] + 1)
+            # r52 = o52.eq(target_52[..., -1] + 1)
+            # # 统计输出中分类正确的预测的目标数
+            # pre_target += (_target_cal(r13, False) + _target_cal(r26, False) + _target_cal(r52, False))
             # print(output_13.shape, output_13.dtype)
             loss_13 = loss_fn(output_13, target_13.cuda(), 0.9)
             loss_26 = loss_fn(output_26, target_26.cuda(), 0.9)
@@ -138,13 +138,12 @@ if __name__ == '__main__':
             # print(loss.item())
             sum_loss += loss
         # 每训练一轮，保存一次权重,删除上一轮保留的权重
-        print("sum_target: "
-              , sum_target)
-        avg_acc = pre_target / sum_target
+        # print("sum_target: ", sum_target)
+        # avg_acc = pre_target / sum_target
         avg_loss = sum_loss / len(train_loader)
         writer.add_scalar("loss", avg_loss, count)
         print("epoch {} avg loss is: {}".format(count, avg_loss))
-        print("epoch {} avg acc is: {}".format(count, avg_acc))
+        # print("epoch {} avg acc is: {}".format(count, avg_acc))
         if os.path.exists(param_path):
             os.rename(param_path, param_path + "_old")
         # print(param_path)
