@@ -98,7 +98,7 @@ if __name__ == '__main__':
     # img_path = 'data/img_after/'
     img_path = cfg.img_path
     img_name_list = []
-    with open(cfg.train_path) as f:
+    with open(cfg.val_path) as f:
         for line in f.readlines():
             img_name_list.append(line.split()[0])
     name = xml_reader.class_name
@@ -147,7 +147,7 @@ if __name__ == '__main__':
         plt.axis('off')
         plt.imshow(im)
         # plt.show()
-        plt.pause(10)
+        plt.pause(3)
         plt.close()
         # im.show()
 

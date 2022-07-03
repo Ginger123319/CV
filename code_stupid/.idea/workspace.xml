@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a06c10d8-5da5-47a0-86b3-b7573c250b9b" name="Changes" comment="" />
+    <list default="true" id="a06c10d8-5da5-47a0-86b3-b7573c250b9b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test_yolo_anchor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../test_yolo_anchor/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/detector_practice.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3_keyboard_mouse/detector_practice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/log/events.out.tfevents.1656653470.DESKTOP-P6O1K2C.11500.0" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
