@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="822f338a-3eb8-41d7-b6fe-5d05db4c20ea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../yolov3/dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3/dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/detector_practice.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3/detector_practice.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yolov3/tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3/tool.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../code_stupid/test705.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code_stupid/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../code_stupid/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +35,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CLS_EXAMPLE" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
