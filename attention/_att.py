@@ -36,7 +36,7 @@ class MultiAttention(nn.Module):
 
         _as = torch.softmax((_qs @ _ks.permute(0, 2, 1)) / self._input_dim ** 0.5, -1) @ _vs
 
-        _vs= _as.permute(1, 0, 2).reshape(-1, self._head * self._input_dim)
+        _vs = _as.permute(1, 0, 2).reshape(-1, self._head * self._input_dim)
 
         return self._output_net(_vs)
 
@@ -47,5 +47,6 @@ if __name__ == '__main__':
     v = torch.randn(7, 5)
 
     att = MultiAttention(2, 5)
+    att = Attention()
     y = att(q, k, v)
     print(y.shape)
