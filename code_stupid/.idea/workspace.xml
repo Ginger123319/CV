@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a06c10d8-5da5-47a0-86b3-b7573c250b9b" name="Changes" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/test705.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../attention/_att.py" beforeDir="false" afterPath="$PROJECT_DIR$/../attention/_att.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../targetDetection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../targetDetection/.idea/workspace.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test_yolo_anchor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../test_yolo_anchor/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/detector_practice.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3_keyboard_mouse/detector_practice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/log/events.out.tfevents.1656653470.DESKTOP-P6O1K2C.11500.0" beforeDir="false" />
+>>>>>>> 8b67edf8807d79b88d0ccfe81899311d0f0c7667
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
