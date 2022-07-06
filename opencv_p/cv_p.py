@@ -3,7 +3,7 @@ import numpy as np
 from PIL import Image
 
 # # 读取
-# from matplotlib import pyplot as plt
+from matplotlib import pyplot as plt
 #
 # img = cv2.imread("sources/59.jpg")
 # # cv2.imshow("img_1", img)
@@ -177,21 +177,21 @@ from PIL import Image
 # 高通滤波和低通滤波
 # 低通滤波也叫平滑滤波，可以使图像变模糊，主要用于去噪
 # 高通滤波一般用于获取图像边缘、轮廓或梯度
-
-# 均值滤波（模糊处理）
-src = cv2.imread("sources/5.jpg")
-# dst = cv2.blur(src, (5, 5))
-# # 高斯滤波
-# dst = cv2.GaussianBlur(src, (5, 5), 0)
-# 中值滤波（去除椒盐噪声，有白和黑的噪声）
-dst = cv2.medianBlur(src, 5)
-# # 双边滤波（连接本该连接上却断开的线条）
-# dst = cv2.bilateralFilter(src, 9, 75, 75)
-# # 高通滤波
-# dst = cv2.Laplacian(src, -1, ksize=3)
-cv2.imshow("src show", src)
-cv2.imshow("dst show", dst)
-cv2.waitKey(0)
+#
+# # 均值滤波（模糊处理）
+# src = cv2.imread("sources/5.jpg")
+# # dst = cv2.blur(src, (5, 5))
+# # # 高斯滤波
+# # dst = cv2.GaussianBlur(src, (5, 5), 0)
+# # 中值滤波（去除椒盐噪声，有白和黑的噪声）
+# dst = cv2.medianBlur(src, 5)
+# # # 双边滤波（连接本该连接上却断开的线条）
+# # dst = cv2.bilateralFilter(src, 9, 75, 75)
+# # # 高通滤波
+# # dst = cv2.Laplacian(src, -1, ksize=3)
+# cv2.imshow("src show", src)
+# cv2.imshow("dst show", dst)
+# cv2.waitKey(0)
 
 # # 直方图均值化（去雾，让色域扩大）
 # img = cv2.imread('sources/16.jpg')
@@ -201,34 +201,35 @@ cv2.waitKey(0)
 # plt.plot(img_G, label='G', color='g')
 # img_R = cv2.calcHist([img], [2], None, [256], [0, 256])
 # plt.plot(img_R, label='R', color='r')
-# # plt.show()
+# plt.show()
 # # 去雾效果
 # img = cv2.imread('sources/16.jpg', 0)
-# # cv2.imshow("src", img)
+# cv2.imshow("src", img)
 # his = cv2.calcHist([img], [0], None, [256], [0, 256])
 # plt.plot(his, label='his', color='r')
 # # plt.show()
 # dst = cv2.equalizeHist(img)
-# # cv2.imshow("dst", dst)
+# cv2.imshow("dst", dst)
+# cv2.waitKey()
 # # cv2.imwrite("15.jpg", dst)
 # his = cv2.calcHist([dst], [0], None, [256], [0, 256])
 # plt.plot(his, label='his', color='b')
-# # plt.show()
+# plt.show()
 #
-# # Canny算法
-# # 边缘提取算法
-# img = cv2.imread("sources/1.jpg", 0)
-# img = cv2.GaussianBlur(img, (3, 3), 0)
-# canny = cv2.Canny(img, 10, 150)
-# cv2.imshow('Canny', canny)
-# cv2.waitKey(0)
-# # 步骤
-# # 彩色图像转换为灰度图像
-# # 高斯滤波，滤除噪声点
-# # 计算图像梯度，根据梯度计算边缘幅值与角度
-# # 非极大值抑制
-# # 双阈值边缘连接处理
-# # 二值化图像输出结果
+# Canny算法
+# 边缘提取算法
+img = cv2.imread("sources/1.jpg", 0)
+img = cv2.GaussianBlur(img, (3, 3), 0)
+canny = cv2.Canny(img, 20, 150)
+cv2.imshow('Canny', canny)
+cv2.waitKey(0)
+# 步骤
+# 彩色图像转换为灰度图像
+# 高斯滤波，滤除噪声点
+# 计算图像梯度，根据梯度计算边缘幅值与角度
+# 非极大值抑制[梯度和边缘都是高频信号，但是梯度线宽不是1，而边缘的线宽是一个像素]
+# 双阈值边缘连接处理
+# 二值化图像输出结果
 #
 # # 轮廓是一堆点，而边缘和梯度是线条
 # # 前提二值化图像
