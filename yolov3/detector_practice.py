@@ -50,7 +50,8 @@ class Detector(torch.nn.Module):  # 定义侦测模块
         # exit()
         idxs = mask.nonzero()  # 将索引取出来其形状N,V包含（N,H,W,3）
         vecs = output[mask]  # 通过掩码获取置信度大于阈值的对应数据【iou,cx,cy,w,h,cls】长度为5+10的向量
-        # print(vecs.shape)
+        print("idxs",idxs.shape)
+        print("vec",vecs.shape)
         # exit()
         return idxs, vecs  # 将索引和数据返回给调用方
 
@@ -86,6 +87,9 @@ class Detector(torch.nn.Module):  # 定义侦测模块
         x2 = x1 + w  # 计算框右下角x的坐标
         y2 = y1 + h  # 计算框右下角y的坐标
         out = torch.stack([confidence, x1, y1, x2, y2, classify], dim=1)  # 将置信度坐标和类别按照一轴即列的方向重组堆叠在一起
+        # print(out.shape)
+        # print(out)
+        # exit()
         return out
 
 
