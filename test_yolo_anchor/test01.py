@@ -6,7 +6,7 @@ import torch
 
 from kmeans import kmeans, avg_iou
 
-ANNOTATIONS_PATH = r"D:\Python\source\key_mouse\outputs"
+ANNOTATIONS_PATH = r"..\..\source\key_mouse\outputs"
 CLUSTERS = 9
 
 
@@ -45,15 +45,15 @@ if __name__ == '__main__':
     print(data.shape)
     out = kmeans(data, k=CLUSTERS)
     # clusters = [[10,13],[16,30],[33,23],[30,61],[62,45],[59,119],[116,90],[156,198],[373,326]]
-    # out= np.array(clusters)/128.0
+    # out= np.array(clusters)/416.0
     print(out)
     # 计算建议框和数据框的IOU，测试建议框选取的好坏程度
     print("Accuracy: {:.2f}%".format(avg_iou(data, out) * 100))
-    # 网络设置的输入尺寸是128*128，所有图片都必须等比缩放为128*128，由于等比缩放不改变比例值
-    # 所以计算缩放后建议框的w和h就乘以128即可
-    print("Boxes:\n {}-{}".format(np.ceil(out[:, 0] * 128), np.ceil(out[:, 1] * 128)))
-    w_ndarray = np.sort(np.ceil(out[:, 0] * 128)).astype(np.int32)
-    h_ndarray = np.sort(np.ceil(out[:, 1] * 128)).astype(np.int32)
+    # 网络设置的输入尺寸是416*416，所有图片都必须等比缩放为416*416，由于等比缩放不改变比例值
+    # 所以计算缩放后建议框的w和h就乘以416即可
+    print("Boxes:\n {}-{}".format(np.ceil(out[:, 0] * 416), np.ceil(out[:, 1] * 416)))
+    w_ndarray = np.sort(np.ceil(out[:, 0] * 416)).astype(np.int32)
+    h_ndarray = np.sort(np.ceil(out[:, 1] * 416)).astype(np.int32)
     # print(w_ndarray)
     ANCHORS_ndarray = np.stack((w_ndarray, h_ndarray), axis=0)
     # print(torch.tensor(ANCHORS_ndarray.T[0:3]), torch.tensor(ANCHORS_ndarray.T[3:6]),

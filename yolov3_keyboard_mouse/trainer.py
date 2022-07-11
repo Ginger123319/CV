@@ -6,7 +6,8 @@ from torch.utils.data import DataLoader
 from tqdm import tqdm
 import cfg
 import dataset
-from module import *
+# from module import *
+from yolobody import YoloBody
 import torch
 import os
 import numpy
@@ -64,7 +65,8 @@ if __name__ == '__main__':
     myDataset = dataset.MyDataset(cfg.train_path, cfg.img_path)
     train_loader = DataLoader(myDataset, batch_size=32, shuffle=True)
     writer = SummaryWriter("log")
-    net = Darknet53().cuda()
+    # net = Darknet53().cuda()
+    net = YoloBody(cfg.ANCHORS_GROUP1, 2, 'n').cuda()
     # 判断是否有权重，有就加载权重
     # 局限性：不适用于给一个异常的预权重且名字为param_path+ "_old"的情况
     # old和new有四种组成：空，old，new，old和new

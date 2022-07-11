@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10beec9b-56d9-44f6-8134-d3786ec80bc5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../yolov3_keyboard_mouse/yolobody.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../yolov3_keyboard_mouse/yolov5n_practice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test01.py" beforeDir="false" afterPath="$PROJECT_DIR$/test01.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/cfg.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3_keyboard_mouse/cfg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3_keyboard_mouse/trainer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov3_keyboard_mouse/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov3_keyboard_mouse/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +36,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../yolov3_keyboard_mouse" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.test01">
@@ -112,6 +117,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
