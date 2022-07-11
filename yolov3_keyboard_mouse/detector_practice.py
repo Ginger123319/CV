@@ -4,7 +4,8 @@ import os
 import cfg
 import xml_reader
 import torchvision
-from module import *
+# from module import *
+from yolobody import YoloBody
 import matplotlib.pyplot as plt
 from PIL import Image, ImageFont
 import PIL.ImageDraw as draw
@@ -22,7 +23,8 @@ class Detector(torch.nn.Module):  # 定义侦测模块
     def __init__(self):
         super().__init__()
 
-        self.net = Darknet53()  # 实例化网络
+        # self.net = Darknet53()  # 实例化网络
+        self.net = YoloBody(cfg.ANCHORS_GROUP1, 2, 'n')  # 实例化网络
         self.net.load_state_dict(torch.load(cfg.param_path))  # 加载网络参数
         self.net.eval()  # 固化参数即使得BatchNormal不在测试的时候起作用
 
@@ -30,11 +32,11 @@ class Detector(torch.nn.Module):  # 定义侦测模块
         output_4, output_8, output_16 = self.net(input)  # 将数据传入网络并获得输出
         # （n,h,w,3,15）其中n,h,w,3做为索引，即这里的idxs_4，表示定义在那个格子上
         idxs_4, vecs_4 = self._filter(output_4, thresh)  # 赛选获取4*4特侦图置信度合格的置信度的索引和15个值，赛选函数下面自己定义的
-        boxes_4 = self._parse(idxs_4, vecs_4, 32, anchors[4], ratio)  # 对上面输出的两个值进行解析，获得最终的输出框，解析函数在下面
+        boxes_4 = self._parse(idxs_4, vecs_4, 32, anchors[13], ratio)  # 对上面输出的两个值进行解析，获得最终的输出框，解析函数在下面
         idxs_8, vecs_8 = self._filter(output_8, thresh)  # 赛选获取8*8特侦图置信度合格的置信度的索引和15个值，赛选函数下面自己定义的
-        boxes_8 = self._parse(idxs_8, vecs_8, 16, anchors[8], ratio)  # 对上面输出的两个值进行解析，获得最终的输出框，解析函数在下面
+        boxes_8 = self._parse(idxs_8, vecs_8, 16, anchors[26], ratio)  # 对上面输出的两个值进行解析，获得最终的输出框，解析函数在下面
         idxs_16, vecs_16 = self._filter(output_16, thresh)  # 赛选获取16*16特侦图置信度合格的置信度的索引和15个值，赛选函数下面自己定义的
-        boxes_16 = self._parse(idxs_16, vecs_16, 8, anchors[16], ratio)  # 对上面输出的两个值进行解析，获得最终的输出框，解析函数在下面
+        boxes_16 = self._parse(idxs_16, vecs_16, 8, anchors[52], ratio)  # 对上面输出的两个值进行解析，获得最终的输出框，解析函数在下面
         return torch.cat([boxes_4, boxes_8, boxes_16], dim=0)  # 将三种框在0维度按顺序拼接在一起并返回给调用方
 
     def _filter(self, output, thresh):  # 过滤置信度函数，将置信度合格留下来

@@ -95,23 +95,23 @@ class MyDataset(Dataset):
                     # np.log(p_w)，因为宽高的偏移量只能是正数，取对数后，标签就有正有负，更利于模型训练
                     labels[feature_size][int(cy_index), int(cx_index), i] = np.array(
                         [iou, cx_offset, cy_offset, np.log(p_w), np.log(p_h), int(cls) + 1])
-        return labels[4], labels[8], labels[16], img_data
+        return labels[13], labels[26], labels[52], img_data
 
 
 if __name__ == '__main__':
     data = MyDataset(cfg.train_path, cfg.img_path)
-    print((data[0][3].permute(1, 2, 0).numpy() * 255).shape)
+    # print((data[0][3].permute(1, 2, 0).numpy() * 255).shape)
     # img = np.uint8(data[0][3].permute(1, 2, 0).numpy() * 255)
     # print(img.dtype)
     # cv2.imshow("img", img)
     # cv2.waitKey()
-    # loader = DataLoader(data, batch_size=32, shuffle=True)
-    # for i, (x1, x2, x3, d) in enumerate(loader):
-    #     print(i)
-    #     print(x1.shape)
-    #     print(x2.shape)
-    #     print(x3.shape)
-    #     print(d.shape)
+    loader = DataLoader(data, batch_size=32, shuffle=True)
+    for i, (x1, x2, x3, d) in enumerate(loader):
+        print(i)
+        print(x1.shape)
+        print(x2.shape)
+        print(x3.shape)
+        print(d.shape)
     # print(data[1][0].shape)
     # print(data[1][0][..., -1] > 0)
     # print(np.sum(np.sum((data[1][0][..., -1] > 0), axis=-1) == 3))
