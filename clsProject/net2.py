@@ -53,4 +53,4 @@ class Net(nn.Module):
 if __name__ == '__main__':
     data = torch.randn(30, 22, 632, 1)
     net = Net()
-    print(net(data)[2].shape)
+    print(net(data)[1].shape)
