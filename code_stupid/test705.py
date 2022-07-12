@@ -8,21 +8,24 @@ c = torch.Tensor([[1, 2, 3]])
 # print(a * c)
 # print(a * b)
 # print(torch.matmul(a, b))
-x_input = torch.tensor([[0.3, 0.6, 0.1]], requires_grad=True)
-target = torch.tensor([2])
+x_input = torch.tensor([[0.3, 0.6]], requires_grad=True)
+target = torch.tensor([1])
 ce = nn.CrossEntropyLoss()
-print(math.log(0.3), math.log(0.6), math.log(0.1))
-first = -x_input[0][2]
-second = 0
-for i in range(1):
-    for j in range(3):
-        second += math.exp(x_input[i][j])
-res = first + math.log(second)
-print(first)
-print(res)
+# print(math.log(0.3), math.log(0.6), math.log(0.1))
+# first = -x_input[0][2]
+# second = 0
+# for i in range(1):
+#     for j in range(3):
+#         second += math.exp(x_input[i][j])
+# res = first + math.log(second)
+# print(first)
+# print(res)
 print(ce(x_input, target))
-print(torch.exp(-res))
+# print(torch.exp(-res))
 print(-math.log(0.2584))
+# 测试数据经过softmax处理后再经过多分类交叉熵公式计算的结果和pytorch中自带的交叉熵函数计算结果就是一致的
+print(torch.softmax(x_input, dim=-1))
+
 # import torch
 # import torch.nn as nn
 # import math
