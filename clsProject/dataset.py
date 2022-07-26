@@ -60,7 +60,7 @@ class MyData(Dataset):
                 # exit()
                 elem = my_one_hot(string_2num_list(elem))
                 print(elem.shape)
-                exit()
+                # exit()
                 self.dataset.append((elem, tag))
 
         # file_path = train_file if is_train else test_file
