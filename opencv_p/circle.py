@@ -40,7 +40,7 @@ print(len(dot))
 img_contour = cv2.drawContours(img, dot, -1, (0, 255, 0), 2)
 # 使得图片自适应展示
 cv2.namedWindow("win1", cv2.WINDOW_NORMAL)
-cv2.imshow("win1", img)
+cv2.imshow("win1", result_binary)
 # cv2.namedWindow("img_contour", cv2.WINDOW_NORMAL)
 # cv2.imshow("img_contour", result_binary)
 # cv2.namedWindow("win", cv2.WINDOW_NORMAL)
