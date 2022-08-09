@@ -1,0 +1,14 @@
+file_path = r"..\..\source\word_vec\atc数据.xlsx"
+save_path = r"..\..\source\word_vec\atc数据.txt"
+test_path = r"..\..\source\word_vec\atc测试.txt"
+embeddings_filepath = r"..\..\source\word_vec\wikicw\sgns.wiki.char"
+word2vec_path = r"..\..\source\word_vec\wikicw\word2vec.npy"
+small_word2vec_path = r"..\..\source\word_vec\wikicw\small_word2vec.npy"
+name_cls_dict_path = r"..\..\source\word_vec\wikicw\name_dict.npy"
+param_path = r"..\..\source\word_vec\param\param.pth"
+opt_path = r"..\..\source\word_vec\param\opt.pth"
+device = "cuda"
+train_batch_size = 512
+test_batch_size = 512
+tag_batch_size = 256
+log_path = r"log"

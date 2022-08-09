@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<doc>
+	<path>C:\Users\A\Desktop\images\5.jpg</path>
+	<outputs>
+		<object>
+			<item>
+				<name>猫</name>
+				<bndbox>
+					<xmin>164</xmin>
+					<ymin>203</ymin>
+					<xmax>369</xmax>
+					<ymax>298</ymax>
+				</bndbox>
+			</item>
+			<item>
+				<name>狗</name>
+				<bndbox>
+					<xmin>15</xmin>
+					<ymin>132</ymin>
+					<xmax>402</xmax>
+					<ymax>306</ymax>
+				</bndbox>
+			</item>
+		</object>
+	</outputs>
+	<time_labeled>1587640515220</time_labeled>
+	<labeled>true</labeled>
+	<size>
+		<width>416</width>
+		<height>416</height>
+		<depth>3</depth>
+	</size>
+</doc>
