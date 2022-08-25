@@ -13,7 +13,7 @@ import os
 import numpy
 from acc_cal import _target_cal
 
-param_path = r"..\..\source\key_mouse\param.pt"
+param_path = r"D:\Python\source\key_mouse\param.pt"
 
 
 def loss_fn(output, target, alpha):
