@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+from cv2 import contourArea
 
 path = r"..\..\source\opencv_pic\1.jpg"
 path1 = r"..\..\source\opencv_pic\pre_mask.jpg"
@@ -47,6 +48,13 @@ cv2.imshow("win1", img_contour)
 # cv2.imshow("win", binary)
 cv2.waitKey()
 cv2.destroyAllWindows()
+# print(len(contours))
+# # 计算轮廓所包围的缺陷面积
+# for i in range(len(contours)):
+#     print(i)
+#     # int
+#     area = contourArea(contours[i])
+#     print(area)
 
 # 二值图判断
 # for i in range(254):
