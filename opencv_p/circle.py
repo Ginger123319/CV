@@ -2,7 +2,11 @@ import cv2
 import numpy as np
 from cv2 import contourArea
 
+<<<<<<< HEAD
 path = r"..\..\source\opencv_pic\1.jpg"
+=======
+path = r"..\..\source\opencv_pic\1.png"
+>>>>>>> 8e573c5ca72d22baed81e334b509533fd6d7a85a
 path1 = r"..\..\source\opencv_pic\pre_mask.jpg"
 img = cv2.imread(path)
 img1 = cv2.imread(path1)

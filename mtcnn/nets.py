@@ -102,9 +102,15 @@ if __name__ == '__main__':
     r_net = RNet()
     o_net = ONet()
 
+<<<<<<< HEAD
     x1 = torch.randn(5, 3, 12, 12)
     x2 = torch.randn(5, 3, 24, 24)
     x3 = torch.randn(5, 3, 48, 48)
+=======
+    x1 = torch.randn(1, 3, 12, 12)
+    x2 = torch.randn(1, 3, 24, 24)
+    x3 = torch.randn(1, 3, 48, 48)
+>>>>>>> 8e573c5ca72d22baed81e334b509533fd6d7a85a
 
     y1 = p_net(x1)
     y2 = r_net(x2)

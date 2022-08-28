@@ -37,7 +37,10 @@ def nms(boxes, thresh=0.3, isMin=False):
     # 框的长度不为0时
     # 根据置信度排序：[x1,y1,x2,y2,C]
     _boxes = boxes[(-boxes[:, 4]).argsort()]  # #根据置信度“由大到小”，默认有小到大（加符号可反向排序）
+<<<<<<< HEAD
     # print(_boxes.shape)
+=======
+>>>>>>> 8e573c5ca72d22baed81e334b509533fd6d7a85a
     # 创建空列表，存放保留剩余的框
     r_boxes = []
     # 用1st个框，与其余的框进行比较，当长度小于等于1时停止（比len(_boxes)-1次）
@@ -54,7 +57,10 @@ def nms(boxes, thresh=0.3, isMin=False):
         # 比较IOU，将符合阈值条件的的框保留下来
         index = np.where(iou(a_box, b_boxes, isMin) < thresh)  # 将阈值小于0.3的建议框保留下来，返回保留框的索引
         _boxes = b_boxes[index]  # 循环控制条件；取出阈值小于0.3的建议框
+<<<<<<< HEAD
         print(_boxes.shape)
+=======
+>>>>>>> 8e573c5ca72d22baed81e334b509533fd6d7a85a
 
     if _boxes.shape[0] > 0:  # 最后一次，结果只用1st个符合或只有一个符合，若框的个数大于1；★此处_boxes调用的是whilex循环里的，此判断条件放在循环里和外都可以（只有在函数类外才可产生局部作用于）
         r_boxes.append(_boxes[0])  # 将此框添加到列表中
