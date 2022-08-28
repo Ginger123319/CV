@@ -41,4 +41,8 @@ if __name__ == '__main__':
     path = r"D:\Python\source\FACE\celebA\save_pic_label\48"  # 只以尺寸为48的为例
     dataset = FaceDataset(path)
     print(dataset[0])
+<<<<<<< HEAD
     print(dataset[0][2].shape)
+=======
+    print(dataset[0][0].shape)
+>>>>>>> 8e573c5ca72d22baed81e334b509533fd6d7a85a

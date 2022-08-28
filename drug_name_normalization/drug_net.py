@@ -45,11 +45,17 @@ class Net(nn.Module):
         out = self._sub_net(out)
         # print(out.shape)
         out = out.permute(1, 0, 2)
+<<<<<<< HEAD
         # print(out.shape)
         # out = out.reshape(-1, 8 * 512)
         # 取S条输出中的最后一条输出
         out = out[:, -1]
         print(out.shape)
+=======
+        # out = out.reshape(-1, 8 * 512)
+        out = out[:, -1]
+        # print(out.shape)
+>>>>>>> 8e573c5ca72d22baed81e334b509533fd6d7a85a
         out = self._output_net(out)
         return out
 

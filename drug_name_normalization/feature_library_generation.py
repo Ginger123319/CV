@@ -26,8 +26,13 @@ class FeatureTrainer:
             for _i, _data in enumerate(self._tag_loader):
                 _data = _data.to(cfg.device)
                 feature = self._net(_data)
+<<<<<<< HEAD
                 print(feature.shape)
                 exit()
+=======
+                # print(feature.shape)
+                # exit()
+>>>>>>> 8e573c5ca72d22baed81e334b509533fd6d7a85a
                 feature_li.append(feature)
             feature_lib = torch.cat(feature_li, dim=0)
             print(feature_lib.shape)
