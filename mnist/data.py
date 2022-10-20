@@ -50,3 +50,4 @@ if __name__ == '__main__':
         print(i)
         print(x.shape)
         print(y.shape)
+        exit(0)

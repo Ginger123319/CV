@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b97973dc-9259-4a09-983b-546ea1e38f9a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../yolov5s_fire/export.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../yolov5s_smoke/detect.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/.idea/ɸѡͼƬ.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/.idea/ɸѡͼƬ.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/01.数据集分包.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/01.数据集分包.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/02.划分数据集.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/02.划分数据集.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/03.voc_label.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/03.voc_label.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/04.标签分包.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/04.标签分包.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/Untitled Diagram.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/Untitled Diagram.drawio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/VOC2007/ImageSets/Main/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/VOC2007/ImageSets/Main/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/VOC2007/ImageSets/Main/train.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/VOC2007/ImageSets/Main/train.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/VOC2007/ImageSets/Main/val.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/VOC2007/ImageSets/Main/val.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/VOC2007/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/VOC2007/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/VOC2007/train.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/VOC2007/train.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/VOC2007/val.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/VOC2007/val.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/img_rename.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/img_rename.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/util_file_rename.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Convert_dataset_YOLOv5_changed/util_file_rename.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fire_smoke/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../fire_smoke/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fire_smoke/.idea/fire_smoke.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../fire_smoke/.idea/fire_smoke.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fire_smoke/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../fire_smoke/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fire_smoke/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../fire_smoke/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fire_smoke/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../fire_smoke/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fire_smoke/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../fire_smoke/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fire_smoke/check.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fire_smoke/check.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fire_smoke/data_pre.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fire_smoke/data_pre.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fire_smoke/random_data_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fire_smoke/random_data_file.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fire_smoke/random_data_mv.py" beforeDir="false" afterPath="$PROJECT_DIR$/../fire_smoke/random_data_mv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../pythonProject/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pythonProject/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pythonProject/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pythonProject/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/.idea/pythonProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../pythonProject/.idea/pythonProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pythonProject/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pythonProject/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../pythonProject/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/.pre-commit-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/.pre-commit-config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/CONTRIBUTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/CONTRIBUTING.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/data/Argoverse.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/data/Argoverse.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/data/GlobalWheat2020.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/data/GlobalWheat2020.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/data/Objects365.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/data/Objects365.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/data/SKU-110K.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/data/SKU-110K.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/data/VOC.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/data/VOC.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/data/VisDrone.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/data/VisDrone.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/data/coco.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/data/coco.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/data/coco128.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/data/coco128.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/data/hyps/hyp.Objects365.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/data/hyps/hyp.Objects365.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/data/hyps/hyp.VOC.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/data/hyps/hyp.VOC.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/data/hyps/hyp.scratch-high.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/data/hyps/hyp.scratch-high.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/data/hyps/hyp.scratch-low.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/data/hyps/hyp.scratch-low.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/data/hyps/hyp.scratch-med.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/data/hyps/hyp.scratch-med.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/data/scripts/download_weights.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/data/scripts/download_weights.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/data/scripts/get_coco.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/data/scripts/get_coco.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/data/scripts/get_coco128.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/data/scripts/get_coco128.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/data/xView.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/data/xView.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/detect.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/detect.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/export.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/export.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/fortest.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/fortest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/hubconf.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/hubconf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/common.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/experimental.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/experimental.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/hub/anchors.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/hub/anchors.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov3-spp.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov3-spp.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov3-tiny.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov3-tiny.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov3.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov3.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5-bifpn.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5-bifpn.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5-fpn.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5-fpn.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5-p2.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5-p2.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5-p34.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5-p34.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5-p6.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5-p6.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5-p7.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5-p7.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5-panet.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5-panet.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5l6.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5l6.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5m6.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5m6.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5n6.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5n6.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5s-ghost.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5s-ghost.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5s-transformer.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5s-transformer.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5s6.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5s6.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5x6.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/hub/yolov5x6.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/tf.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/tf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/yolo.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/yolo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/yolov5l.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/yolov5l.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/yolov5m.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/yolov5m.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/yolov5n.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/yolov5n.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/yolov5s.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/yolov5s.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/models/yolov5x.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/models/yolov5x.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/setup.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/setup.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/tmp036z5fpf" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/tmp036z5fpf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/tmpdj3ortpc" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/tmpdj3ortpc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/tutorial.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/tutorial.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/activations.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/activations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/augmentations.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/augmentations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/autoanchor.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/autoanchor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/autobatch.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/autobatch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/aws/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/aws/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/aws/mime.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/aws/mime.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/aws/resume.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/aws/resume.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/aws/userdata.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/aws/userdata.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/benchmarks.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/benchmarks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/callbacks.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/callbacks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/dataloaders.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/dataloaders.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/docker/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/docker/.dockerignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/docker/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/docker/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/docker/Dockerfile-arm64" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/docker/Dockerfile-arm64" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/docker/Dockerfile-cpu" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/docker/Dockerfile-cpu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/downloads.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/downloads.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/flask_rest_api/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/flask_rest_api/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/flask_rest_api/example_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/flask_rest_api/example_request.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/flask_rest_api/restapi.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/flask_rest_api/restapi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/general.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/general.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/google_app_engine/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/google_app_engine/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/google_app_engine/additional_requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/google_app_engine/additional_requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/google_app_engine/app.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/google_app_engine/app.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/loggers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/loggers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/loggers/wandb/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/loggers/wandb/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/loggers/wandb/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/loggers/wandb/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/loggers/wandb/log_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/loggers/wandb/log_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/loggers/wandb/sweep.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/loggers/wandb/sweep.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/loggers/wandb/sweep.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/loggers/wandb/sweep.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/loggers/wandb/wandb_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/loggers/wandb/wandb_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/loss.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/metrics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/plots.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/plots.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/utils/torch_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/utils/torch_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yolov5-chinese/val.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yolov5-chinese/val.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2EVsliDgS3jUl1knHt5FpjTxrPf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/room/PycharmProjects/pao_mao_di_lou",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
+  <component name="RunManager" selected="Python.contoursMatch">
+    <configuration name="bgst" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pao_mao_di_lou" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bgst.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="contoursMatch" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pao_mao_di_lou" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/contoursMatch.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="crawler" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pao_mao_di_lou" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crawler.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="sample" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pao_mao_di_lou" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sample.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_plus" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pao_mao_di_lou" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_plus.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.contoursMatch" />
+        <item itemvalue="Python.bgst" />
+        <item itemvalue="Python.crawler" />
+        <item itemvalue="Python.test_plus" />
+        <item itemvalue="Python.sample" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b97973dc-9259-4a09-983b-546ea1e38f9a" name="Changes" comment="" />
+      <created>1662692238882</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662692238882</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
