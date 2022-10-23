@@ -265,7 +265,7 @@ if __name__ == '__main__':
                 print((x1, y1, x2, y2))
 
                 print("conf:", box[4])  # 置信度
-                imDraw.rectangle((x1, y1, x2, y2), outline='yellow',width=2)
+                imDraw.rectangle((x1, y1, x2, y2), outline='yellow', width=2)
                 # imDraw.text((x1, y1), "{:.2f}".format(box[4]), font=font, fill=(255, 0, 255))
                 # im.show() # 每循环一次框一个人脸
             # im.show()
