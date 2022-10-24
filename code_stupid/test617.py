@@ -5,13 +5,20 @@ torch.manual_seed(10)
 mat1 = torch.randint(0, 10, (2, 3))
 mat2 = torch.randint(0, 10, (2, 3))
 mat3 = torch.randint(0, 10, (3, 3))
+mat4 = mat1.reshape(1, 6)
+# 张量以及他的视图，张量中对应的元素指向同一块地址，因此会同时改变
+print(id(mat4[0, 3]), id(mat1[1, 1]))
+print(mat4)
 print(mat1)
-print(mat2)
-print(mat3)
-print(torch.multiply(mat1, mat2))
-print(torch.matmul(mat1, mat3))
-print(numpy.multiply(mat1, mat2))
-print(numpy.matmul(mat1, mat3))
+mat1[0, 0] = 100
+print(mat1)
+print(mat4)
+# print(mat2)
+# print(mat3)
+# print(torch.multiply(mat1, mat2))
+# print(torch.matmul(mat1, mat3))
+# print(numpy.multiply(mat1, mat2))
+# print(numpy.matmul(mat1, mat3))
 
 # # 在每次重新运行程序时，同样的随机数生成代码得到的是同样的结果。
 # # 如果需要同一段程序中每次随机生成的数字都一样，需要将每次随机生成之前都将随机数种子固定
