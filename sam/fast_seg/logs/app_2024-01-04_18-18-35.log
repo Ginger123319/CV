@@ -1,0 +1,38 @@
+(INFO) 2024-01-04 18:18:36: === 加载模型:weights/sam_hq_vit_l.pth 开始计时……
+(INFO) 2024-01-04 18:18:44: === 加载模型:weights/sam_hq_vit_l.pth 耗时 7631ms
+(INFO) 2024-01-04 18:18:53: === Post全程 开始计时……
+(INFO) 2024-01-04 18:18:53: body_dict: {'imgPath': 'imgs/kaola.jpg', 'preMask': 'imgs/result3.png', 'resultPath': 'imgs/result8.png', 'box': {'xmin': 0, 'ymin': 0, 'xmax': 1918, 'ymax': 1198}, 'maskColor': {'R': 0, 'G': 255, 'B': 0, 'A': 200}, 'click': [{'x': 1189, 'y': 834, 'is_positive': True}]}
+(INFO) 2024-01-04 18:18:53: === Wrapper内部 开始计时……
+(INFO) 2024-01-04 18:18:53: === Read img imgs/kaola.jpg 开始计时……
+(INFO) 2024-01-04 18:18:53: === Read img imgs/kaola.jpg 耗时 37ms
+(INFO) 2024-01-04 18:18:53: === Read img imgs/kaola.jpg --> 颜色转换 耗时 45ms
+(INFO) 2024-01-04 18:18:53: === Read img imgs/result3.png 开始计时……
+(INFO) 2024-01-04 18:18:53: === Read img imgs/result3.png 耗时 35ms
+(INFO) 2024-01-04 18:18:53: === mask_input loaded from: imgs/result3.png.npy
+(INFO) 2024-01-04 18:18:53: === Wrapper内部 --> 读图 耗时 83ms
+(INFO) 2024-01-04 18:18:53: === Wrapper内部 --> 初始化Predictor 耗时 84ms
+(INFO) 2024-01-04 18:18:57: === Wrapper内部 --> 调用Image Encoder 耗时 3417ms
+(INFO) 2024-01-04 18:18:57: === Wrapper内部 --> 调用Predictor 耗时 3448ms
+(INFO) 2024-01-04 18:18:57: === Wrapper内部 --> 处理颜色 耗时 3448ms
+(INFO) 2024-01-04 18:19:30: === Prob saved to: imgs/result8.png.npy
+(INFO) 2024-01-04 18:19:31: === masks scores<--->[0.93582284]
+(INFO) 2024-01-04 18:19:31: === Wrapper内部 耗时 37308ms
+(INFO) 2024-01-04 18:19:31: === Post全程 耗时 37328ms
+(INFO) 2024-01-04 18:20:33: === Post全程 开始计时……
+(INFO) 2024-01-04 18:20:33: body_dict: {'imgPath': 'imgs/kaola.jpg', 'preMask': 'imgs/result3.png', 'resultPath': 'imgs/result9.png', 'box': {'xmin': 0, 'ymin': 0, 'xmax': 1918, 'ymax': 1198}, 'maskColor': {'R': 0, 'G': 255, 'B': 0, 'A': 200}, 'click': [{'x': 1189, 'y': 834, 'is_positive': True}]}
+(INFO) 2024-01-04 18:20:33: === Wrapper内部 开始计时……
+(INFO) 2024-01-04 18:20:33: === Read img imgs/kaola.jpg 开始计时……
+(INFO) 2024-01-04 18:20:33: === Read img imgs/kaola.jpg 耗时 45ms
+(INFO) 2024-01-04 18:20:33: === Read img imgs/kaola.jpg --> 颜色转换 耗时 46ms
+(INFO) 2024-01-04 18:20:33: === Read img imgs/result3.png 开始计时……
+(INFO) 2024-01-04 18:20:33: === Read img imgs/result3.png 耗时 31ms
+(INFO) 2024-01-04 18:20:33: === mask_input loaded from: imgs/result3.png.npy
+(INFO) 2024-01-04 18:20:33: === Wrapper内部 --> 读图 耗时 80ms
+(INFO) 2024-01-04 18:20:33: === Wrapper内部 --> 初始化Predictor 耗时 80ms
+(INFO) 2024-01-04 18:20:33: === Wrapper内部 --> 调用Image Encoder 耗时 123ms
+(INFO) 2024-01-04 18:20:33: === Wrapper内部 --> 调用Predictor 耗时 144ms
+(INFO) 2024-01-04 18:20:33: === Wrapper内部 --> 处理颜色 耗时 144ms
+(INFO) 2024-01-04 18:21:07: === Prob saved to: imgs/result9.png.npy
+(INFO) 2024-01-04 18:21:07: === masks scores<--->[0.93582284]
+(INFO) 2024-01-04 18:21:07: === Wrapper内部 耗时 33916ms
+(INFO) 2024-01-04 18:21:07: === Post全程 耗时 33930ms

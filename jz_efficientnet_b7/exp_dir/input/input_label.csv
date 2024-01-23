@@ -1,0 +1,21 @@
+id,path,label
+1,D:/Python/test_jzyj/key_mouse_20/pic\0001.jpg,{'annotations': [{'category_id': '键盘'}]}
+2,D:/Python/test_jzyj/key_mouse_20/pic\0002 .jpg,{'annotations': [{'category_id': '鼠标'}]}
+3,D:/Python/test_jzyj/key_mouse_20/pic\0003 .jpg,{'annotations': [{'category_id': '鼠标'}]}
+4,D:/Python/test_jzyj/key_mouse_20/pic\0004 .jpg,{'annotations': [{'category_id': '鼠标'}]}
+5,D:/Python/test_jzyj/key_mouse_20/pic\0005 .jpg,{'annotations': [{'category_id': '鼠标'}]}
+6,D:/Python/test_jzyj/key_mouse_20/pic\0006 .jpg,{'annotations': [{'category_id': '键盘'}]}
+7,D:/Python/test_jzyj/key_mouse_20/pic\0007.jpg,{'annotations': [{'category_id': '鼠标'}]}
+8,D:/Python/test_jzyj/key_mouse_20/pic\0008.jpg,{'annotations': [{'category_id': '键盘'}]}
+9,D:/Python/test_jzyj/key_mouse_20/pic\0009.jpg,{'annotations': [{'category_id': '鼠标'}]}
+10,D:/Python/test_jzyj/key_mouse_20/pic\0010.jpg,{'annotations': [{'category_id': '鼠标'}]}
+11,D:/Python/test_jzyj/key_mouse_20/pic\0401.jpg,{'annotations': [{'category_id': '键盘'}]}
+12,D:/Python/test_jzyj/key_mouse_20/pic\0402.jpg,{'annotations': [{'category_id': '键盘'}]}
+13,D:/Python/test_jzyj/key_mouse_20/pic\0403.jpg,{'annotations': [{'category_id': '键盘'}]}
+14,D:/Python/test_jzyj/key_mouse_20/pic\0404.jpg,{'annotations': [{'category_id': '鼠标'}]}
+15,D:/Python/test_jzyj/key_mouse_20/pic\0405.jpg,{'annotations': [{'category_id': '键盘'}]}
+16,D:/Python/test_jzyj/key_mouse_20/pic\0406.jpg,{'annotations': [{'category_id': '鼠标'}]}
+17,D:/Python/test_jzyj/key_mouse_20/pic\0407.jpg,{'annotations': [{'category_id': '键盘'}]}
+18,D:/Python/test_jzyj/key_mouse_20/pic\0408.jpg,{'annotations': [{'category_id': '键盘'}]}
+19,D:/Python/test_jzyj/key_mouse_20/pic\0409.jpg,{'annotations': [{'category_id': '键盘'}]}
+20,D:/Python/test_jzyj/key_mouse_20/pic\0410.jpg,{'annotations': [{'category_id': '键盘'}]}

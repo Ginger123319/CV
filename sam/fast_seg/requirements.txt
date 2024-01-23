@@ -1,0 +1,11 @@
+tornado==6.1
+opencv-python==4.6.0.66
+scipy
+numpy
+Cython
+albumentations==0.5.2
+tqdm
+pyyaml
+easydict==1.9
+torch==1.10.2
+torchvision==0.11.3

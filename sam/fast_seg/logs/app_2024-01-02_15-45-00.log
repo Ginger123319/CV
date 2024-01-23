@@ -1,0 +1,38 @@
+(INFO) 2024-01-02 15:45:01: === 加载模型:weights/sam_hq_vit_l.pth 开始计时……
+(INFO) 2024-01-02 15:45:09: === 加载模型:weights/sam_hq_vit_l.pth 耗时 7233ms
+(INFO) 2024-01-02 15:45:15: === Post全程 开始计时……
+(INFO) 2024-01-02 15:45:15: body_dict: {'imgPath': 'imgs/kaola.jpg', 'preMask': 'imgs/result3.png', 'resultPath': 'imgs/result9.png', 'box': {'xmin': 752, 'ymin': 404, 'xmax': 1267, 'ymax': 958}, 'maskColor': {'R': 0, 'G': 255, 'B': 0, 'A': 200}, 'click': [{'x': 1189, 'y': 834, 'is_positive': True}]}
+(INFO) 2024-01-02 15:45:15: === Wrapper内部 开始计时……
+(INFO) 2024-01-02 15:45:15: === Read img imgs/kaola.jpg 开始计时……
+(INFO) 2024-01-02 15:45:15: === Read img imgs/kaola.jpg 耗时 37ms
+(INFO) 2024-01-02 15:45:15: === Read img imgs/kaola.jpg --> 颜色转换 耗时 45ms
+(INFO) 2024-01-02 15:45:15: === Read img imgs/result3.png 开始计时……
+(INFO) 2024-01-02 15:45:15: === Read img imgs/result3.png 耗时 37ms
+(INFO) 2024-01-02 15:45:15: mask_input loaded from: imgs/result3.png.npy
+(INFO) 2024-01-02 15:45:15: === Wrapper内部 --> 读图 耗时 85ms
+(INFO) 2024-01-02 15:45:15: === Wrapper内部 --> 初始化Predictor 耗时 85ms
+(ERROR) 2024-01-02 15:45:18: Failed to predict.
+Traceback (most recent call last):
+  File "/home/jyf/code/sam/fast_seg/app.py", line 294, in post
+    mask_path = self.model.predict(body_dict)
+  File "/home/jyf/code/sam/fast_seg/app.py", line 201, in predict
+    print(cache[image_hash].shape)
+AttributeError: 'tuple' object has no attribute 'shape'
+(INFO) 2024-01-02 15:45:34: === Post全程 开始计时……
+(INFO) 2024-01-02 15:45:34: body_dict: {'imgPath': 'imgs/kaola.jpg', 'preMask': 'imgs/result3.png', 'resultPath': 'imgs/result9.png', 'box': {'xmin': 752, 'ymin': 404, 'xmax': 1267, 'ymax': 958}, 'maskColor': {'R': 0, 'G': 255, 'B': 0, 'A': 200}, 'click': [{'x': 1189, 'y': 834, 'is_positive': True}]}
+(INFO) 2024-01-02 15:45:34: === Wrapper内部 开始计时……
+(INFO) 2024-01-02 15:45:34: === Read img imgs/kaola.jpg 开始计时……
+(INFO) 2024-01-02 15:45:34: === Read img imgs/kaola.jpg 耗时 41ms
+(INFO) 2024-01-02 15:45:34: === Read img imgs/kaola.jpg --> 颜色转换 耗时 42ms
+(INFO) 2024-01-02 15:45:34: === Read img imgs/result3.png 开始计时……
+(INFO) 2024-01-02 15:45:34: === Read img imgs/result3.png 耗时 31ms
+(INFO) 2024-01-02 15:45:34: mask_input loaded from: imgs/result3.png.npy
+(INFO) 2024-01-02 15:45:34: === Wrapper内部 --> 读图 耗时 76ms
+(INFO) 2024-01-02 15:45:34: === Wrapper内部 --> 初始化Predictor 耗时 77ms
+(ERROR) 2024-01-02 15:45:35: Failed to predict.
+Traceback (most recent call last):
+  File "/home/jyf/code/sam/fast_seg/app.py", line 294, in post
+    mask_path = self.model.predict(body_dict)
+  File "/home/jyf/code/sam/fast_seg/app.py", line 201, in predict
+    print(cache[image_hash][0].shape)
+AttributeError: 'tuple' object has no attribute 'shape'

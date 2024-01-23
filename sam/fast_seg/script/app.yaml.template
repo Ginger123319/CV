@@ -1,0 +1,117 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fast-seg
+  labels:
+    svc: fast-seg
+    ver: SVC_VER
+  namespace: NS
+spec:
+  #type: NodePort
+  ports:
+  - port: PORT_HTTP
+    targetPort: 8888
+    protocol: TCP
+    name: http
+  selector:
+    app: fast-seg
+    ver: APP_VER
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fast-seg
+  namespace: NS
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fast-seg
+      ver: APP_VER
+  template:
+    metadata:
+      name: fast-seg
+      labels:
+        app: fast-seg
+        ver: APP_VER
+        dc/os: "true"
+        dc/os.server.own: "true"
+    spec:
+      #priorityClassName: dc-lower-priority
+      containers:
+      - name: app-container
+        image: registry.aps.datacanvas.com:5000/aps/module/base/baseimage-dl-gpu:latest
+        imagePullPolicy: Always
+        startupProbe:
+          failureThreshold: 10
+          httpGet:
+            path: /actuator/health/liveness
+            port: 8888
+            scheme: HTTP
+          initialDelaySeconds: 3
+          periodSeconds: 2
+          successThreshold: 1
+          timeoutSeconds: 2
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /actuator/health/liveness
+            port: 8888
+            scheme: HTTP
+          initialDelaySeconds: 3
+          periodSeconds: 2
+          successThreshold: 1
+          timeoutSeconds: 2
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /actuator/health/readiness
+            port: 8888
+            scheme: HTTP
+          initialDelaySeconds: 3
+          periodSeconds: 2
+          successThreshold: 1
+          timeoutSeconds: 2
+        workingDir: /opt/workdir/aps/fast_seg-test
+        command: ['python3','app.py']
+        #command: ['sleep','10000']
+        resources:
+          requests:
+            cpu: REQ_CPU
+            memory: REQ_MEM
+        #    nvidia.com/gpu: "1"
+          limits:
+            cpu: LMT_CPU
+            memory: LMT_MEM
+        #    nvidia.com/gpu: "1"
+        volumeMounts:
+        - name: work-volume
+          mountPath: /opt/workdir
+        - name: data-volume
+          mountPath: "/mnt/aps"
+      dnsPolicy: ClusterFirst
+      volumes:
+      - name: work-volume
+        emptyDir: {}
+      - name: data-volume
+        hostPath:
+          path: /mnt/aps/
+      initContainers:
+      - name: init-grafana
+        image: APP_IMAGE
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 1
+            memory: 512Mi
+          limits:
+            cpu: 1
+            memory: 512Mi
+        command: ['sh','-c','set -ex;mkdir -p /opt/workdir/aps; cp -r -p /opt/aps/app/fast_seg-test /opt/workdir/aps/fast_seg-test; chown -R 3000.3000 /opt/workdir/*;']
+        securityContext:
+          runAsUser: 0
+        volumeMounts:
+        - name: work-volume
+          mountPath: "/opt/workdir"
+      #nodeSelector:
+      #  usedGpu: "true"

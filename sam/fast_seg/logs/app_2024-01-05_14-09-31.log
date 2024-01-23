@@ -1,0 +1,26 @@
+(INFO) 2024-01-05 14:09:31: === 加载模型:weights/sam_vit_l_0b3195.pth 开始计时……
+(INFO) 2024-01-05 14:09:35: === 加载模型:weights/sam_vit_l_0b3195.pth 耗时 3893ms
+(INFO) 2024-01-05 14:10:44: === Post全程 开始计时……
+(INFO) 2024-01-05 14:10:44: body_dict: {'imgPath': 'imgs/kaola.jpg', 'preMask': 'imgs/result3.png', 'resultPath': 'imgs/result8.png', 'box': {'xmin': 752, 'ymin': 404, 'xmax': 1267, 'ymax': 958}, 'maskColor': {'R': 0, 'G': 255, 'B': 0, 'A': 200}, 'click': [{'x': 1189, 'y': 834, 'is_positive': True}]}
+(INFO) 2024-01-05 14:10:44: === Wrapper内部 开始计时……
+(INFO) 2024-01-05 14:10:44: === Read img imgs/kaola.jpg 开始计时……
+(INFO) 2024-01-05 14:10:44: === Read img imgs/kaola.jpg 耗时 42ms
+(INFO) 2024-01-05 14:10:44: === Read img imgs/kaola.jpg --> 颜色转换 耗时 52ms
+(INFO) 2024-01-05 14:10:44: === Read img imgs/result3.png 开始计时……
+(INFO) 2024-01-05 14:10:44: === Read img imgs/result3.png 耗时 34ms
+(INFO) 2024-01-05 14:10:44: === mask_input loaded from: imgs/result3.png.npy
+(INFO) 2024-01-05 14:10:44: === Wrapper内部 --> 读图 耗时 89ms
+(INFO) 2024-01-05 14:10:45: === Wrapper内部 --> 初始化Predictor 耗时 324ms
+(ERROR) 2024-01-05 14:10:48: Failed to predict.
+Traceback (most recent call last):
+  File "/home/jyf/code/sam/fast_seg/app.py", line 335, in post
+    mask_path = self.model.predict(body_dict)
+  File "/home/jyf/code/sam/fast_seg/app.py", line 230, in predict
+    predictor.set_image(image, cache, image_hash)
+  File "/home/jyf/code/sam/fast_seg/segment_anything_hq/predictor.py", line 64, in set_image
+    self.set_torch_image(input_image_torch, image.shape[:2], cache, image_hash)
+  File "/home/jyf/miniconda3/envs/diffusion/lib/python3.8/site-packages/torch/autograd/grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/jyf/code/sam/fast_seg/segment_anything_hq/predictor.py", line 100, in set_torch_image
+    self.features, self.interm_features = self.model.image_encoder(input_image)
+ValueError: not enough values to unpack (expected 2, got 1)

@@ -1,0 +1,50 @@
+(INFO) 2024-01-04 18:25:34: === 加载模型:weights/sam_hq_vit_l.pth 开始计时……
+(INFO) 2024-01-04 18:25:41: === 加载模型:weights/sam_hq_vit_l.pth 耗时 7945ms
+(INFO) 2024-01-04 18:25:53: === Post全程 开始计时……
+(INFO) 2024-01-04 18:25:53: body_dict: {'imgPath': 'imgs/kaola.jpg', 'preMask': 'imgs/result3.png', 'resultPath': 'imgs/result9.png', 'box': {'xmin': 0, 'ymin': 0, 'xmax': 1918, 'ymax': 1198}, 'maskColor': {'R': 0, 'G': 255, 'B': 0, 'A': 200}, 'click': [{'x': 1189, 'y': 834, 'is_positive': True}]}
+(INFO) 2024-01-04 18:25:53: === Wrapper内部 开始计时……
+(ERROR) 2024-01-04 18:25:53: Failed to predict.
+Traceback (most recent call last):
+  File "/home/jyf/code/sam/fast_seg/app.py", line 317, in post
+    mask_path = self.model.predict(body_dict)
+  File "/home/jyf/code/sam/fast_seg/app.py", line 143, in predict
+    check_result_path(result_path=result_path)
+  File "/home/jyf/code/sam/fast_seg/app.py", line 123, in check_result_path
+    raise Exception("目标路径[{}]已存在文件".format(result_path))
+Exception: 目标路径[imgs/result9.png]已存在文件
+(INFO) 2024-01-04 18:26:07: === Post全程 开始计时……
+(INFO) 2024-01-04 18:26:07: body_dict: {'imgPath': 'imgs/kaola.jpg', 'preMask': 'imgs/result3.png', 'resultPath': 'imgs/result9.png', 'box': {'xmin': 0, 'ymin': 0, 'xmax': 1918, 'ymax': 1198}, 'maskColor': {'R': 0, 'G': 255, 'B': 0, 'A': 200}, 'click': [{'x': 1189, 'y': 834, 'is_positive': True}]}
+(INFO) 2024-01-04 18:26:07: === Wrapper内部 开始计时……
+(INFO) 2024-01-04 18:26:07: === Read img imgs/kaola.jpg 开始计时……
+(INFO) 2024-01-04 18:26:07: === Read img imgs/kaola.jpg 耗时 29ms
+(INFO) 2024-01-04 18:26:07: === Read img imgs/kaola.jpg --> 颜色转换 耗时 37ms
+(INFO) 2024-01-04 18:26:07: === Read img imgs/result3.png 开始计时……
+(INFO) 2024-01-04 18:26:07: === Read img imgs/result3.png 耗时 32ms
+(INFO) 2024-01-04 18:26:07: === mask_input loaded from: imgs/result3.png.npy
+(INFO) 2024-01-04 18:26:07: === Wrapper内部 --> 读图 耗时 71ms
+(INFO) 2024-01-04 18:26:07: === Wrapper内部 --> 初始化Predictor 耗时 71ms
+(INFO) 2024-01-04 18:26:10: === Wrapper内部 --> 调用Image Encoder 耗时 3369ms
+(INFO) 2024-01-04 18:26:10: === Wrapper内部 --> 调用Predictor 耗时 3401ms
+(INFO) 2024-01-04 18:26:10: === Wrapper内部 --> 处理颜色 耗时 3402ms
+(INFO) 2024-01-04 18:26:10: === Prob saved to: imgs/result9.png.npy
+(INFO) 2024-01-04 18:26:10: === masks scores<--->[0.93582284]
+(INFO) 2024-01-04 18:26:10: === Wrapper内部 耗时 3496ms
+(INFO) 2024-01-04 18:26:10: === Post全程 耗时 3568ms
+(INFO) 2024-01-04 18:27:03: === Post全程 开始计时……
+(INFO) 2024-01-04 18:27:03: body_dict: {'imgPath': 'imgs/kaola.jpg', 'preMask': 'imgs/result3.png', 'resultPath': 'imgs/result8.png', 'box': {'xmin': 752, 'ymin': 404, 'xmax': 1267, 'ymax': 958}, 'maskColor': {'R': 0, 'G': 255, 'B': 0, 'A': 200}, 'click': [{'x': 1189, 'y': 834, 'is_positive': True}]}
+(INFO) 2024-01-04 18:27:03: === Wrapper内部 开始计时……
+(INFO) 2024-01-04 18:27:03: === Read img imgs/kaola.jpg 开始计时……
+(INFO) 2024-01-04 18:27:03: === Read img imgs/kaola.jpg 耗时 40ms
+(INFO) 2024-01-04 18:27:03: === Read img imgs/kaola.jpg --> 颜色转换 耗时 41ms
+(INFO) 2024-01-04 18:27:03: === Read img imgs/result3.png 开始计时……
+(INFO) 2024-01-04 18:27:03: === Read img imgs/result3.png 耗时 27ms
+(INFO) 2024-01-04 18:27:03: === mask_input loaded from: imgs/result3.png.npy
+(INFO) 2024-01-04 18:27:03: === Wrapper内部 --> 读图 耗时 70ms
+(INFO) 2024-01-04 18:27:03: === Wrapper内部 --> 初始化Predictor 耗时 70ms
+(INFO) 2024-01-04 18:27:03: === Wrapper内部 --> 调用Image Encoder 耗时 121ms
+(INFO) 2024-01-04 18:27:03: === Wrapper内部 --> 调用Predictor 耗时 138ms
+(INFO) 2024-01-04 18:27:03: === Wrapper内部 --> 处理颜色 耗时 138ms
+(INFO) 2024-01-04 18:27:03: === Prob saved to: imgs/result8.png.npy
+(INFO) 2024-01-04 18:27:03: === masks scores<--->[0.99349046]
+(INFO) 2024-01-04 18:27:03: === Wrapper内部 耗时 225ms
+(INFO) 2024-01-04 18:27:04: === Post全程 耗时 269ms

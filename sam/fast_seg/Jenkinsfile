@@ -1,0 +1,178 @@
+properties([
+    parameters([
+        choice(choices: ['fast_seg',], description: '---选择要操作的服务---', name: 'appname')
+    ])
+])
+def user = manager.build.getCause(hudson.model.Cause.UserIdCause.class).getUserName()
+manager.addShortText("${user} , ${appname} ");
+def createVersion() {
+    return new Date().format('yyyyMMddHHmmss')
+}
+pipeline{
+    agent{
+        kubernetes{
+            label 'mypod-dev-fast-seg'
+            cloud 'kubernetes_new_dev'
+            yaml '''
+                apiVersion: v1
+                kind: Pod
+                metadata:
+                  labels:
+                    some-label: some-label-value
+                spec:
+                  containers:
+                  - name: busybox
+                    image: registry.aps.datacanvas.com:5000/aps/cicd/jnlp-slave-docker-k8s-mvnsbt:alpinev1.13_ssh
+                    imagePullPolicy: Always
+                    command:
+                    - cat
+                    tty: true
+                    volumeMounts:
+                    - name: docker-socker
+                      mountPath: /var/run/docker.sock
+                    - name: docker-daemon
+                      mountPath: /etc/docker/daemon.json
+                    - name: kubectl
+                      mountPath: /usr/bin/kubectl
+                    - name: kubeconfig
+                      mountPath: /home/jenkins/.kube
+                    - name: kubeconfig1
+                      mountPath: /root/.kube
+                    - name: apsservice
+                      mountPath: /mnt/aps/apsservice
+                    - name: maven-repository-ivy2
+                      mountPath: /home/jenkins/.ivy2
+                    - name: maven-repository-sbt
+                      mountPath: /home/jenkins/.sbt
+                  volumes:
+                  - name: docker-socker
+                    hostPath:
+                      path: /var/run/docker.sock
+                  - name: docker-daemon
+                    hostPath:
+                      path: /etc/docker/daemon.json
+                  - name: kubectl
+                    hostPath:
+                      path: /usr/bin/kubectl
+                  - name: kubeconfig
+                    hostPath:
+                      path: /opt/.kube
+                  - name: kubeconfig1
+                    hostPath:
+                      path: /opt/.kube
+                  - name: apsservice
+                    hostPath:
+                      path: /mnt/aps/apsservice  
+                  - name: maven-repository-ivy2
+                    hostPath:
+                      path: /mnt/aps/maven_repository/.ivy2
+                  - name: maven-repository-m2
+                    hostPath:
+                      path: /mnt/aps/maven_repository/.m2
+                  - name: maven-repository-sbt
+                    hostPath:
+                      path: /mnt/aps/maven_repository/.sbt
+                  nodeSelector:
+                    kubernetes.io/hostname: 172.20.53.21 
+
+                '''
+        }
+    }
+    environment {
+        TAG_TIME = createVersion()
+        BUGFIX_TAG = "${BRANCH_NAME}"
+        DEV_TAG = sh( returnStdout: true, script: "wget --user=zetyun --password=123qwe  http://172.20.50.206:8888/package/devops/jenkinsconf.json && wget --user=zetyun --password=123qwe  http://172.20.50.206:8888/package/devops/jenkinsupdate && chmod +x jenkinsupdate && ./jenkinsupdate -b ${BRANCH_NAME}|sed 's/ //g'")
+    }
+    stages{
+        stage('准备'){
+            steps{
+              checkout scm
+              dir('dockertemplate') {
+                  checkout([$class: 'GitSCM', branches: [[name: '*/${BRANCH_NAME}']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '1d6af1a7-c894-482a-83ef-f6751c8fadf0', url: 'https://gitlab.datacanvas.com/APS/ops-dockerfile.git']]])
+              }
+              dir('fast_seg') {
+                  checkout([$class: 'GitSCM', branches: [[name: '*/${BRANCH_NAME}']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '1d6af1a7-c894-482a-83ef-f6751c8fadf0', url: 'https://gitlab.datacanvas.com/APS/fast_seg.git']]])
+              }
+			  container('busybox'){
+                  sh '''
+                    mkdir -p /home/jenkins/.kube/
+                    #wget http://172.20.50.142/config -O  /home/jenkins/.kube/config
+                    wget http://172.20.50.142/config_newDev -O  /home/jenkins/.kube/config
+                    #sudo cp  -a /home/jenkins/.kube  /root/ || echo "error"
+                '''
+                }
+            }
+        }
+		stage('build 开发环境image'){
+		    when { branch "dev" }
+			steps{
+                container('busybox'){
+                  script {
+                      sh '''
+                        cp -a dockertemplate/APSService/${appname}/Dockerfile.template ./Dockerfile
+                        
+                        mv  fast_seg/ fast_seg-test
+                        chown -R 3000:3000 fast_seg-test
+                        docker build -t registry.aps.datacanvas.com:5000/aps/service/system/$appname:$DEV_TAG .
+                        docker login registry.aps.datacanvas.com:5000 --username=admin --password=Server2008!
+                        docker push registry.aps.datacanvas.com:5000/aps/service/system/$appname:$DEV_TAG
+                        docker tag registry.aps.datacanvas.com:5000/aps/service/system/$appname:$DEV_TAG harbor.zetyun.com/aps`echo $DEV_TAG`/service/system/$appname:$DEV_TAG
+                        docker login harbor.zetyun.com --username=admin --password=zetyunHARbor
+                        docker push harbor.zetyun.com/aps`echo $DEV_TAG`/service/system/$appname:$DEV_TAG
+                    '''
+                  } 
+                }
+            }
+        }
+        stage('build bugfix环境image'){
+		    when { not { branch "dev" } }
+			steps{
+                container('busybox'){
+                  script {
+                      sh '''
+                        cp -a dockertemplate/APSService/${appname}/Dockerfile.template ./Dockerfile
+                        
+                        mv  fast_seg/ fast_seg-test
+                        chown -R 3000:3000 fast_seg-test
+                        docker build -t harbor.zetyun.com/aps$BUGFIX_TAG/service/system/$appname:$BUGFIX_TAG . --no-cache
+                        docker login harbor.zetyun.com --username=admin --password=zetyunHARbor
+                        docker push harbor.zetyun.com/aps$BUGFIX_TAG/service/system/$appname:$BUGFIX_TAG
+
+                    '''
+                  } 
+                }
+            }
+        }
+		stage('deploy 开发环境'){
+		  when { branch "dev" }
+          steps{
+            container('busybox'){
+                script {
+                   sh '''
+                        #kubectl patch deployment/fast-seg --patch '{"spec": {"template": {"spec": {"containers": [{"name": "app-container","image":"registry.aps.datacanvas.com:5000/aps/service/system/$appname:'$TAG_TIME'"}]}}}}' -n aps-os
+				        kubectl delete -f /mnt/aps/apsservice/fast_seg/app.yaml
+				        kubectl apply -f /mnt/aps/apsservice/fast_seg/app.yaml 
+                  '''
+                }
+            }
+          }
+        }
+        stage('deploy bugfix环境'){
+		  when { not { branch "dev" } }
+          steps{
+            container('busybox'){
+                script {
+                  sh '''
+				    echo '开始部署!!!'
+                    sudo sed -i s/latest-stable/v3.9/g /etc/apk/repositories
+                    sudo apk update
+                    sudo apk add sshpass
+                    sshpass -p Server2008! ssh -o StrictHostKeyChecking=no root@172.20.53.129 "kubectl delete -f /mnt/aps/apsservice/fast_seg/app.yaml ; kubectl apply -f /mnt/aps/apsservice/fast_seg/app.yaml "
+
+                  '''
+                }
+            }
+          }
+        }
+    }
+}
