@@ -71,7 +71,7 @@ def extract_clip_frames(total_frames, clip_range, frame_rate, target_fps=2):
 
 # 计算每两帧之间的光流图
 def compute_farneback_optical_flow(frames):
-    prev_gray = cv2.cvtColor(frames[0], cv2.COLOR_BGR2GRAY)
+    prev_gray = cv2.cvtColor(frames[0], cv2.COLOR_RGB2GRAY)
     flow_maps = []
 
     # Initialize Farneback optical flow parameters
@@ -86,7 +86,7 @@ def compute_farneback_optical_flow(frames):
     )
 
     for frame in frames[1:]:
-        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
         flow_map = cv2.calcOpticalFlowFarneback(
             prev_gray, gray, flow=None, **params)
         flow_maps.append(flow_map)
